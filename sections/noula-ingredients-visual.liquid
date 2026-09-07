@@ -1,0 +1,53 @@
+<section class="noula-section">
+  <div class="noula-section__inner">
+    <p class="noula-section__eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2 class="noula-section__heading">{{ section.settings.heading }}</h2>
+    <p class="noula-section__text">{{ section.settings.text }}</p>
+
+    <div class="noula-clean-ingredients">
+      <div class="noula-clean-ingredient">
+        <h3>Red Rice Extract</h3>
+        <p>The signature recovery ingredient.</p>
+      </div>
+      <div class="noula-clean-ingredient">
+        <h3>Ceramides</h3>
+        <p>Support overnight comfort.</p>
+      </div>
+      <div class="noula-clean-ingredient">
+        <h3>Hyaluronic Acid</h3>
+        <p>Helps skin feel soft and hydrated.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Noula ingredients clean",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Formula"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Powered by Red Rice Recovery Complex™"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "A soft pink overnight cream designed to nourish tired-looking skin while you sleep."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noula ingredients clean"
+    }
+  ]
+}
+{% endschema %}

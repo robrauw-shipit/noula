@@ -1,0 +1,29 @@
+{% comment %}
+  Noula Shipping + Location Row
+  Usage in a Custom Liquid block:
+  {% render 'noula-shipping-location-row' %}
+{% endcomment %}
+
+{% assign noula_country_code = localization.country.iso_code | default: '' %}
+{% assign noula_country_name = localization.country.name | default: 'your country' %}
+
+{% capture noula_flag %}{% case noula_country_code %}{% when 'US' %}🇺🇸{% when 'CA' %}🇨🇦{% when 'GB' %}🇬🇧{% when 'AU' %}🇦🇺{% when 'NZ' %}🇳🇿{% when 'NL' %}🇳🇱{% when 'BE' %}🇧🇪{% when 'DE' %}🇩🇪{% when 'FR' %}🇫🇷{% when 'ES' %}🇪🇸{% when 'IT' %}🇮🇹{% when 'IE' %}🇮🇪{% when 'CH' %}🇨🇭{% when 'AT' %}🇦🇹{% when 'SE' %}🇸🇪{% when 'NO' %}🇳🇴{% when 'DK' %}🇩🇰{% when 'FI' %}🇫🇮{% when 'AE' %}🇦🇪{% when 'SA' %}🇸🇦{% when 'QA' %}🇶🇦{% when 'KW' %}🇰🇼{% when 'SG' %}🇸🇬{% when 'ID' %}🇮🇩{% when 'MY' %}🇲🇾{% when 'PH' %}🇵🇭{% when 'JP' %}🇯🇵{% when 'KR' %}🇰🇷{% else %}🌍{% endcase %}{% endcapture %}
+
+<div class="noula-cro noula-shipping-row" aria-label="Shipping information">
+  <div class="noula-shipping-row__item noula-shipping-row__item--today">
+    <span class="noula-shipping-row__dot" aria-hidden="true"></span>
+    <span>Shipped today</span>
+  </div>
+  <div class="noula-shipping-row__divider" aria-hidden="true"></div>
+  <div class="noula-shipping-row__item noula-shipping-row__item--location">
+    <span class="noula-shipping-row__flag" aria-hidden="true">{{ noula_flag | strip }}</span>
+    <span>Free shipping to {{ noula_country_code | default: noula_country_name }}</span>
+  </div>
+</div>
+
+<style>
+.noula-shipping-row{
+  margin:0 !important;
+  padding:0 !important;
+}
+</style>

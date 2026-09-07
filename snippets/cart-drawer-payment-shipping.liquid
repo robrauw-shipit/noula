@@ -1,0 +1,62 @@
+<div class="noula-cart-payments" aria-label="Accepted payment methods">
+  <ul class="noula-cart-payments__list" role="list">
+    <li>{{ 'american_express' | payment_type_svg_tag: class: 'noula-cart-payments__icon' }}</li>
+    <li>{{ 'apple_pay' | payment_type_svg_tag: class: 'noula-cart-payments__icon' }}</li>
+    <li>{{ 'discover' | payment_type_svg_tag: class: 'noula-cart-payments__icon' }}</li>
+    <li>{{ 'google_pay' | payment_type_svg_tag: class: 'noula-cart-payments__icon' }}</li>
+    <li>{{ 'master' | payment_type_svg_tag: class: 'noula-cart-payments__icon' }}</li>
+    <li>{{ 'paypal' | payment_type_svg_tag: class: 'noula-cart-payments__icon' }}</li>
+    <li>{{ 'shopify_pay' | payment_type_svg_tag: class: 'noula-cart-payments__icon' }}</li>
+    <li>{{ 'visa' | payment_type_svg_tag: class: 'noula-cart-payments__icon' }}</li>
+  </ul>
+
+  <p class="noula-cart-payments__text">FREE Shipping included</p>
+</div>
+
+<style>
+  .noula-cart-payments {
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .noula-cart-payments__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .noula-cart-payments__list li {
+    display: flex;
+    line-height: 0;
+  }
+
+  .noula-cart-payments__icon {
+    width: 32px;
+    height: auto;
+    display: block;
+  }
+
+  .noula-cart-payments__text {
+    margin: 9px 0 0;
+    color: #2D241D;
+    font-size: 12px;
+    line-height: 1.35;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  @media screen and (max-width: 380px) {
+    .noula-cart-payments__list {
+      gap: 4px;
+    }
+
+    .noula-cart-payments__icon {
+      width: 29px;
+    }
+  }
+</style>

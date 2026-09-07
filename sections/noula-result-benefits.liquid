@@ -1,0 +1,67 @@
+<section class="noula-section noula-section--oat">
+  <div class="noula-section__inner">
+    <p class="noula-section__eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2 class="noula-section__heading">{{ section.settings.heading }}</h2>
+    <p class="noula-section__text">{{ section.settings.text }}</p>
+
+    <div class="noula-result-band">
+      <div class="noula-result-band__promise">
+        <h3>Wake up looking like sleep actually worked.</h3>
+        <p>Noula is made for the specific morning-face problem: dry, dull, tired-looking skin that does not match how rested you feel.</p>
+      </div>
+      <div class="noula-result-list">
+        <div class="noula-result-item">
+          <span class="noula-result-item__label">Less tired-looking</span>
+          <h3 class="noula-card__title">A fresher morning face</h3>
+          <p class="noula-card__text">For the mirror moment when your skin looks more exhausted than you are.</p>
+        </div>
+        <div class="noula-result-item">
+          <span class="noula-result-item__label">Softer</span>
+          <h3 class="noula-card__title">Comfort for dry skin</h3>
+          <p class="noula-card__text">Helps skin feel softer and more comfortable after your night routine.</p>
+        </div>
+        <div class="noula-result-item">
+          <span class="noula-result-item__label">Less dull</span>
+          <h3 class="noula-card__title">A healthier-looking finish</h3>
+          <p class="noula-card__text">Designed to help skin look fresher, not shiny, greasy, or overdone.</p>
+        </div>
+        <div class="noula-result-item">
+          <span class="noula-result-item__label">More rested-looking</span>
+          <h3 class="noula-card__title">Your face catches up</h3>
+          <p class="noula-card__text">The emotional goal: your face looks closer to how you actually feel.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Noula result benefits",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The result she actually wants"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Fresher. Softer. Like sleep actually worked."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "The promise is not abstract glow. It is waking up with skin that looks less dry, less dull, and less tired."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noula result benefits"
+    }
+  ]
+}
+{% endschema %}

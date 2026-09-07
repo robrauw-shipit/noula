@@ -1,0 +1,72 @@
+<section class="noula-section noula-section--ivory">
+  <div class="noula-section__inner">
+    <div class="noula-two-col">
+      <div>
+        <p class="noula-section__eyebrow">{{ section.settings.eyebrow }}</p>
+        <h2 class="noula-section__heading">{{ section.settings.heading }}</h2>
+        <p class="noula-section__text">{{ section.settings.text }}</p>
+      </div>
+      <div class="noula-proof-panel">
+        <p class="noula-proof-panel__quote">{{ section.settings.panel_quote }}</p>
+        <p class="noula-proof-panel__caption">{{ section.settings.panel_caption }}</p>
+      </div>
+    </div>
+    <div class="noula-card-grid">
+      <div class="noula-card">
+        <h3 class="noula-card__title">Dry</h3>
+        <p class="noula-card__text">Skin can look tighter, flatter, and less comfortable by morning.</p>
+      </div>
+      <div class="noula-card">
+        <h3 class="noula-card__title">Dull</h3>
+        <p class="noula-card__text">When skin loses its fresh look, makeup often has to work harder.</p>
+      </div>
+      <div class="noula-card">
+        <h3 class="noula-card__title">Tired-looking</h3>
+        <p class="noula-card__text">The face in the mirror can look more exhausted than you actually feel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Noula problem block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The morning mirror problem"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "When sleep does not show up on your face"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Noula is made for the mornings when your skin looks dry, dull, or tired even after rest. The goal is not to change your face. It is to help it look fresher, softer, and more like how you feel."
+    },
+    {
+      "type": "text",
+      "id": "panel_quote",
+      "label": "Panel quote",
+      "default": "My face looks more tired than I feel."
+    },
+    {
+      "type": "text",
+      "id": "panel_caption",
+      "label": "Panel caption",
+      "default": "The customer insight behind Noula's overnight recovery approach."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noula problem block"
+    }
+  ]
+}
+{% endschema %}

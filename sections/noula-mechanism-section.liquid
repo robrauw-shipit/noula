@@ -1,0 +1,56 @@
+<section class="noula-section noula-section--oat">
+  <div class="noula-section__inner">
+    <p class="noula-section__eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2 class="noula-section__heading">{{ section.settings.heading }}</h2>
+    <p class="noula-section__text">{{ section.settings.text }}</p>
+
+    <div class="noula-mechanism-steps">
+      <div class="noula-step">
+        <span class="noula-step__number">1</span>
+        <h3 class="noula-card__title">Overnight moisture comfort</h3>
+        <p class="noula-card__text">Supports the soft, comfortable skin feel she wants before bed.</p>
+      </div>
+      <div class="noula-step">
+        <span class="noula-step__number">2</span>
+        <h3 class="noula-card__title">Red Rice Recovery Complex</h3>
+        <p class="noula-card__text">Gives the product a clear reason to believe beyond generic hydration.</p>
+      </div>
+      <div class="noula-step">
+        <span class="noula-step__number">3</span>
+        <h3 class="noula-card__title">Fresher morning look</h3>
+        <p class="noula-card__text">Helps skin wake up looking softer, smoother, and more rested.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Noula mechanism",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Powered by Red Rice Recovery Complex"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Overnight recovery for tired-looking skin"
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Red Rice Recovery Complex is the reason-to-believe behind Noula's overnight approach: a comforting night cream designed for skin that looks dry, dull, and more tired than you feel."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noula mechanism"
+    }
+  ]
+}
+{% endschema %}

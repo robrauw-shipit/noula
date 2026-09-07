@@ -1,0 +1,33 @@
+<section class="noula-section">
+  <div class="noula-section__inner">
+    <div class="noula-clean-visual noula-clean-visual--texture" aria-hidden="true"></div>
+    <p class="noula-section__eyebrow" style="margin-top: 28px;">Texture</p>
+    <h2 class="noula-section__heading">{{ section.settings.heading }}</h2>
+    <p class="noula-section__text">{{ section.settings.text }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Noula texture clean",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Rich comfort. No greasy pillow feel."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "A cushiony cream that melts in and leaves skin feeling soft, not sticky."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noula texture clean"
+    }
+  ]
+}
+{% endschema %}

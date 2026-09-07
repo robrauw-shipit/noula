@@ -1,0 +1,17 @@
+{% comment %}
+  Noula Review Row
+  Usage in a Custom Liquid block:
+  {% render 'noula-review-row' %}
+{% endcomment %}
+
+<div class="noula-cro noula-review-row" aria-label="Customer review rating">
+  <span class="noula-review-row__stars" aria-hidden="true">
+    {% for i in (1..5) %}
+      <svg viewBox="0 0 20 20" role="presentation">
+        <path d="M10 1.7l2.48 5.03 5.55.8-4.02 3.92.95 5.53L10 14.37l-4.96 2.61.95-5.53-4.02-3.92 5.55-.8L10 1.7Z" />
+      </svg>
+    {% endfor %}
+  </span>
+  <span class="noula-review-row__text">4.8/5 based on verified reviews</span>
+  <a class="noula-review-row__link" href="#reviews">Read reviews</a>
+</div>

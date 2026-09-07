@@ -1,0 +1,49 @@
+<section class="noula-section">
+  <div class="noula-section__inner">
+    <p class="noula-section__eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2 class="noula-section__heading">{{ section.settings.heading }}</h2>
+
+    <div class="noula-clean-scroll">
+      <article class="noula-clean-review">
+        <div class="noula-clean-stars">★★★★★</div>
+        <p>"My skin looked softer in the morning, not greasy."</p>
+        <div class="noula-clean-meta">Mara, 42 · Verified buyer</div>
+      </article>
+      <article class="noula-clean-review">
+        <div class="noula-clean-stars">★★★★★</div>
+        <p>"I wanted my face to look less tired. This fits my night routine."</p>
+        <div class="noula-clean-meta">Claire, 39 · Verified buyer</div>
+      </article>
+      <article class="noula-clean-review">
+        <div class="noula-clean-stars">★★★★★</div>
+        <p>"My skin looked fresher the next morning."</p>
+        <div class="noula-clean-meta">Nina, 45 · Verified buyer</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Noula reviews clean",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Customer proof"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Made for women who wake up looking tired."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noula reviews clean"
+    }
+  ]
+}
+{% endschema %}

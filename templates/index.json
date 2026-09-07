@@ -1,0 +1,74 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image-with-text": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Wake Up Looking Rested",
+            "heading_size": "h1"
+          }
+        },
+        "text_WR6DUC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Overnight recovery cream for dry, dull, tired-looking skin.</p>",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop now",
+            "button_link": "shopify://products/overnight-recovery-cream",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text_WR6DUC",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/blonde916_v3.jpg",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "image_behavior": "none",
+        "content_layout": "overlap",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "mobile_content_alignment": "center",
+        "section_color_scheme": "scheme-5",
+        "color_scheme": "scheme-3",
+        "padding_top": 16,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_U3jLzi": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "{% comment %}\n  NOULA HOMEPAGE — SIMPLE ONE PRODUCT PAGE\n  Built from the same styling system as the PDP custom liquid sections.\n{% endcomment %}\n\n<style>\n  .noula-home {\n    font-family: inherit;\n    color: #2D241D;\n    background: #FFFDF9;\n  }\n\n  .noula-home,\n  .noula-home * {\n    box-sizing: border-box;\n    font-family: inherit;\n  }\n\n  .noula-home__section {\n    padding: 38px 0;\n    border-top: 1px solid #EAE1D2;\n  }\n\n  .noula-home__section:first-child {\n    border-top: none;\n    padding-top: 28px;\n  }\n\n  .noula-home__wrap {\n    max-width: 680px;\n    margin: 0 auto;\n    padding: 0 16px;\n  }\n\n  .noula-home__title {\n    margin: 0;\n    color: #2D241D;\n    font-size: clamp(31px, 8vw, 42px);\n    line-height: 1.08;\n    font-weight: 800;\n    letter-spacing: 0;\n  }\n\n  .noula-home__hl {\n    display: inline-block;\n    background: #E7B4AA;\n    color: #2D241D;\n    padding: 1px 10px 3px;\n    border-radius: 6px;\n  }\n\n  .noula-home__p {\n    margin: 15px 0 0;\n    color: #4A3D31;\n    font-size: 15px;\n    line-height: 1.58;\n    letter-spacing: 0;\n  }\n\n  .noula-home__media {\n    margin-top: 24px;\n    border-radius: 12px;\n    overflow: hidden;\n    border: 1px solid #EAE1D2;\n    background: #F3E8D8;\n  }\n\n  .noula-home__media img {\n    width: 100%;\n    height: auto;\n    display: block;\n  }\n\n  .noula-home__btn {\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    min-height: 50px;\n    margin-top: 22px;\n    border-radius: 999px;\n    background: #2D241D;\n    color: #FFFFFF;\n    text-decoration: none;\n    font-size: 14px;\n    line-height: 1;\n    font-weight: 800;\n    letter-spacing: 0.04em;\n    text-transform: uppercase;\n    padding: 16px 20px;\n  }\n\n  .noula-home__subnote {\n    margin: 10px 0 0;\n    color: #6B5C4F;\n    font-size: 13px;\n    line-height: 1.45;\n    text-align: center;\n  }\n\n  .noula-home__list {\n    list-style: none;\n    margin: 20px 0 0;\n    padding: 0;\n    display: flex;\n    flex-direction: column;\n    gap: 13px;\n  }\n\n  .noula-home__list li {\n    display: flex;\n    align-items: center;\n    gap: 12px;\n    color: #2D241D;\n    font-size: 15px;\n    font-weight: 700;\n    line-height: 1.35;\n  }\n\n  .noula-home__icon {\n    width: 38px;\n    height: 38px;\n    border-radius: 50%;\n    flex-shrink: 0;\n    display: block;\n  }\n\n  .noula-home__ing-list {\n    display: flex;\n    flex-direction: column;\n    gap: 12px;\n    margin-top: 24px;\n  }\n\n  .noula-home__ing-card {\n    display: grid;\n    grid-template-columns: 84px 1fr;\n    align-items: center;\n    gap: 14px;\n    border: 1px solid #EAE1D2;\n    border-radius: 14px;\n    background: #FFFFFF;\n    padding: 12px;\n    box-shadow: 0 8px 24px rgba(45, 36, 29, 0.045);\n  }\n\n  .noula-home__ing-media {\n    width: 84px;\n    height: 84px;\n    border-radius: 10px;\n    background: #F3E8D8;\n    border: 1px solid #EAE1D2;\n    overflow: hidden;\n    flex-shrink: 0;\n  }\n\n  .noula-home__ing-media img {\n    width: 100%;\n    height: 100%;\n    display: block;\n    object-fit: cover;\n  }\n\n  .noula-home__ing-name {\n    margin: 0;\n    color: #2D241D;\n    font-size: 18px;\n    line-height: 1.18;\n    font-weight: 800;\n    letter-spacing: 0;\n  }\n\n  .noula-home__ing-desc {\n    margin: 7px 0 0;\n    color: #5F5147;\n    font-size: 14px;\n    line-height: 1.45;\n    letter-spacing: 0;\n  }\n\n  @media screen and (min-width: 641px) {\n    .noula-home__section {\n      padding: 46px 0;\n    }\n\n    .noula-home__section:first-child {\n      padding-top: 46px;\n    }\n\n    .noula-home__wrap {\n      padding: 0 20px;\n    }\n\n    .noula-home__title {\n      font-size: 42px;\n      line-height: 1.08;\n    }\n\n    .noula-home__p {\n      font-size: 16px;\n      line-height: 1.6;\n    }\n\n    .noula-home__media {\n      margin-top: 26px;\n    }\n\n    .noula-home__ing-card {\n      grid-template-columns: 108px 1fr;\n      gap: 18px;\n      padding: 14px 18px 14px 14px;\n    }\n\n    .noula-home__ing-media {\n      width: 108px;\n      height: 108px;\n      border-radius: 12px;\n    }\n\n    .noula-home__ing-name {\n      font-size: 20px;\n    }\n\n    .noula-home__ing-desc {\n      font-size: 14.5px;\n    }\n  }\n</style>\n\n<div class=\"noula-home\">\n  <section class=\"noula-home__section\">\n    <div class=\"noula-home__wrap\">\n      <h1 class=\"noula-home__title\">\n        Recovery that works <span class=\"noula-home__hl\">while you sleep</span>\n      </h1>\n\n      <p class=\"noula-home__p\">\n        Noula Overnight Recovery Cream is made for the morning mirror moment: dry, dull skin that still looks tired after a full night’s sleep.\n      </p>\n\n      <p class=\"noula-home__p\">\n        Powered by Red Rice Recovery Complex™, ceramides, hyaluronic acid and Vitamin B5, it comforts and nourishes skin overnight so you wake up looking fresher, softer, and more rested.\n      </p>\n\n      <ul class=\"noula-home__list\">\n        <li>\n          <img class=\"noula-home__icon\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_33.png?v=1781526850\" alt=\"\" loading=\"lazy\">\n          <span>Wakes up dull, tired-looking skin</span>\n        </li>\n\n        <li>\n          <img class=\"noula-home__icon\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_34.png?v=1781526850\" alt=\"\" loading=\"lazy\">\n          <span>Softens the look of tired lines</span>\n        </li>\n      </ul>\n\n      <a class=\"noula-home__btn\" href=\"/products/overnight-recovery-cream\">\n        Shop Overnight Recovery Cream\n      </a>\n\n      <p class=\"noula-home__subnote\">90-night sleep-on-it guarantee</p>\n\n      <div class=\"noula-home__media\">\n        <img\n          src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/model_916_v1.jpg?v=1781526384\"\n          alt=\"Woman applying Noula Overnight Recovery Cream\"\n          loading=\"eager\"\n        >\n      </div>\n    </div>\n  </section>\n\n  <section class=\"noula-home__section\">\n    <div class=\"noula-home__wrap\">\n      <h2 class=\"noula-home__title\">How does it work?</h2>\n\n      <p class=\"noula-home__p\">\n        Most night creams only sit on top of dry skin. Noula uses Red Rice Recovery Complex™ to comfort skin through the night, when your moisture barrier is most ready for support.\n      </p>\n\n      <p class=\"noula-home__p\">\n        Inspired by Korean beauty rituals, red rice extract pairs with ceramides, hyaluronic acid and Vitamin B5 to help dry, dull skin feel cushioned, hydrated and calm by morning.\n      </p>\n    </div>\n  </section>\n\n  <section class=\"noula-home__section\">\n    <div class=\"noula-home__wrap\">\n      <h2 class=\"noula-home__title\">Ingredients for better-looking mornings</h2>\n\n      <p class=\"noula-home__p\">\n        The overnight comfort your skin needs when it keeps waking up dry, dull, and tired-looking.\n      </p>\n\n      <div class=\"noula-home__ing-list\">\n        <div class=\"noula-home__ing-card\">\n          <div class=\"noula-home__ing-media\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ig_017798eba84234ca016a2ff8f929648191b9b9d8d8dd5f53fd.jpg?v=1781529292\" alt=\"Red Rice Extract\" loading=\"lazy\">\n          </div>\n          <div>\n            <h3 class=\"noula-home__ing-name\">Red Rice Extract</h3>\n            <p class=\"noula-home__ing-desc\">K-beauty inspired nourishment for tired-looking skin</p>\n          </div>\n        </div>\n\n        <div class=\"noula-home__ing-card\">\n          <div class=\"noula-home__ing-media\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ig_017798eba84234ca016a2ffa2c25c48191a8e775af1e4b7aee.jpg?v=1781529292\" alt=\"Ceramides and Vitamin B5\" loading=\"lazy\">\n          </div>\n          <div>\n            <h3 class=\"noula-home__ing-name\">Ceramides + Vitamin B5</h3>\n            <p class=\"noula-home__ing-desc\">Comfort dry skin and support the moisture barrier</p>\n          </div>\n        </div>\n\n        <div class=\"noula-home__ing-card\">\n          <div class=\"noula-home__ing-media\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ig_017798eba84234ca016a2ff9bdcdbc819191ec302ab8c2b571.jpg?v=1781529291\" alt=\"Hyaluronic Acid\" loading=\"lazy\">\n          </div>\n          <div>\n            <h3 class=\"noula-home__ing-name\">Hyaluronic Acid</h3>\n            <p class=\"noula-home__ing-desc\">Draws in moisture for softer, fresher-looking skin</p>\n          </div>\n        </div>\n      </div>\n    </div>\n  </section>\n</div>",
+        "color_scheme": "",
+        "padding_top": 20,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "image-with-text",
+    "custom_liquid_U3jLzi"
+  ]
+}

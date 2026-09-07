@@ -1,0 +1,128 @@
+<div class="noula-cart-timer" data-noula-cart-timer>
+  Your order is reserved for <span data-noula-cart-time>10:00</span>
+</div>
+
+<style>
+  .noula-cart-timer {
+    margin: 0 0 14px;
+    border: 1px solid #9AD77C;
+    border-radius: 6px;
+    background: #E3FFD8;
+    color: #184E17;
+    padding: 10px 12px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .noula-cart-timer span {
+    font-variant-numeric: tabular-nums;
+  }
+
+  cart-drawer.is-empty .noula-cart-timer {
+    display: none;
+  }
+</style>
+
+<script>
+  window.NoulaCartTimer = window.NoulaCartTimer || (function () {
+    var TIMER_LENGTH = 10 * 60 * 1000;
+    var STORAGE_KEY = 'noula_cart_timer_started_at';
+    var interval = null;
+
+    function getStartTime() {
+      var stored = Number(localStorage.getItem(STORAGE_KEY));
+      var now = Date.now();
+
+      if (!stored || stored > now) {
+        stored = now;
+        localStorage.setItem(STORAGE_KEY, String(stored));
+      }
+
+      return stored;
+    }
+
+    function formatTime(ms) {
+      var totalSeconds = Math.max(0, Math.ceil(ms / 1000));
+      var minutes = Math.floor(totalSeconds / 60);
+      var seconds = totalSeconds % 60;
+
+      return String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+    }
+
+    function clearCart() {
+      localStorage.removeItem(STORAGE_KEY);
+
+      fetch('/cart/clear.js', {
+        method: 'POST',
+        headers: { Accept: 'application/json' }
+      }).finally(function () {
+        window.location.reload();
+      });
+    }
+
+    function start() {
+      var timer = document.querySelector('[data-noula-cart-timer]');
+      var time = document.querySelector('[data-noula-cart-time]');
+
+      if (!timer || !time) return;
+
+      if (interval) {
+        clearInterval(interval);
+      }
+
+      function tick() {
+        fetch('/cart.js')
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (cart) {
+            if (!cart || cart.item_count === 0) {
+              timer.style.display = 'none';
+              localStorage.removeItem(STORAGE_KEY);
+              clearInterval(interval);
+              interval = null;
+              return;
+            }
+
+            timer.style.display = '';
+            var remaining = TIMER_LENGTH - (Date.now() - getStartTime());
+            time.textContent = formatTime(remaining);
+
+            if (remaining <= 0) {
+              clearInterval(interval);
+              interval = null;
+              clearCart();
+            }
+          });
+      }
+
+      tick();
+      interval = setInterval(tick, 1000);
+    }
+
+    return { start: start };
+  })();
+
+  window.NoulaCartTimer.start();
+
+  document.addEventListener('DOMContentLoaded', function () {
+    window.NoulaCartTimer.start();
+  });
+
+  document.addEventListener('click', function () {
+    setTimeout(function () {
+      window.NoulaCartTimer.start();
+    }, 300);
+  });
+
+  new MutationObserver(function () {
+    window.NoulaCartTimer.start();
+  }).observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+</script>

@@ -1,0 +1,665 @@
+{%- comment -%}
+  Noula advertorial listicle
+  Layout system: alternating zigzag (text/image), serif numbered headers,
+  no per-block CTAs — the listicle informs, the sticky bar sells.
+{%- endcomment -%}
+
+{%- liquid
+  assign shop_url = section.settings.cta_url
+  if shop_url == blank
+    assign shop_url = '/products/overnight-recovery-cream'
+  endif
+-%}
+
+<section class="nl-listicle" data-section-id="{{ section.id }}">
+  <style>
+    .nl-listicle {
+      --nl-cocoa: #2b1f1a;
+      --nl-clay: #c98a7a;
+      --nl-blush: #e0b7ae;
+      --nl-oat: #e8dfd2;
+      --nl-cream: #fdfbf7;
+      --nl-ink: #2b1f1a;
+      --nl-muted: #6b5d55;
+      --nl-rule: #e6ded4;
+      --nl-max: 1080px;
+
+      background: var(--nl-cream);
+      color: var(--nl-ink);
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 64px;
+    }
+
+    .nl-listicle *,
+    .nl-listicle *::before,
+    .nl-listicle *::after { box-sizing: border-box; }
+
+    .nl-wrap {
+      max-width: var(--nl-max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .nl-wrap--narrow { max-width: 720px; }
+
+    /* ---------- Announcement bar (static, scrolls away) ---------- */
+    .nl-topbar {
+      background: var(--nl-blush);
+      color: var(--nl-cocoa);
+      text-align: center;
+      padding: 11px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ---------- Hero ---------- */
+    .nl-hero { padding: 28px 0 0; }
+
+    .nl-hero-collage {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      max-width: 620px;
+      margin: 0 auto 30px;
+    }
+    .nl-hero-collage figure {
+      margin: 0;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: var(--nl-oat);
+    }
+    .nl-hero-collage img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .nl-h1 {
+      font-family: 'Assistant', Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      font-size: clamp(26px, 5vw, 40px);
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      margin: 0 0 16px;
+      color: var(--nl-cocoa);
+    }
+
+    .nl-deck {
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 600;
+      color: var(--nl-muted);
+      margin: 0 0 16px;
+    }
+
+    .nl-intro p {
+      font-size: 15px;
+      line-height: 1.68;
+      margin: 0 0 14px;
+      color: var(--nl-ink);
+    }
+
+    /* ---------- Byline ---------- */
+    .nl-byline {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin: 26px 0 8px;
+      padding-top: 20px;
+      border-top: 1px solid var(--nl-rule);
+    }
+    .nl-byline img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--nl-oat);
+      flex: 0 0 auto;
+    }
+    .nl-byline-name { font-size: 13px; line-height: 1.45; color: var(--nl-ink); }
+    .nl-byline-name strong { font-weight: 700; }
+    .nl-byline-date { font-size: 12px; color: var(--nl-muted); }
+
+    /* ---------- Numbered blocks (zigzag) ---------- */
+    .nl-blocks { margin-top: 44px; }
+
+    .nl-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 56px;
+    }
+    /* Odd = text left / image right. Even = flipped. */
+    .nl-block:nth-child(even) .nl-block-text { order: 2; }
+    .nl-block:nth-child(even) .nl-block-media { order: 1; }
+
+    .nl-block-num {
+      font-family: 'Assistant', Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(19px, 2.4vw, 25px);
+      line-height: 1.25;
+      color: var(--nl-cocoa);
+      margin: 0 0 12px;
+    }
+    .nl-block-body {
+      font-size: 14.5px;
+      line-height: 1.7;
+      color: var(--nl-ink);
+      margin: 0;
+    }
+    .nl-block-body p { margin: 0 0 12px; }
+    .nl-block-body p:last-child { margin-bottom: 0; }
+
+    .nl-block-media { margin: 0; }
+    .nl-block-media img,
+    .nl-block-ph {
+      width: 100%;
+      display: block;
+      border-radius: 2px;
+      background: var(--nl-oat);
+    }
+    .nl-block-media img { height: auto; }
+
+    /* Placeholder shown until a real image is chosen */
+    .nl-block-ph {
+      aspect-ratio: 4 / 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--nl-muted);
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px dashed var(--nl-rule);
+    }
+
+    /* ---------- Proof / testimonials ---------- */
+    .nl-proof {
+      margin-top: 8px;
+      padding: 48px 0 8px;
+      border-top: 1px solid var(--nl-rule);
+    }
+    .nl-proof-head { text-align: center; margin-bottom: 32px; }
+    .nl-stars { color: var(--nl-clay); font-size: 13px; letter-spacing: 0.14em; }
+    .nl-proof-count {
+      font-size: 12px;
+      color: var(--nl-muted);
+      margin-left: 8px;
+      letter-spacing: 0.04em;
+    }
+    .nl-proof-title {
+      font-family: 'Assistant', Georgia, serif;
+      font-weight: 700;
+      font-size: clamp(22px, 3.4vw, 30px);
+      margin: 12px 0 6px;
+      color: var(--nl-cocoa);
+    }
+    .nl-proof-sub { font-size: 13px; color: var(--nl-muted); margin: 0; }
+
+    .nl-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .nl-card {
+      background: #fff;
+      border: 1px solid var(--nl-rule);
+      border-radius: 3px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .nl-card-img { aspect-ratio: 1 / 1; background: var(--nl-oat); }
+    .nl-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .nl-card-body { padding: 16px; }
+    .nl-card-name {
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      margin: 0 0 8px;
+      color: var(--nl-cocoa);
+    }
+    .nl-card-name .nl-stars { font-size: 11px; margin-left: 4px; }
+    .nl-card-quote {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--nl-ink);
+      margin: 0;
+      text-align: center;
+    }
+
+    /* ---------- Closing ---------- */
+    .nl-close {
+      text-align: center;
+      padding: 46px 0 0;
+    }
+    .nl-close-line {
+      font-family: 'Assistant', Georgia, serif;
+      font-size: clamp(17px, 2.6vw, 22px);
+      line-height: 1.45;
+      color: var(--nl-cocoa);
+      max-width: 520px;
+      margin: 0 auto 22px;
+    }
+    .nl-btn {
+      display: inline-block;
+      background: var(--nl-cocoa);
+      color: var(--nl-cream);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 15px 34px;
+      border-radius: 999px;
+      transition: opacity 0.18s ease;
+    }
+    .nl-btn:hover { opacity: 0.88; }
+
+    /* ---------- Sticky CTA (the ONE fixed element) ---------- */
+    .nl-sticky {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 60;
+      padding: 8px;
+      background: rgba(253, 251, 247, 0.94);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--nl-rule);
+      transform: translateY(110%);
+      transition: transform 0.28s ease;
+      pointer-events: none;
+    }
+    .nl-sticky.is-visible { transform: translateY(0); pointer-events: auto; }
+    .nl-sticky a {
+      display: block;
+      max-width: 460px;
+      margin: 0 auto;
+      background: var(--nl-cocoa);
+      color: var(--nl-cream);
+      text-align: center;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 44px;
+      height: 44px;
+      border-radius: 999px;
+    }
+
+    /* ---------- Mobile ---------- */
+    @media screen and (max-width: 749px) {
+      .nl-block {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        margin-bottom: 40px;
+      }
+      /* Image always above text on mobile, regardless of desktop zigzag */
+      .nl-block .nl-block-text { order: 2; }
+      .nl-block .nl-block-media { order: 1; }
+
+      .nl-cards { grid-template-columns: 1fr; gap: 16px; }
+      .nl-hero-collage { gap: 3px; margin-bottom: 22px; }
+      .nl-listicle { padding-bottom: 84px; }
+      .nl-proof { padding-top: 36px; }
+    }
+  </style>
+
+  {%- if section.settings.topbar_text != blank -%}
+    <div class="nl-topbar">{{ section.settings.topbar_text }}</div>
+  {%- endif -%}
+
+  <div class="nl-hero">
+    <div class="nl-wrap">
+      {%- if section.settings.hero_1 or section.settings.hero_2 or section.settings.hero_3 -%}
+        <div class="nl-hero-collage">
+          {%- for i in (1..3) -%}
+            {%- assign key = 'hero_' | append: i -%}
+            {%- assign img = section.settings[key] -%}
+            <figure>
+              {%- if img -%}
+                {{ img | image_url: width: 600 | image_tag: loading: 'eager', alt: img.alt | default: section.settings.heading }}
+              {%- endif -%}
+            </figure>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="nl-wrap nl-wrap--narrow">
+      <h1 class="nl-h1">{{ section.settings.heading }}</h1>
+
+      {%- if section.settings.deck != blank -%}
+        <p class="nl-deck">{{ section.settings.deck }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.intro != blank -%}
+        <div class="nl-intro">{{ section.settings.intro }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.author_name != blank -%}
+        <div class="nl-byline">
+          {%- if section.settings.author_image -%}
+            {{ section.settings.author_image | image_url: width: 120 | image_tag: loading: 'lazy', alt: section.settings.author_name }}
+          {%- else -%}
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="" width="40" height="40">
+          {%- endif -%}
+          <div>
+            <div class="nl-byline-name">By <strong>{{ section.settings.author_name }}</strong></div>
+            {%- if section.settings.author_date != blank -%}
+              <div class="nl-byline-date">{{ section.settings.author_date }}</div>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="nl-wrap nl-blocks">
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'reason' -%}
+        <div class="nl-block" {{ block.shopify_attributes }}>
+          <div class="nl-block-text">
+            <h2 class="nl-block-num">{{ forloop.index }}. {{ block.settings.title }}</h2>
+            <div class="nl-block-body">{{ block.settings.body }}</div>
+          </div>
+          <figure class="nl-block-media">
+            {%- if block.settings.image -%}
+              {{ block.settings.image | image_url: width: 900 | image_tag: loading: 'lazy', alt: block.settings.image.alt | default: block.settings.title }}
+            {%- else -%}
+              <div class="nl-block-ph">Image {{ forloop.index }}</div>
+            {%- endif -%}
+          </figure>
+        </div>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  {%- assign has_testimonials = false -%}
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'testimonial' -%}{%- assign has_testimonials = true -%}{%- endif -%}
+  {%- endfor -%}
+
+  {%- if has_testimonials -%}
+    <div class="nl-wrap nl-proof">
+      <div class="nl-proof-head">
+        <span class="nl-stars">★★★★★</span>
+        {%- if section.settings.proof_count != blank -%}
+          <span class="nl-proof-count">{{ section.settings.proof_count }}</span>
+        {%- endif -%}
+        <h2 class="nl-proof-title">{{ section.settings.proof_title }}</h2>
+        {%- if section.settings.proof_sub != blank -%}
+          <p class="nl-proof-sub">{{ section.settings.proof_sub }}</p>
+        {%- endif -%}
+      </div>
+
+      <div class="nl-cards">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'testimonial' -%}
+            <div class="nl-card" {{ block.shopify_attributes }}>
+              <div class="nl-card-img">
+                {%- if block.settings.image -%}
+                  {{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: block.settings.name }}
+                {%- endif -%}
+              </div>
+              <div class="nl-card-body">
+                <p class="nl-card-name">{{ block.settings.name }}<span class="nl-stars">★★★★★</span></p>
+                <p class="nl-card-quote">{{ block.settings.quote }}</p>
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+  <div class="nl-wrap nl-wrap--narrow nl-close">
+    {%- if section.settings.closing_line != blank -%}
+      <p class="nl-close-line">{{ section.settings.closing_line }}</p>
+    {%- endif -%}
+    <a class="nl-btn" href="{{ shop_url }}">{{ section.settings.cta_label }}</a>
+  </div>
+
+  <div class="nl-sticky" aria-hidden="true">
+    <a href="{{ shop_url }}">{{ section.settings.sticky_label }}</a>
+  </div>
+
+  <script>
+    (function () {
+      var init = function () {
+        var root = document.querySelector('.nl-listicle[data-section-id="{{ section.id }}"]');
+        if (!root) return;
+        var hero = root.querySelector('.nl-hero');
+        var sticky = root.querySelector('.nl-sticky');
+        if (!hero || !sticky) return;
+
+        var show = function (on) {
+          sticky.classList.toggle('is-visible', on);
+          sticky.setAttribute('aria-hidden', on ? 'false' : 'true');
+        };
+        show(false);
+
+        if (!('IntersectionObserver' in window)) {
+          var onScroll = function () {
+            show(hero.getBoundingClientRect().bottom <= 0);
+          };
+          onScroll();
+          window.addEventListener('scroll', onScroll, { passive: true });
+          return;
+        }
+
+        new IntersectionObserver(function (entries) {
+          var e = entries[0];
+          show(!e.isIntersecting && e.boundingClientRect.bottom <= 0);
+        }, { threshold: 0 }).observe(hero);
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Noula listicle",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Top bar"
+    },
+    {
+      "type": "text",
+      "id": "topbar_text",
+      "label": "Announcement text",
+      "default": "TEST COPY — announcement bar goes here"
+    },
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_1",
+      "label": "Hero image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_2",
+      "label": "Hero image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_3",
+      "label": "Hero image 3"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Headline",
+      "default": "TEST COPY — 10 Reasons Women Are Waking Up To Less Tired-Looking Skin"
+    },
+    {
+      "type": "textarea",
+      "id": "deck",
+      "label": "Sub-headline (deck)",
+      "default": "TEST COPY — one-line promise that expands the headline without repeating it."
+    },
+    {
+      "type": "richtext",
+      "id": "intro",
+      "label": "Intro paragraphs",
+      "default": "<p>TEST COPY — opening paragraph that names the problem in the reader's own words and sets up why this page exists.</p><p>TEST COPY — second paragraph that introduces the mechanism and what makes it different.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Byline"
+    },
+    {
+      "type": "image_picker",
+      "id": "author_image",
+      "label": "Author photo"
+    },
+    {
+      "type": "text",
+      "id": "author_name",
+      "label": "Author name",
+      "default": "Test Author"
+    },
+    {
+      "type": "text",
+      "id": "author_date",
+      "label": "Date line",
+      "default": "Last Updated September 2026"
+    },
+    {
+      "type": "header",
+      "content": "Testimonials"
+    },
+    {
+      "type": "text",
+      "id": "proof_count",
+      "label": "Review count line",
+      "default": "TEST — 0,000+ Verified Reviews"
+    },
+    {
+      "type": "text",
+      "id": "proof_title",
+      "label": "Testimonials heading",
+      "default": "What Women Are Saying"
+    },
+    {
+      "type": "text",
+      "id": "proof_sub",
+      "label": "Testimonials sub-heading",
+      "default": "TEST COPY — supporting line"
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "textarea",
+      "id": "closing_line",
+      "label": "Closing line",
+      "default": "TEST COPY — the reward line that closes the page."
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA link",
+      "info": "Defaults to the Overnight Recovery Cream product page."
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Bottom button label",
+      "default": "Check Availability"
+    },
+    {
+      "type": "text",
+      "id": "sticky_label",
+      "label": "Sticky bar button label",
+      "default": "Check Availability"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "reason",
+      "name": "Reason",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Reason headline",
+          "default": "Test reason headline"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Reason body",
+          "default": "<p>TEST COPY — three to four sentences. State the claim, give the reason it is true, then land on what it means for her morning. Keep every block roughly this length so the page reads at an even rhythm.</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name and age",
+          "default": "Test Name, 00"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "TEST COPY — a specific, identity-driven quote in her own words."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noula listicle",
+      "blocks": [
+        { "type": "reason" },
+        { "type": "reason" },
+        { "type": "reason" },
+        { "type": "reason" },
+        { "type": "reason" },
+        { "type": "reason" },
+        { "type": "reason" },
+        { "type": "reason" },
+        { "type": "reason" },
+        { "type": "reason" },
+        { "type": "testimonial" },
+        { "type": "testimonial" },
+        { "type": "testimonial" }
+      ]
+    }
+  ]
+}
+{% endschema %}

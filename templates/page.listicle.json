@@ -1,0 +1,132 @@
+{
+  "sections": {
+    "listicle": {
+      "type": "noula-listicle",
+      "blocks": {
+        "reason_1": {
+          "type": "reason",
+          "settings": {
+            "title": "Test reason headline 1",
+            "body": "<p>TEST COPY \u2014 three to four sentences. State the claim, give the reason it is true, then land on what it means for her morning. Keep every block roughly this length so the page reads at an even rhythm.</p>"
+          }
+        },
+        "reason_2": {
+          "type": "reason",
+          "settings": {
+            "title": "Test reason headline 2",
+            "body": "<p>TEST COPY \u2014 three to four sentences. State the claim, give the reason it is true, then land on what it means for her morning. Keep every block roughly this length so the page reads at an even rhythm.</p>"
+          }
+        },
+        "reason_3": {
+          "type": "reason",
+          "settings": {
+            "title": "Test reason headline 3",
+            "body": "<p>TEST COPY \u2014 three to four sentences. State the claim, give the reason it is true, then land on what it means for her morning. Keep every block roughly this length so the page reads at an even rhythm.</p>"
+          }
+        },
+        "reason_4": {
+          "type": "reason",
+          "settings": {
+            "title": "Test reason headline 4",
+            "body": "<p>TEST COPY \u2014 three to four sentences. State the claim, give the reason it is true, then land on what it means for her morning. Keep every block roughly this length so the page reads at an even rhythm.</p>"
+          }
+        },
+        "reason_5": {
+          "type": "reason",
+          "settings": {
+            "title": "Test reason headline 5",
+            "body": "<p>TEST COPY \u2014 three to four sentences. State the claim, give the reason it is true, then land on what it means for her morning. Keep every block roughly this length so the page reads at an even rhythm.</p>"
+          }
+        },
+        "reason_6": {
+          "type": "reason",
+          "settings": {
+            "title": "Test reason headline 6",
+            "body": "<p>TEST COPY \u2014 three to four sentences. State the claim, give the reason it is true, then land on what it means for her morning. Keep every block roughly this length so the page reads at an even rhythm.</p>"
+          }
+        },
+        "reason_7": {
+          "type": "reason",
+          "settings": {
+            "title": "Test reason headline 7",
+            "body": "<p>TEST COPY \u2014 three to four sentences. State the claim, give the reason it is true, then land on what it means for her morning. Keep every block roughly this length so the page reads at an even rhythm.</p>"
+          }
+        },
+        "reason_8": {
+          "type": "reason",
+          "settings": {
+            "title": "Test reason headline 8",
+            "body": "<p>TEST COPY \u2014 three to four sentences. State the claim, give the reason it is true, then land on what it means for her morning. Keep every block roughly this length so the page reads at an even rhythm.</p>"
+          }
+        },
+        "reason_9": {
+          "type": "reason",
+          "settings": {
+            "title": "Test reason headline 9",
+            "body": "<p>TEST COPY \u2014 three to four sentences. State the claim, give the reason it is true, then land on what it means for her morning. Keep every block roughly this length so the page reads at an even rhythm.</p>"
+          }
+        },
+        "reason_10": {
+          "type": "reason",
+          "settings": {
+            "title": "Test reason headline 10",
+            "body": "<p>TEST COPY \u2014 three to four sentences. State the claim, give the reason it is true, then land on what it means for her morning. Keep every block roughly this length so the page reads at an even rhythm.</p>"
+          }
+        },
+        "testimonial_1": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Test Name, 01",
+            "quote": "TEST COPY \u2014 a specific, identity-driven quote in her own words, not a product description."
+          }
+        },
+        "testimonial_2": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Test Name, 02",
+            "quote": "TEST COPY \u2014 a specific, identity-driven quote in her own words, not a product description."
+          }
+        },
+        "testimonial_3": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Test Name, 03",
+            "quote": "TEST COPY \u2014 a specific, identity-driven quote in her own words, not a product description."
+          }
+        }
+      },
+      "block_order": [
+        "reason_1",
+        "reason_2",
+        "reason_3",
+        "reason_4",
+        "reason_5",
+        "reason_6",
+        "reason_7",
+        "reason_8",
+        "reason_9",
+        "reason_10",
+        "testimonial_1",
+        "testimonial_2",
+        "testimonial_3"
+      ],
+      "settings": {
+        "topbar_text": "TEST COPY \u2014 announcement bar goes here",
+        "heading": "TEST COPY \u2014 10 Reasons Women Are Waking Up To Less Tired-Looking Skin",
+        "deck": "TEST COPY \u2014 one-line promise that expands the headline without repeating it.",
+        "intro": "<p>TEST COPY \u2014 opening paragraph that names the problem in the reader's own words and sets up why this page exists.</p><p>TEST COPY \u2014 second paragraph that introduces the mechanism and what makes it different.</p>",
+        "author_name": "Test Author",
+        "author_date": "Last Updated September 2026",
+        "proof_count": "TEST \u2014 0,000+ Verified Reviews",
+        "proof_title": "What Women Are Saying",
+        "proof_sub": "TEST COPY \u2014 supporting line",
+        "closing_line": "TEST COPY \u2014 the reward line that closes the page.",
+        "cta_label": "Check Availability",
+        "sticky_label": "Check Availability"
+      }
+    }
+  },
+  "order": [
+    "listicle"
+  ]
+}

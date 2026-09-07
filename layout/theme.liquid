@@ -307,13 +307,27 @@
       {%- render 'cart-drawer' -%}
     {%- endif -%}
 
-    {% sections 'header-group' %}
+    {%- comment -%}
+      Advertorial/listicle templates run chrome-free: no header, no footer.
+      Gated on the template suffix so every other page is untouched.
+    {%- endcomment -%}
+    {%- assign nl_bare_templates = 'listicle' -%}
+    {%- assign nl_is_bare = false -%}
+    {%- if template.suffix != blank and nl_bare_templates contains template.suffix -%}
+      {%- assign nl_is_bare = true -%}
+    {%- endif -%}
+
+    {%- unless nl_is_bare -%}
+      {% sections 'header-group' %}
+    {%- endunless -%}
 
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       {{ content_for_layout }}
     </main>
 
-    {% sections 'footer-group' %}
+    {%- unless nl_is_bare -%}
+      {% sections 'footer-group' %}
+    {%- endunless -%}
 
     <ul hidden>
       <li id="a11y-refresh-page-message">{{ 'accessibility.refresh_page' | t }}</li>

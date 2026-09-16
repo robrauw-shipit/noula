@@ -1,7 +1,7 @@
 {%- comment -%} Noula v2 — announcement bar with rolling countdown {%- endcomment -%}
 <div class="nv nv-topbar" data-section-id="{{ section.id }}">
   <div class="nv-topbar__inner">
-    <span>{{ section.settings.text }}</span>
+    <span>{{ section.settings.text }}{% if section.settings.highlight != blank %} <strong>{{ section.settings.highlight }}</strong>{% endif %}</span>
     {%- if section.settings.show_timer -%}
       <span class="nv-topbar__timer" data-nv-countdown data-hours="{{ section.settings.hours }}" data-key="{{ section.id }}">
         <span class="nv-topbar__unit"><b data-h>00</b><small>hrs</small></span><span class="nv-topbar__sep">:</span>

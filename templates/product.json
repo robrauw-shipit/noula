@@ -7,7 +7,7 @@
           "type": "nv_rating",
           "settings": {
             "text": "Rated 4.8 (476 reviews)",
-            "tag": "Bestseller"
+            "tag": ""
           }
         },
         "title": {
@@ -152,11 +152,16 @@
             "icon": "none",
             "content": "<p>Free shipping on every order. Ships within 24 hours from our US warehouse. Returns are covered by the 90-night guarantee.</p>"
           }
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
         }
       },
       "block_order": [
         "nv_rating",
         "title",
+        "price",
         "description",
         "nv_benefits",
         "nv_offer_label",

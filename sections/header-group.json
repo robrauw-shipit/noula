@@ -5,11 +5,12 @@
     "noula_v2_topbar": {
       "type": "noula-v2-topbar",
       "settings": {
-        "text": "Buy 1, Get 1 Free — ends in",
-        "show_timer": true,
+        "text": "Secret Deal:",
+        "show_timer": false,
         "hours": 12,
         "link_text": "",
-        "link": ""
+        "link": "",
+        "highlight": "save $66 + Free Gifts"
       }
     },
     "header": {

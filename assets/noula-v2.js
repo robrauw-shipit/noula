@@ -112,6 +112,28 @@
     });
   }
 
+  /* ---------- ATC button mirrors the selected KaChing deal price ---------- */
+  function initAtcPrice() {
+    var btn = document.querySelector('.product-form__submit');
+    var host = document.querySelector('.kaching-bundles');
+    if (!btn || !host) return;
+    var label = btn.querySelector('span');
+    if (!label) return;
+    var base = (label.getAttribute('data-base-label') || label.textContent).trim();
+    label.setAttribute('data-base-label', base);
+    function txt(el) { return el ? el.textContent.replace(/\s+/g, ' ').trim() : ''; }
+    function update() {
+      if (btn.disabled) return;
+      var bar = host.querySelector('.kaching-bundles__bar--selected');
+      var price = txt(bar && bar.querySelector('.kaching-bundles__bar-price'));
+      var full = txt(bar && bar.querySelector('.kaching-bundles__bar-full-price'));
+      if (!price) { label.textContent = base; return; }
+      label.innerHTML = base + ' \u00b7 ' + price + (full && full !== price ? ' <s class="nv-atc-compare">' + full + '</s>' : '');
+    }
+    update();
+    new MutationObserver(update).observe(host, { subtree: true, childList: true, attributes: true, characterData: true });
+  }
+
   function init(root) {
     root = root || document;
     root.querySelectorAll('[data-nv-countdown]').forEach(initCountdown);
@@ -120,6 +142,7 @@
     root.querySelectorAll('.nv-review').forEach(initReadMore);
     root.querySelectorAll('[data-nv-grid]').forEach(initGrid);
     root.querySelectorAll('.nv-sticky').forEach(initSticky);
+    initAtcPrice();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { init(); });

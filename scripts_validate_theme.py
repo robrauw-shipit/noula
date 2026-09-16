@@ -32,6 +32,7 @@ def check(where, settings, defs):
         elif t=='select' and v not in [o['value'] for o in d['options']]: warn(f'{where}: {k}={v!r} not a valid option')
         elif t=='color_scheme' and v and v not in schemes: warn(f'{where}: {k}={v!r} unknown color scheme')
         elif t=='url' and isinstance(v,str) and v.startswith('#'): warn(f'{where}: {k}={v!r} hash url not allowed')
+        elif isinstance(v,str) and '{{' in v: warn(f'{where}: {k} contains Liquid braces — JSON template settings are not rendered as Liquid')
         elif t=='page' and v=='': warn(f'{where}: {k} is "" — omit the key instead (proven to drop the template)')
         elif t=='inline_richtext' and isinstance(v,str):
             leftover=INLINE_OK.sub('',v)

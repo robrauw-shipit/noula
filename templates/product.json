@@ -6,7 +6,8 @@
         "nv_rating": {
           "type": "nv_rating",
           "settings": {
-            "text": "Rated {{ REAL_RATING }} ({{ REAL_REVIEW_COUNT }} reviews)",
+            "prefix": "Rated",
+            "suffix": "reviews",
             "tag": ""
           }
         },
@@ -522,8 +523,8 @@
         "eyebrow": "[[EYEBROW PLACEHOLDER]]",
         "heading": "Better mornings [[in a jar]]",
         "lead": "",
-        "count_text": "{{ REAL_REVIEW_COUNT }} reviews",
-        "initial": 10
+        "initial": 10,
+        "count_suffix": "reviews"
       }
     },
     "faq": {
@@ -636,7 +637,6 @@
     "sticky_bar": {
       "type": "noula-v2-sticky-bar",
       "settings": {
-        "rating_text": "{{ REAL_RATING }}/5 ({{ REAL_REVIEW_COUNT }} reviews)",
         "cta_text": "Add to cart",
         "watch_section_id": "main"
       }

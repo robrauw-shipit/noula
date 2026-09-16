@@ -115,6 +115,7 @@ body { background: var(--nv-bone); color: var(--nv-cocoa); }
   padding: 10px 16px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
 }
 .nv-topbar__inner { display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
+@media (max-width: 749px) { .nv-topbar { font-size: 11px; padding: 8px 12px; } .nv-topbar__inner { gap: 8px; } .nv-topbar__unit b { font-size: 12px; } }
 .nv-topbar__timer { display: inline-flex; gap: 6px; align-items: baseline; font-variant-numeric: tabular-nums; }
 .nv-topbar__unit { display: inline-flex; flex-direction: column; align-items: center; line-height: 1; }
 .nv-topbar__unit b { font-size: 14px; }
@@ -381,7 +382,7 @@ product-info.color-scheme-1 { background: var(--nv-bone); }
 .nv-ba figure:last-child figcaption { background: var(--nv-cocoa); color: var(--nv-ivory); }
 .nv-ba--composite { grid-template-columns: 1fr; }
 .nv-ba--composite figure { aspect-ratio: 1 / 1; }
-.nv-ba__cap--r { left: auto; right: 12px; background: var(--nv-cocoa) !important; color: var(--nv-ivory) !important; }
+.nv-ba .nv-ba__cap--r { left: auto; right: 12px; background: var(--nv-cocoa); color: var(--nv-ivory); }
 
 /* stats */
 .nv-stats { display: grid; gap: 12px; margin-top: 32px; }

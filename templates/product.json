@@ -94,6 +94,12 @@
           "settings": {
             "custom_liquid": "<script>\n\nwindow.addEventListener('load', function() {\n\nvar _learnq = window._learnq || [];\n\nfunction addedToCart() {\n\n  fetch(`$/cart.js`)\n\n  .then(res => res.clone().json().then(data => {\n\n    var cart = {\n\n      total_price: data.total_price/100,\n\n      $value: data.total_price/100,\n\n      total_discount: data.total_discount,\n\n      original_total_price: data.original_total_price/100,\n\n      items: data.items\n\n    }\n\n    if (item !== 'undefined') {\n\n      cart = Object.assign(cart, item)\n\n    }\n\n    if (klAjax) {\n\n        _learnq.push(['track', 'Added to Cart', cart]);\n\n        klAjax = false;\n\n      }\n\n  }))\n\n};\n\n(function (ns, fetch) {\n\n  ns.fetch = function() {\n\n    const response = fetch.apply(this, arguments);\n\n    response.then(res => {\n\n      if (`$/cart/add.js`\n\n       .includes(res.url)) {\n\n         addedToCart()\n\n      }\n\n    });\n\n    return response\n\n  }\n\n}(window, window.fetch));\n\nvar klAjax = true;\n\nvar atcButtons = document.querySelectorAll("
           }
+        },
+        "custom_liquid_atc_price": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% comment %}\n  ATC button shows the selected KaChing bundle price, live.\n{% endcomment %}\n<style>\n  .nla-atc-compare{opacity:.6;font-weight:500;text-decoration:line-through;margin-left:4px;}\n</style>\n<script>\n(function(){\n  function init(){\n    var btn = document.querySelector('.product-form__submit');\n    var host = document.querySelector('.kaching-bundles');\n    if(!btn || !host) return;\n    var label = btn.querySelector('span');\n    if(!label) return;\n    var base = (label.getAttribute('data-base') || label.textContent).trim().replace(/\\s*[·-]\\s*\\$[\\d.,]+.*$/,'');\n    label.setAttribute('data-base', base);\n    function read(el){ return el ? el.textContent.replace(/\\s+/g,' ').trim() : ''; }\n    function update(){\n      if(btn.disabled) return;\n      var bar = host.querySelector('.kaching-bundles__bar--selected');\n      var price = read(bar && bar.querySelector('.kaching-bundles__bar-price'));\n      var full  = read(bar && bar.querySelector('.kaching-bundles__bar-full-price'));\n      if(!price){ label.textContent = base; return; }\n      label.innerHTML = base + ' ' + price + (full && full !== price ? ' <s class=\"nla-atc-compare\">' + full + '</s>' : '');\n    }\n    update();\n    if(host._nlaObs) host._nlaObs.disconnect();\n    var queued = false;\n    host._nlaObs = new MutationObserver(function(){\n      if(queued) return; queued = true;\n      requestAnimationFrame(function(){ queued = false; update(); });\n    });\n    host._nlaObs.observe(host, {subtree:true, childList:true, characterData:true});\n  }\n  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);\n  else init();\n  document.addEventListener('shopify:section:load', init);\n})();\n</script>\n"
+          }
         }
       },
       "block_order": [
@@ -106,6 +112,7 @@
         "description",
         "kaching_bundles_app_block_6WNQzB",
         "buy_buttons",
+        "custom_liquid_atc_price",
         "custom_liquid_JgenB8",
         "custom_liquid_VzmrAg",
         "custom_liquid_gFjUeT",

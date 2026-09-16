@@ -69,11 +69,11 @@
   .nlist-hero__media{order:-1;}
   .nlist-hero__h1{margin:0;font-family:var(--font-heading-family,inherit);font-size:25.5px;line-height:1.15;font-weight:800;letter-spacing:-.01em;}
   @media screen and (min-width:390px){.nlist-hero__h1{font-size:28px;}}
-  .nlist-hero__stand{margin:14px 0 0;font-size:18px;line-height:1.55;font-weight:600;color:var(--ink);}
+  .nlist-hero__stand{margin:14px 0 0;font-size:18px;line-height:1.55;font-weight:400;color:var(--ink);}
   .nlist-hero__media{position:relative;width:calc(100% + var(--pad) * 2);margin:0 calc(var(--pad) * -1) 22px;padding-top:calc(100% + var(--pad) * 2);overflow:hidden;background:var(--band);}
   .nlist-hero__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;}
   .nlist-usps{list-style:none;margin:22px auto 0;padding:0;display:grid;gap:12px;width:max-content;max-width:100%;}
-  .nlist-usps li{display:flex;align-items:flex-start;gap:10px;font-size:17px;line-height:1.45;font-weight:600;}
+  .nlist-usps li{display:flex;align-items:flex-start;gap:10px;font-size:17px;line-height:1.45;font-weight:700;}
   .nlist-usps img{width:17px;height:17px;flex:0 0 auto;margin-top:2px;}
   .nlist-usps strong{font-weight:700;}
   .nlist-cta{
@@ -94,13 +94,6 @@
   .nlist-reason__h2{margin:0 0 14px;font-family:var(--font-heading-family,inherit);font-size:34px;line-height:1.12;font-weight:800;letter-spacing:-.015em;}
   .nlist-reason__body p{margin:0 0 16px;font-size:19px;line-height:1.5;color:var(--ink);}
   .nlist-reason__body p:last-child{margin-bottom:0;}
-
-  /* ---------- honest limits ---------- */
-  .nlist-limits{padding-top:26px;padding-bottom:30px;}
-  .nlist-limits__box{border:1px solid var(--line);background:var(--band);padding:18px;}
-  .nlist-limits__title{margin:0 0 10px;font-size:16px;font-weight:800;}
-  .nlist-limits__box p{margin:0 0 10px;font-size:16px;line-height:1.55;color:var(--ink);}
-  .nlist-limits__box p:last-child{margin-bottom:0;}
 
   /* ---------- testimonials ---------- */
   .nlist-revs{padding:28px 0;border-top:1px solid var(--line);}
@@ -256,16 +249,6 @@
     {%- endif -%}
   {%- endfor -%}
 
-  <!-- honest limits -->
-  {%- if section.settings.limits_body != blank -%}
-    <div class="nlist__wrap nlist-limits">
-      <div class="nlist-limits__box">
-        <p class="nlist-limits__title">{{ section.settings.limits_title }}</p>
-        {{ section.settings.limits_body }}
-      </div>
-    </div>
-  {%- endif -%}
-
   <!-- testimonials -->
   {%- assign revs = section.blocks | where: 'type', 'review' -%}
   {%- if revs.size > 0 -%}
@@ -349,55 +332,188 @@
 {
   "name": "Noula: Listicle",
   "settings": [
-    { "type": "header", "content": "Announcement + header" },
-    { "type": "text", "id": "announcement", "label": "Announcement bar", "default": "Save $66 + Free Shipping" },
-    { "type": "image_picker", "id": "logo", "label": "Logo" },
-    { "type": "text", "id": "header_cta", "label": "Header button", "default": "Shop now" },
-    { "type": "header", "content": "Hero" },
-    { "type": "textarea", "id": "h1", "label": "Headline", "default": "7 Reasons Women Over 45 Are Switching to This Korean Red Rice Night Cream" },
-    { "type": "textarea", "id": "standfirst", "label": "Standfirst", "default": "Most night creams are made for skin that still repairs itself overnight. Somewhere after 45 yours stopped, and this was built for exactly that." },
-    { "type": "image_picker", "id": "hero_image", "label": "Hero image (square)" },
-    { "type": "text", "id": "hero_asset", "label": "Hero image, theme asset (fallback)" },
-    { "type": "textarea", "id": "usps", "label": "Checkmark bullets, one per line", "default": "Made for skin that changed after 45\nNo acids, no retinol, no sting\nStill working at six in the morning" },
-    { "type": "header", "content": "Call to action" },
-    { "type": "text", "id": "cta_text", "label": "Button text", "default": "See availability" },
-    { "type": "url", "id": "cta_url", "label": "Button link" },
-    { "type": "text", "id": "risk_reversal", "label": "Risk reversal under the button", "default": "Free shipping · 90 night guarantee" },
-    { "type": "header", "content": "Honest limits" },
-    { "type": "text", "id": "limits_title", "label": "Title", "default": "What it will not do" },
-    { "type": "richtext", "id": "limits_body", "label": "Body", "default": "<p>It will not lift or firm, and it will not replace lost volume. Nothing in a jar does that, whatever the jar says. It will not work in one night either. Most women tell us it takes a few weeks.</p><p>We would rather you knew now than found out in week three.</p>" },
-    { "type": "header", "content": "Testimonials" },
-    { "type": "text", "id": "revs_title", "label": "Title", "default": "What women are saying" },
-    { "type": "header", "content": "Close (product highlight)" },
-    { "type": "product", "id": "product", "label": "Product (image + title)" },
-    { "type": "image_picker", "id": "close_image", "label": "Image override" },
-    { "type": "text", "id": "close_rating", "label": "Rating line", "default": "4.8/5 based on 476+ reviews" },
-    { "type": "text", "id": "close_title", "label": "Headline", "default": "Made for your mornings, not for someone else's twenties" },
-    { "type": "text", "id": "close_price", "label": "Price line", "default": "One jar, $59. Free shipping. 90 nights to try it." },
-    { "type": "header", "content": "Sticky bar" },
-    { "type": "text", "id": "sticky_text", "label": "Sticky text", "default": "Red Rice Recovery Cream" },
-    { "type": "text", "id": "sticky_sub", "label": "Sticky subtext", "default": "$59 · Free shipping" }
+    {
+      "type": "header",
+      "content": "Announcement + header"
+    },
+    {
+      "type": "text",
+      "id": "announcement",
+      "label": "Announcement bar",
+      "default": "Save $66 + Free Shipping"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "header_cta",
+      "label": "Header button",
+      "default": "Shop now"
+    },
+    {
+      "type": "header",
+      "content": "Hero"
+    },
+    {
+      "type": "textarea",
+      "id": "h1",
+      "label": "Headline",
+      "default": "7 Reasons Women Over 45 Are Switching to This Korean Red Rice Night Cream"
+    },
+    {
+      "type": "textarea",
+      "id": "standfirst",
+      "label": "Standfirst",
+      "default": "Most night creams are made for skin that still repairs itself overnight. Somewhere after 45 yours stopped, and this was built for exactly that."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image (square)"
+    },
+    {
+      "type": "text",
+      "id": "hero_asset",
+      "label": "Hero image, theme asset (fallback)"
+    },
+    {
+      "type": "textarea",
+      "id": "usps",
+      "label": "Checkmark bullets, one per line",
+      "default": "Made for skin that changed after 45\nNo acids, no retinol, no sting\nStill working at six in the morning"
+    },
+    {
+      "type": "header",
+      "content": "Call to action"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "See availability"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "risk_reversal",
+      "label": "Risk reversal under the button",
+      "default": "Free shipping · 90 night guarantee"
+    },
+    {
+      "type": "header",
+      "content": "Testimonials"
+    },
+    {
+      "type": "text",
+      "id": "revs_title",
+      "label": "Title",
+      "default": "What women are saying"
+    },
+    {
+      "type": "header",
+      "content": "Close (product highlight)"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product (image + title)"
+    },
+    {
+      "type": "image_picker",
+      "id": "close_image",
+      "label": "Image override"
+    },
+    {
+      "type": "text",
+      "id": "close_rating",
+      "label": "Rating line",
+      "default": "4.8/5 based on 476+ reviews"
+    },
+    {
+      "type": "text",
+      "id": "close_title",
+      "label": "Headline",
+      "default": "Made for your mornings, not for someone else's twenties"
+    },
+    {
+      "type": "text",
+      "id": "close_price",
+      "label": "Price line",
+      "default": "One jar, $59. Free shipping. 90 nights to try it."
+    },
+    {
+      "type": "header",
+      "content": "Sticky bar"
+    },
+    {
+      "type": "text",
+      "id": "sticky_text",
+      "label": "Sticky text",
+      "default": "Red Rice Recovery Cream"
+    },
+    {
+      "type": "text",
+      "id": "sticky_sub",
+      "label": "Sticky subtext",
+      "default": "$59 · Free shipping"
+    }
   ],
   "blocks": [
     {
       "type": "reason",
       "name": "Reason",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Image (square, 1:1)" },
-        { "type": "text", "id": "asset", "label": "Theme asset filename (fallback)" },
-        { "type": "text", "id": "heading", "label": "Headline" },
-        { "type": "richtext", "id": "body", "label": "Body" }
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image (square, 1:1)"
+        },
+        {
+          "type": "text",
+          "id": "asset",
+          "label": "Theme asset filename (fallback)"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Headline"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body"
+        }
       ]
     },
     {
       "type": "review",
       "name": "Testimonial",
       "settings": [
-        { "type": "text", "id": "name", "label": "Name and age", "default": "Denise, 53" },
-        { "type": "textarea", "id": "quote", "label": "Quote" }
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name and age",
+          "default": "Denise, 53"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote"
+        }
       ]
     }
   ],
-  "presets": [{ "name": "Noula: Listicle" }]
+  "presets": [
+    {
+      "name": "Noula: Listicle"
+    }
+  ]
 }
 {% endschema %}

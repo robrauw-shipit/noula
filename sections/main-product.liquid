@@ -237,9 +237,10 @@
               {%- when 'nv_title_price' -%}
                 <div {{ block.shopify_attributes }}>{% render 'noula-v2-title-price', product: product, badge: block.settings.badge, section_id: section.id %}</div>
               {%- when 'nv_rating' -%}
+                {%- assign REAL_RATING = settings.real_rating | default: 'REAL_RATING' -%}{%- assign REAL_REVIEW_COUNT = settings.real_review_count | default: 'REAL_REVIEW_COUNT' -%}
                 <div class="nv nv-rating" {{ block.shopify_attributes }}>
                   {% render 'noula-v2-stars', rating: 5 %}
-                  <span class="nv-rating__count">{{ block.settings.text }}</span>
+                  <span class="nv-rating__count">{{ block.settings.prefix }} {{ REAL_RATING }} ({{ REAL_REVIEW_COUNT }} {{ block.settings.suffix }})</span>
                   {%- if block.settings.tag != blank -%}<span class="nv-rating__tag">{{ block.settings.tag }}</span>{%- endif -%}
                 </div>
               {%- when 'nv_benefits' -%}
@@ -1055,16 +1056,25 @@
       "limit": 1,
       "settings": [
         {
+          "type": "paragraph",
+          "content": "Rating and count come from Theme settings → Noula: real numbers."
+        },
+        {
           "type": "text",
-          "id": "text",
-          "label": "Text (placeholders until real numbers)",
-          "default": "Rated {{ REAL_RATING }} ({{ REAL_REVIEW_COUNT }} reviews)"
+          "id": "prefix",
+          "label": "Word before the rating",
+          "default": "Rated"
+        },
+        {
+          "type": "text",
+          "id": "suffix",
+          "label": "Word after the count",
+          "default": "reviews"
         },
         {
           "type": "text",
           "id": "tag",
-          "label": "Tag",
-          "default": "Bestseller"
+          "label": "Tag"
         }
       ]
     },

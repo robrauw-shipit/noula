@@ -7,8 +7,9 @@
       {%- if section.settings.lead != blank -%}<p class="nv-lead">{{ section.settings.lead }}</p>{%- endif -%}
     </div>
     <div class="nv-grid__meta">
+{%- assign REAL_RATING = settings.real_rating | default: 'REAL_RATING' -%}{%- assign REAL_REVIEW_COUNT = settings.real_review_count | default: 'REAL_REVIEW_COUNT' -%}
       {% render 'noula-v2-stars', rating: 5 %}
-      <span>{{ section.settings.count_text }}</span>
+      <span>{{ REAL_REVIEW_COUNT }} {{ section.settings.count_suffix }}</span>
     </div>
     <div class="nv-grid">
       {%- assign limit = section.settings.initial | default: 10 -%}
@@ -53,9 +54,9 @@
     },
     {
       "type": "text",
-      "id": "count_text",
-      "label": "Count text",
-      "default": "{{ REAL_REVIEW_COUNT }} reviews"
+      "id": "count_suffix",
+      "label": "Word after the review count",
+      "default": "reviews"
     },
     {
       "type": "range",

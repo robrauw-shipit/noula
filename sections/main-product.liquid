@@ -1014,66 +1014,480 @@
     },
     {
       "type": "nv_rating",
-      "name": "Noula v2 · Rating line",
+      "name": "Noula: Rating line",
       "limit": 1,
       "settings": [
-        { "type": "text", "id": "text", "label": "Text", "default": "Rated 4.8 (476 reviews)" },
-        { "type": "text", "id": "tag", "label": "Tag", "default": "Bestseller" }
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Rated 4.8 (476 reviews)"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag",
+          "default": "Bestseller"
+        }
       ]
     },
     {
       "type": "nv_benefits",
-      "name": "Noula v2 · Benefits 2×2",
+      "name": "Noula: Benefits 2×2",
       "limit": 1,
       "settings": [
-        { "type": "select", "id": "icon_1", "label": "Icon 1", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "sun" }, { "type": "text", "id": "text_1", "label": "Benefit 1", "default": "Wake up looking less tired" },
-        { "type": "select", "id": "icon_2", "label": "Icon 2", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "face" }, { "type": "text", "id": "text_2", "label": "Benefit 2", "default": "Softer, fresher-looking skin" },
-        { "type": "select", "id": "icon_3", "label": "Icon 3", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "shield" }, { "type": "text", "id": "text_3", "label": "Benefit 3", "default": "Comforts dry, sensitive skin" },
-        { "type": "select", "id": "icon_4", "label": "Icon 4", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "moon" }, { "type": "text", "id": "text_4", "label": "Benefit 4", "default": "Recovers while you sleep" }
+        {
+          "type": "select",
+          "id": "icon_1",
+          "label": "Icon 1",
+          "options": [
+            {
+              "value": "sun",
+              "label": "Sun"
+            },
+            {
+              "value": "moon",
+              "label": "Moon"
+            },
+            {
+              "value": "drop",
+              "label": "Drop"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "sparkle",
+              "label": "Sparkle"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "layers",
+              "label": "Layers"
+            },
+            {
+              "value": "face",
+              "label": "Face"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "seal",
+              "label": "Seal"
+            },
+            {
+              "value": "jar",
+              "label": "Jar"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "refresh",
+              "label": "Refresh"
+            },
+            {
+              "value": "wallet",
+              "label": "Wallet"
+            }
+          ],
+          "default": "sun"
+        },
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Benefit 1",
+          "default": "Wake up looking less tired"
+        },
+        {
+          "type": "select",
+          "id": "icon_2",
+          "label": "Icon 2",
+          "options": [
+            {
+              "value": "sun",
+              "label": "Sun"
+            },
+            {
+              "value": "moon",
+              "label": "Moon"
+            },
+            {
+              "value": "drop",
+              "label": "Drop"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "sparkle",
+              "label": "Sparkle"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "layers",
+              "label": "Layers"
+            },
+            {
+              "value": "face",
+              "label": "Face"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "seal",
+              "label": "Seal"
+            },
+            {
+              "value": "jar",
+              "label": "Jar"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "refresh",
+              "label": "Refresh"
+            },
+            {
+              "value": "wallet",
+              "label": "Wallet"
+            }
+          ],
+          "default": "face"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Benefit 2",
+          "default": "Softer, fresher-looking skin"
+        },
+        {
+          "type": "select",
+          "id": "icon_3",
+          "label": "Icon 3",
+          "options": [
+            {
+              "value": "sun",
+              "label": "Sun"
+            },
+            {
+              "value": "moon",
+              "label": "Moon"
+            },
+            {
+              "value": "drop",
+              "label": "Drop"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "sparkle",
+              "label": "Sparkle"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "layers",
+              "label": "Layers"
+            },
+            {
+              "value": "face",
+              "label": "Face"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "seal",
+              "label": "Seal"
+            },
+            {
+              "value": "jar",
+              "label": "Jar"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "refresh",
+              "label": "Refresh"
+            },
+            {
+              "value": "wallet",
+              "label": "Wallet"
+            }
+          ],
+          "default": "shield"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Benefit 3",
+          "default": "Comforts dry, sensitive skin"
+        },
+        {
+          "type": "select",
+          "id": "icon_4",
+          "label": "Icon 4",
+          "options": [
+            {
+              "value": "sun",
+              "label": "Sun"
+            },
+            {
+              "value": "moon",
+              "label": "Moon"
+            },
+            {
+              "value": "drop",
+              "label": "Drop"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            },
+            {
+              "value": "sparkle",
+              "label": "Sparkle"
+            },
+            {
+              "value": "clock",
+              "label": "Clock"
+            },
+            {
+              "value": "layers",
+              "label": "Layers"
+            },
+            {
+              "value": "face",
+              "label": "Face"
+            },
+            {
+              "value": "leaf",
+              "label": "Leaf"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "seal",
+              "label": "Seal"
+            },
+            {
+              "value": "jar",
+              "label": "Jar"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "refresh",
+              "label": "Refresh"
+            },
+            {
+              "value": "wallet",
+              "label": "Wallet"
+            }
+          ],
+          "default": "moon"
+        },
+        {
+          "type": "text",
+          "id": "text_4",
+          "label": "Benefit 4",
+          "default": "Recovers while you sleep"
+        }
       ]
     },
     {
       "type": "nv_offer_label",
-      "name": "Noula v2 · Offer label",
+      "name": "Noula: Offer label",
       "limit": 1,
-      "settings": [ { "type": "text", "id": "text", "label": "Text", "default": "Select your offer" } ]
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Select your offer"
+        }
+      ]
     },
     {
       "type": "nv_guarantee",
-      "name": "Noula v2 · Guarantee box",
+      "name": "Noula: Guarantee box",
       "limit": 1,
       "settings": [
-        { "type": "text", "id": "heading", "label": "Heading", "default": "90-night sleep-on-it guarantee" },
-        { "type": "textarea", "id": "text", "label": "Text", "default": "Try it worry-free. If your mornings don't look more rested after 90 nights, we'll refund you and you keep the jar." }
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "90-night sleep-on-it guarantee"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Try it worry-free. If your mornings don't look more rested after 90 nights, we'll refund you and you keep the jar."
+        }
       ]
     },
     {
       "type": "nv_checks",
-      "name": "Noula v2 · Check list",
+      "name": "Noula: Check list",
       "settings": [
-        { "type": "select", "id": "layout", "label": "Layout", "options": [ { "value": "grid", "label": "Two columns" }, { "value": "stack", "label": "Stacked" } ], "default": "grid" },
-        { "type": "text", "id": "text_1", "label": "Item 1", "default": "Free shipping included" },
-        { "type": "text", "id": "text_2", "label": "Item 2", "default": "Ships within 24 hours" },
-        { "type": "text", "id": "text_3", "label": "Item 3" }
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "Layout",
+          "options": [
+            {
+              "value": "grid",
+              "label": "Two columns"
+            },
+            {
+              "value": "stack",
+              "label": "Stacked"
+            }
+          ],
+          "default": "grid"
+        },
+        {
+          "type": "text",
+          "id": "text_1",
+          "label": "Item 1",
+          "default": "Free shipping included"
+        },
+        {
+          "type": "text",
+          "id": "text_2",
+          "label": "Item 2",
+          "default": "Ships within 24 hours"
+        },
+        {
+          "type": "text",
+          "id": "text_3",
+          "label": "Item 3"
+        }
       ]
     },
     {
       "type": "nv_pay",
-      "name": "Noula v2 · Payment icons",
+      "name": "Noula: Payment icons",
       "limit": 1,
       "settings": []
     },
     {
       "type": "nv_ugc",
-      "name": "Noula v2 · See it in action",
+      "name": "Noula: See it in action",
       "limit": 1,
       "settings": [
-        { "type": "text", "id": "heading", "label": "Heading", "default": "See it in action" },
-        { "type": "text", "id": "badge", "label": "Badge", "default": "Over 4M views on Instagram" },
-        { "type": "image_picker", "id": "image_1", "label": "Thumbnail 1" }, { "type": "text", "id": "image_url_1", "label": "Thumbnail 1 URL (fallback)" }, { "type": "url", "id": "link_1", "label": "Link 1" },
-        { "type": "image_picker", "id": "image_2", "label": "Thumbnail 2" }, { "type": "text", "id": "image_url_2", "label": "Thumbnail 2 URL (fallback)" }, { "type": "url", "id": "link_2", "label": "Link 2" },
-        { "type": "image_picker", "id": "image_3", "label": "Thumbnail 3" }, { "type": "text", "id": "image_url_3", "label": "Thumbnail 3 URL (fallback)" }, { "type": "url", "id": "link_3", "label": "Link 3" },
-        { "type": "image_picker", "id": "image_4", "label": "Thumbnail 4" }, { "type": "text", "id": "image_url_4", "label": "Thumbnail 4 URL (fallback)" }, { "type": "url", "id": "link_4", "label": "Link 4" }
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "See it in action"
+        },
+        {
+          "type": "text",
+          "id": "badge",
+          "label": "Badge",
+          "default": "Over 4M views on Instagram"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Thumbnail 1"
+        },
+        {
+          "type": "text",
+          "id": "image_url_1",
+          "label": "Thumbnail 1 URL (fallback)"
+        },
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Thumbnail 2"
+        },
+        {
+          "type": "text",
+          "id": "image_url_2",
+          "label": "Thumbnail 2 URL (fallback)"
+        },
+        {
+          "type": "url",
+          "id": "link_2",
+          "label": "Link 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Thumbnail 3"
+        },
+        {
+          "type": "text",
+          "id": "image_url_3",
+          "label": "Thumbnail 3 URL (fallback)"
+        },
+        {
+          "type": "url",
+          "id": "link_3",
+          "label": "Link 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Thumbnail 4"
+        },
+        {
+          "type": "text",
+          "id": "image_url_4",
+          "label": "Thumbnail 4 URL (fallback)"
+        },
+        {
+          "type": "url",
+          "id": "link_4",
+          "label": "Link 4"
+        }
       ]
     },
     {

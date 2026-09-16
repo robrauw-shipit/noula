@@ -32,35 +32,113 @@
 
 {% schema %}
 {
-  "name": "Noula v2 · Comparison",
+  "name": "Noula: Comparison",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Why Noula?" },
-    { "type": "image_picker", "id": "product_image", "label": "Product image" },
-    { "type": "text", "id": "product_image_url", "label": "Product image URL (fallback)", "default": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_2_1.png?v=1780830581" },
-    { "type": "text", "id": "us_label", "label": "Our column label", "default": "Noula" },
-    { "type": "text", "id": "them_label", "label": "Their column label", "default": "Regular night creams" }
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Why Noula?"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "product_image_url",
+      "label": "Product image URL (fallback)",
+      "default": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_2_1.png?v=1780830581"
+    },
+    {
+      "type": "text",
+      "id": "us_label",
+      "label": "Our column label",
+      "default": "Noula"
+    },
+    {
+      "type": "text",
+      "id": "them_label",
+      "label": "Their column label",
+      "default": "Regular night creams"
+    }
   ],
   "blocks": [
     {
       "type": "row",
       "name": "Row",
       "settings": [
-        { "type": "text", "id": "label", "label": "Label", "default": "Built for" },
-        { "type": "text", "id": "us", "label": "Noula", "default": "The morning mirror moment" },
-        { "type": "text", "id": "them", "label": "Others", "default": "General moisture" }
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Built for"
+        },
+        {
+          "type": "text",
+          "id": "us",
+          "label": "Noula",
+          "default": "The morning mirror moment"
+        },
+        {
+          "type": "text",
+          "id": "them",
+          "label": "Others",
+          "default": "General moisture"
+        }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Noula v2 · Comparison",
+      "name": "Noula: Comparison",
       "blocks": [
-        { "type": "row", "settings": { "label": "Built for", "us": "Tired-looking morning skin", "them": "General moisture" } },
-        { "type": "row", "settings": { "label": "Works while", "us": "You sleep — a full night of contact", "them": "Sits on top, rubs off on the pillow" } },
-        { "type": "row", "settings": { "label": "Morning feel", "us": "Rested, softer, fresher-looking", "them": "Often just richer or heavier" } },
-        { "type": "row", "settings": { "label": "Texture", "us": "Rich cream, no pillow-grease", "them": "Can feel coated by morning" } },
-        { "type": "row", "settings": { "label": "Actives", "us": "Recovery support without harsh actives", "them": "Stinging or peeling to \"work\"" } }
+        {
+          "type": "row",
+          "settings": {
+            "label": "Built for",
+            "us": "Tired-looking morning skin",
+            "them": "General moisture"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Works while",
+            "us": "You sleep — a full night of contact",
+            "them": "Sits on top, rubs off on the pillow"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Morning feel",
+            "us": "Rested, softer, fresher-looking",
+            "them": "Often just richer or heavier"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Texture",
+            "us": "Rich cream, no pillow-grease",
+            "them": "Can feel coated by morning"
+          }
+        },
+        {
+          "type": "row",
+          "settings": {
+            "label": "Actives",
+            "us": "Recovery support without harsh actives",
+            "them": "Stinging or peeling to \"work\""
+          }
+        }
       ]
     }
   ]

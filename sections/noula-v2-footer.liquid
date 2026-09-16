@@ -104,41 +104,127 @@
 
 {% schema %}
 {
-  "name": "Noula v2 · Footer",
+  "name": "Noula: Footer",
   "class": "nv-section-footer",
   "max_blocks": 3,
   "settings": [
-    { "type": "image_picker", "id": "logo", "label": "Logo (falls back to theme logo)" },
-    { "type": "text", "id": "tagline", "label": "Tagline", "default": "Overnight recovery for better-looking mornings." },
-    { "type": "header", "content": "Newsletter" },
-    { "type": "checkbox", "id": "show_newsletter", "label": "Show newsletter", "default": true },
-    { "type": "text", "id": "newsletter_heading", "label": "Heading", "default": "Be the first to know." },
-    { "type": "text", "id": "newsletter_text", "label": "Text", "default": "Sign up for exclusive Noula emails and offers." },
-    { "type": "text", "id": "newsletter_placeholder", "label": "Placeholder", "default": "Enter your email address" },
-    { "type": "text", "id": "newsletter_button", "label": "Button", "default": "Submit" },
-    { "type": "header", "content": "Need help" },
-    { "type": "text", "id": "help_heading", "label": "Heading", "default": "Need help?" },
-    { "type": "text", "id": "help_email", "label": "Support email", "default": "help@noulaskin.com" },
-    { "type": "text", "id": "help_text", "label": "Text", "default": "Our support team is here Monday to Friday, 9am to 6pm EST." },
-    { "type": "checkbox", "id": "show_payment", "label": "Show payment icons", "default": true },
-    { "type": "checkbox", "id": "show_social", "label": "Show social icons", "default": true }
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo (falls back to theme logo)"
+    },
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Tagline",
+      "default": "Overnight recovery for better-looking mornings."
+    },
+    {
+      "type": "header",
+      "content": "Newsletter"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show newsletter",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "newsletter_heading",
+      "label": "Heading",
+      "default": "Be the first to know."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_text",
+      "label": "Text",
+      "default": "Sign up for exclusive Noula emails and offers."
+    },
+    {
+      "type": "text",
+      "id": "newsletter_placeholder",
+      "label": "Placeholder",
+      "default": "Enter your email address"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_button",
+      "label": "Button",
+      "default": "Submit"
+    },
+    {
+      "type": "header",
+      "content": "Need help"
+    },
+    {
+      "type": "text",
+      "id": "help_heading",
+      "label": "Heading",
+      "default": "Need help?"
+    },
+    {
+      "type": "text",
+      "id": "help_email",
+      "label": "Support email",
+      "default": "help@noulaskin.com"
+    },
+    {
+      "type": "text",
+      "id": "help_text",
+      "label": "Text",
+      "default": "Our support team is here Monday to Friday, 9am to 6pm EST."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment",
+      "label": "Show payment icons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "label": "Show social icons",
+      "default": true
+    }
   ],
   "blocks": [
     {
       "type": "links",
       "name": "Link column",
       "settings": [
-        { "type": "text", "id": "heading", "label": "Heading", "default": "Shop." },
-        { "type": "link_list", "id": "menu", "label": "Menu" }
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "Shop."
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu"
+        }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Noula v2 · Footer",
+      "name": "Noula: Footer",
       "blocks": [
-        { "type": "links", "settings": { "heading": "Shop.", "menu": "main-menu" } },
-        { "type": "links", "settings": { "heading": "More.", "menu": "footer" } }
+        {
+          "type": "links",
+          "settings": {
+            "heading": "Shop.",
+            "menu": "main-menu"
+          }
+        },
+        {
+          "type": "links",
+          "settings": {
+            "heading": "More.",
+            "menu": "footer"
+          }
+        }
       ]
     }
   ]

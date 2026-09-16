@@ -38,34 +38,111 @@
 
 {% schema %}
 {
-  "name": "Noula v2 · Loved by",
+  "name": "Noula: Loved by",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
-    { "type": "text", "id": "heading", "label": "Heading (wrap a word in [[ ]] to highlight)", "default": "Loved by [[12,000+]]" },
-    { "type": "text", "id": "lead", "label": "Lead", "default": "Real women waking up to softer, fresher-looking skin." }
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading (wrap a word in [[ ]] to highlight)",
+      "default": "Loved by [[12,000+]]"
+    },
+    {
+      "type": "text",
+      "id": "lead",
+      "label": "Lead",
+      "default": "Real women waking up to softer, fresher-looking skin."
+    }
   ],
   "blocks": [
     {
       "type": "review",
       "name": "Review",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Photo" },
-        { "type": "text", "id": "image_url", "label": "Photo URL (fallback)" },
-        { "type": "text", "id": "name", "label": "Name", "default": "Maria" },
-        { "type": "text", "id": "age", "label": "Age", "default": "43" },
-        { "type": "range", "id": "rating", "label": "Stars", "min": 1, "max": 5, "step": 1, "default": 5 },
-        { "type": "textarea", "id": "text", "label": "Review", "default": "“My skin finally looks rested in the morning, not just moisturized.”" }
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Photo URL (fallback)"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name",
+          "default": "Maria"
+        },
+        {
+          "type": "text",
+          "id": "age",
+          "label": "Age",
+          "default": "43"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review",
+          "default": "“My skin finally looks rested in the morning, not just moisturized.”"
+        }
       ]
     }
   ],
   "presets": [
     {
-      "name": "Noula v2 · Loved by",
+      "name": "Noula: Loved by",
       "blocks": [
-        { "type": "review", "settings": { "name": "Maria", "age": "43", "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-01.jpg?v=1782119454", "text": "“Over the years I've spent a fortune on night creams. Most did nothing. This is the first one where my skin actually looks rested in the morning, not just moisturized.”" } },
-        { "type": "review", "settings": { "name": "Priya", "age": "41", "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-06.jpg?v=1782119454", "text": "“It feels rich, but never greasy. My skin looks calmer when I wake up and my pillow stays clean.”" } },
-        { "type": "review", "settings": { "name": "Dana", "age": "45", "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-04.jpg?v=1782119454", "text": "“No harsh tingle. Just softer skin that looks less tired by morning. I almost didn't try it — glad I did.”" } },
-        { "type": "review", "settings": { "name": "Elena", "age": "44", "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-02.jpg?v=1782119454", "text": "“I wake up looking fresher, even on mornings when I feel tired. That's all I wanted.”" } }
+        {
+          "type": "review",
+          "settings": {
+            "name": "Maria",
+            "age": "43",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-01.jpg?v=1782119454",
+            "text": "“Over the years I've spent a fortune on night creams. Most did nothing. This is the first one where my skin actually looks rested in the morning, not just moisturized.”"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "name": "Priya",
+            "age": "41",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-06.jpg?v=1782119454",
+            "text": "“It feels rich, but never greasy. My skin looks calmer when I wake up and my pillow stays clean.”"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "name": "Dana",
+            "age": "45",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-04.jpg?v=1782119454",
+            "text": "“No harsh tingle. Just softer skin that looks less tired by morning. I almost didn't try it — glad I did.”"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "name": "Elena",
+            "age": "44",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-02.jpg?v=1782119454",
+            "text": "“I wake up looking fresher, even on mornings when I feel tired. That's all I wanted.”"
+          }
+        }
       ]
     }
   ]

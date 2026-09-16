@@ -1,0 +1,325 @@
+{%- comment -%}
+  NOULA LISTICLE — Cocunat skeleton, mobile first (95% of traffic).
+  Structure: sticky top bar -> hero -> 7 numbered reasons (image + copy,
+  alternating band) -> honest limits -> testimonials -> close -> sticky CTA.
+
+  ⚠️ LAUNCH GATE: reason 4 states red rice sits near the top of the ingredient
+  list. Per noula_listicle_1.md that is a BATCH TWO claim and is not true of
+  batch one stock. Do not publish this page against batch one.
+{%- endcomment -%}
+
+{%- liquid
+  assign cta = section.settings.cta_url
+  if cta == blank
+    assign cta = '/products/overnight-recovery-cream'
+  endif
+-%}
+
+<div class="nlist" data-section-id="{{ section.id }}">
+<style>
+  .nlist{
+    --ink:#2D241D;
+    --ink-soft:#5F5147;
+    --line:#EAE1D2;
+    --band:#FBF8F3;
+    --paper:#FFFFFF;
+    --clay:#D2978B;
+    font-family:inherit;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  .nlist *,.nlist *::before,.nlist *::after{box-sizing:border-box;font-family:inherit;}
+  .nlist img{max-width:100%;display:block;}
+  .nlist__wrap{max-width:720px;margin:0 auto;padding:0 20px;}
+
+  /* ---------- sticky top bar ---------- */
+  .nlist-top{
+    position:sticky;top:0;z-index:60;
+    background:var(--ink);color:#fff;
+    display:flex;align-items:center;justify-content:center;gap:12px;
+    padding:10px 16px;
+    font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    text-align:center;line-height:1.3;
+  }
+  .nlist-top__logo{height:16px;width:auto;filter:brightness(0) invert(1);flex:0 0 auto;}
+  .nlist-top__text{min-width:0;}
+
+  /* ---------- hero ---------- */
+  .nlist-hero{padding:26px 0 8px;}
+  .nlist-hero__eyebrow{
+    margin:0 0 10px;color:var(--ink-soft);
+    font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  }
+  .nlist-hero__h1{
+    margin:0;font-size:29px;line-height:1.18;font-weight:800;letter-spacing:-.015em;
+  }
+  .nlist-hero__stand{margin:14px 0 0;font-size:16px;line-height:1.6;color:var(--ink-soft);}
+  .nlist-hero__meta{
+    margin:16px 0 0;display:flex;flex-wrap:wrap;gap:6px 14px;
+    font-size:13px;font-weight:600;color:var(--ink-soft);
+  }
+  .nlist-hero__meta span{display:inline-flex;align-items:center;gap:6px;}
+  .nlist-hero__meta svg{width:14px;height:14px;stroke:var(--ink);fill:none;stroke-width:2;}
+
+  /* ---------- reason ---------- */
+  .nlist-reason{padding:30px 0;border-top:1px solid var(--line);}
+  .nlist-reason--band{background:var(--band);}
+  .nlist-reason__media{margin:0 0 18px;border-radius:12px;overflow:hidden;background:var(--band);}
+  .nlist-reason__media img{width:100%;height:auto;}
+  .nlist-reason__h2{
+    margin:0 0 12px;font-size:23px;line-height:1.22;font-weight:800;letter-spacing:-.01em;
+  }
+  .nlist-reason__n{color:var(--ink);font-weight:800;}
+  .nlist-reason__body p{margin:0 0 12px;font-size:16px;line-height:1.62;color:var(--ink-soft);}
+  .nlist-reason__body p:last-child{margin-bottom:0;}
+  .nlist-reason__body strong{color:var(--ink);font-weight:700;}
+
+  /* ---------- honest limits ---------- */
+  .nlist-limits{padding:26px 0 30px;}
+  .nlist-limits__box{
+    border:1px solid var(--line);border-radius:12px;background:var(--band);
+    padding:18px 18px 20px;
+  }
+  .nlist-limits__title{margin:0 0 10px;font-size:16px;font-weight:800;}
+  .nlist-limits__box p{margin:0 0 10px;font-size:14.5px;line-height:1.6;color:var(--ink-soft);}
+  .nlist-limits__box p:last-child{margin-bottom:0;}
+
+  /* ---------- testimonials ---------- */
+  .nlist-revs{padding:30px 0;border-top:1px solid var(--line);}
+  .nlist-revs__title{margin:0 0 18px;font-size:23px;line-height:1.22;font-weight:800;text-align:center;}
+  .nlist-rev{
+    border:1px solid var(--line);border-radius:12px;background:var(--paper);
+    padding:16px 16px 18px;margin-bottom:12px;
+  }
+  .nlist-rev:last-child{margin-bottom:0;}
+  .nlist-rev__top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .nlist-rev__name{font-size:15px;font-weight:800;}
+  .nlist-rev__stars{color:var(--clay);font-size:13px;letter-spacing:1px;line-height:1;}
+  .nlist-rev__quote{margin:10px 0 0;font-size:15px;line-height:1.6;color:var(--ink-soft);}
+  .nlist-rev__verified{
+    display:inline-flex;align-items:center;gap:5px;margin-top:10px;
+    font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);
+  }
+  .nlist-rev__verified svg{width:13px;height:13px;fill:var(--ink-soft);}
+
+  /* ---------- close ---------- */
+  .nlist-close{padding:32px 0 40px;border-top:1px solid var(--line);text-align:center;}
+  .nlist-close__title{margin:0 0 12px;font-size:25px;line-height:1.2;font-weight:800;letter-spacing:-.01em;}
+  .nlist-close p{margin:0 0 10px;font-size:16px;line-height:1.6;color:var(--ink-soft);}
+  .nlist-close__price{color:var(--ink);font-weight:700;}
+  .nlist-btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:100%;max-width:420px;min-height:56px;padding:0 26px;margin-top:18px;
+    background:var(--ink);color:#fff;border:0;border-radius:6px;
+    font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    text-decoration:none;cursor:pointer;
+  }
+
+  /* ---------- sticky CTA ---------- */
+  .nlist-sticky{
+    position:fixed;left:0;right:0;bottom:0;z-index:70;
+    background:var(--paper);border-top:1px solid var(--line);
+    transform:translateY(110%);transition:transform .25s ease;
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+  .nlist-sticky.is-on{transform:translateY(0);}
+  .nlist-sticky__in{
+    max-width:640px;margin:0 auto;display:flex;align-items:center;gap:12px;
+  }
+  .nlist-sticky__txt{min-width:0;flex:1;font-size:13px;line-height:1.3;font-weight:700;}
+  .nlist-sticky__txt small{display:block;font-weight:500;color:var(--ink-soft);font-size:12px;}
+  .nlist-sticky .nlist-btn{margin:0;width:auto;min-height:46px;padding:0 20px;font-size:13px;flex:0 0 auto;}
+
+  @media screen and (prefers-reduced-motion:reduce){
+    .nlist-sticky{transition:none;}
+  }
+
+  /* ---------- desktop: Cocunat two column ---------- */
+  @media screen and (min-width:900px){
+    .nlist__wrap{max-width:1100px;padding:0 32px;}
+    .nlist-top{font-size:12px;padding:12px 24px;}
+    .nlist-hero{padding:48px 0 18px;}
+    .nlist-hero__h1{font-size:44px;line-height:1.12;max-width:16ch;}
+    .nlist-hero__stand{font-size:18px;max-width:60ch;}
+
+    .nlist-reason{padding:0;border-top:0;}
+    .nlist-reason__inner{
+      display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;
+      padding:54px 0;
+    }
+    .nlist-reason--flip .nlist-reason__media{order:2;}
+    .nlist-reason__media{margin:0;}
+    .nlist-reason__h2{font-size:30px;}
+    .nlist-reason__body p{font-size:17px;}
+
+    .nlist-revs__list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .nlist-rev{margin-bottom:0;}
+    .nlist-close__title{font-size:34px;}
+  }
+</style>
+
+  <!-- sticky top bar -->
+  <div class="nlist-top">
+    {%- if section.settings.logo != blank -%}
+      <img class="nlist-top__logo" src="{{ section.settings.logo | image_url: width: 300 }}" alt="{{ shop.name }}">
+    {%- endif -%}
+    <span class="nlist-top__text">{{ section.settings.top_bar }}</span>
+  </div>
+
+  <!-- hero -->
+  <div class="nlist__wrap nlist-hero">
+    <p class="nlist-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+    <h1 class="nlist-hero__h1">{{ section.settings.h1 }}</h1>
+    <p class="nlist-hero__stand">{{ section.settings.standfirst }}</p>
+    <p class="nlist-hero__meta">
+      {%- assign metas = section.settings.meta | split: '·' -%}
+      {%- for meta in metas -%}
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>{{ meta | strip }}</span>
+      {%- endfor -%}
+    </p>
+  </div>
+
+  <!-- reasons -->
+  {%- assign n = 0 -%}
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'reason' -%}
+      {%- assign n = n | plus: 1 -%}
+      <section class="nlist-reason{% cycle '', ' nlist-reason--band' %}" {{ block.shopify_attributes }}>
+        <div class="nlist__wrap">
+          <div class="nlist-reason__inner{% cycle 'flip': '', ' nlist-reason--flip' %}">
+            {%- if block.settings.image != blank or block.settings.asset != blank -%}
+              <figure class="nlist-reason__media">
+                {%- if block.settings.image != blank -%}
+                  {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', alt: block.settings.heading }}
+                {%- else -%}
+                  <img src="{{ block.settings.asset | asset_url }}" loading="lazy" alt="{{ block.settings.heading | escape }}" width="1254" height="1254">
+                {%- endif -%}
+              </figure>
+            {%- endif -%}
+            <div class="nlist-reason__copy">
+              <h2 class="nlist-reason__h2"><span class="nlist-reason__n">{{ n }}.</span> {{ block.settings.heading }}</h2>
+              <div class="nlist-reason__body">{{ block.settings.body }}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {%- endif -%}
+  {%- endfor -%}
+
+  <!-- honest limits -->
+  {%- if section.settings.limits_body != blank -%}
+    <div class="nlist__wrap nlist-limits">
+      <div class="nlist-limits__box">
+        <p class="nlist-limits__title">{{ section.settings.limits_title }}</p>
+        {{ section.settings.limits_body }}
+      </div>
+    </div>
+  {%- endif -%}
+
+  <!-- testimonials -->
+  {%- assign revs = section.blocks | where: 'type', 'review' -%}
+  {%- if revs.size > 0 -%}
+    <section class="nlist-revs">
+      <div class="nlist__wrap">
+        <h2 class="nlist-revs__title">{{ section.settings.revs_title }}</h2>
+        <div class="nlist-revs__list">
+          {%- for block in revs -%}
+            <article class="nlist-rev" {{ block.shopify_attributes }}>
+              <div class="nlist-rev__top">
+                <span class="nlist-rev__name">{{ block.settings.name }}</span>
+                <span class="nlist-rev__stars">★★★★★</span>
+              </div>
+              <p class="nlist-rev__quote">“{{ block.settings.quote }}”</p>
+              <span class="nlist-rev__verified">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.4 1.9 3-.4.9 2.9 2.7 1.4-.6 3 1.9 2.4-1.9 2.4.6 3-2.7 1.4-.9 2.9-3-.4L12 22l-2.4-1.9-3 .4-.9-2.9L3 16.2l.6-3L1.7 10.8l1.9-2.4-.6-3L5.7 4l.9-2.9 3 .4L12 2Zm-1.2 13.2 5.6-5.6-1.4-1.4-4.2 4.2-2-2-1.4 1.4 3.4 3.4Z"/></svg>
+                Verified buyer
+              </span>
+            </article>
+          {%- endfor -%}
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+
+  <!-- close -->
+  <section class="nlist__wrap nlist-close">
+    <h2 class="nlist-close__title">{{ section.settings.close_title }}</h2>
+    <div>{{ section.settings.close_body }}</div>
+    <a class="nlist-btn" href="{{ cta }}">{{ section.settings.cta_text }}</a>
+  </section>
+
+  <!-- sticky CTA -->
+  <div class="nlist-sticky" data-nlist-sticky>
+    <div class="nlist-sticky__in">
+      <span class="nlist-sticky__txt">{{ section.settings.sticky_text }}<small>{{ section.settings.sticky_sub }}</small></span>
+      <a class="nlist-btn" href="{{ cta }}">{{ section.settings.cta_text }}</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function(){
+    var root = document.querySelector('[data-section-id="{{ section.id }}"]');
+    if(!root) return;
+    var bar = root.querySelector('[data-nlist-sticky]');
+    var first = root.querySelector('.nlist-reason');
+    if(!bar || !first) return;
+    if(!('IntersectionObserver' in window)){ bar.classList.add('is-on'); return; }
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        bar.classList.toggle('is-on', e.boundingClientRect.top < 0);
+      });
+    }, {threshold:0}).observe(first);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Noula: Listicle",
+  "settings": [
+    { "type": "header", "content": "Top bar" },
+    { "type": "image_picker", "id": "logo", "label": "Logo" },
+    { "type": "text", "id": "top_bar", "label": "Top bar text", "default": "Free shipping · 90 nights to try it · Keep the jar" },
+    { "type": "header", "content": "Hero" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "For skin that changed after 45" },
+    { "type": "textarea", "id": "h1", "label": "Headline", "default": "7 Reasons Women Over 45 Are Switching to This Korean Red Rice Night Cream" },
+    { "type": "textarea", "id": "standfirst", "label": "Standfirst", "default": "Most night creams are made for skin that still repairs itself overnight. Somewhere after 45 yours stopped, and this was built for exactly that." },
+    { "type": "text", "id": "meta", "label": "Meta line (separate with ·)", "default": "Free shipping · 90 night guarantee · No harsh actives" },
+    { "type": "header", "content": "Honest limits" },
+    { "type": "text", "id": "limits_title", "label": "Title", "default": "What it will not do" },
+    { "type": "richtext", "id": "limits_body", "label": "Body", "default": "<p>It will not lift or firm, and it will not replace lost volume. Nothing in a jar does that, whatever the jar says. It will not work in one night either. Most women tell us it takes a few weeks.</p><p>We would rather you knew now than found out in week three.</p>" },
+    { "type": "header", "content": "Testimonials" },
+    { "type": "text", "id": "revs_title", "label": "Title", "default": "What women are saying" },
+    { "type": "header", "content": "Close" },
+    { "type": "text", "id": "close_title", "label": "Title", "default": "Made for your mornings, not for someone else's twenties" },
+    { "type": "richtext", "id": "close_body", "label": "Body", "default": "<p>Noula Red Rice Recovery Cream. 50ml. One step at the end of the night you already have.</p><p>One jar, $59. Free shipping. 90 nights, and the jar is yours either way.</p>" },
+    { "type": "header", "content": "Call to action" },
+    { "type": "text", "id": "cta_text", "label": "Button text", "default": "See availability" },
+    { "type": "url", "id": "cta_url", "label": "Button link" },
+    { "type": "text", "id": "sticky_text", "label": "Sticky bar text", "default": "Red Rice Recovery Cream" },
+    { "type": "text", "id": "sticky_sub", "label": "Sticky bar subtext", "default": "$59 · Free shipping" }
+  ],
+  "blocks": [
+    {
+      "type": "reason",
+      "name": "Reason",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "asset", "label": "Theme asset filename (fallback)" },
+        { "type": "text", "id": "heading", "label": "Headline" },
+        { "type": "richtext", "id": "body", "label": "Body" }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Name and age", "default": "Denise, 53" },
+        { "type": "textarea", "id": "quote", "label": "Quote" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Noula: Listicle" }]
+}
+{% endschema %}

@@ -1,0 +1,118 @@
+{
+  "sections": {
+    "listicle": {
+      "type": "noula-listicle-v2",
+      "blocks": {
+        "reason_1": {
+          "type": "reason",
+          "settings": {
+            "asset": "noula-selfie-3.jpg",
+            "heading": "One morning you looked in the mirror and it had changed",
+            "body": "<p>For most women it lands somewhere between 45 and 53, and it does not feel gradual. Almost every night cream is built for skin that still does its own repair work overnight, and yours stopped. Noula was built for the skin that comes after that.</p><p>You will still look your age. You will just stop looking like you slept badly when you did not.</p>"
+          }
+        },
+        "reason_2": {
+          "type": "reason",
+          "settings": {
+            "asset": "noula-mechanism.jpg",
+            "heading": "You moisturise like crazy and still wake up dry",
+            "body": "<p>That is not you doing it wrong. A moisturiser sits on the surface and is gone hours before you wake up, which never mattered while your skin held onto moisture by itself. Now it does not. Noula is made for the hours in between, so there is still something working at six in the morning.</p><p>You notice it when your face feels soft instead of tight.</p>"
+          }
+        },
+        "reason_3": {
+          "type": "reason",
+          "settings": {
+            "asset": "noula-texture.jpg",
+            "heading": "Your neck started looking like tissue paper",
+            "body": "<p>It shows up on the neck first, and dryness makes it look worse than it actually is. A thin lotion will not touch it, and a heavy one ends up on your pillowcase. Noula is rich enough for that kind of dryness, with shea butter, and it still absorbs overnight.</p><p>It will not tighten anything. But papery skin looks a good deal less papery once it is properly fed.</p>"
+          }
+        },
+        "reason_4": {
+          "type": "reason",
+          "settings": {
+            "asset": "noula-ingredients.jpg",
+            "heading": "Nothing works the way it did before",
+            "body": "<p>Most creams put their best ingredient in last, below the thickeners, in an amount you would need a lab to find. You have paid for that before without knowing it. On Noula, red rice is one of the first things on the ingredient list, and that list is printed on the jar so you can check instead of taking our word for it.</p><p>Korean women have used rice on their skin at every age for generations, not just in their twenties.</p>"
+          }
+        },
+        "reason_5": {
+          "type": "reason",
+          "settings": {
+            "asset": "noula-selfie-5.jpg",
+            "heading": "Retinol started hurting, so you stopped. Then nothing happened.",
+            "body": "<p>At 35 it worked. At 50 it stings, flakes and breaks you out, so you went back to something gentle and gentle did nothing. That is not a willpower problem. Strong creams work by irritating your skin on purpose, and that is a trade your skin can no longer make.</p><p>Noula feeds it instead. No sting, no flaking, no three weeks of getting worse first.</p>"
+          }
+        },
+        "reason_6": {
+          "type": "reason",
+          "settings": {
+            "asset": "noula-selfie-2.jpg",
+            "heading": "Everyone tells you only hormones will help",
+            "body": "<p>They are not wrong exactly. HRT and prescription creams do things a jar cannot, and Noula is not competing with any of it. There are no retinoids and no exfoliating acids in it, so nothing clashes with tretinoin, oestrogen cream or HRT.</p><p>It covers the part those leave alone, which is how your skin feels when you wake up. One step, at the end of the routine you already have.</p>"
+          }
+        },
+        "reason_7": {
+          "type": "reason",
+          "settings": {
+            "asset": "noula-selfie-1.jpg",
+            "heading": "You have a drawer of creams that did nothing",
+            "body": "<p>Some of them were expensive. That is the real risk here and it was never the money, it is being let down again by something that sounded right.</p><p>So Noula is sold on 90 nights. If your mornings are no different, one email gets you a full refund and you keep the jar. You only pay for it if it works.</p>"
+          }
+        },
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "name": "Denise, 53",
+            "quote": "I'd given up on night creams. I've bought the expensive ones and most did nothing by morning. Around week five I stopped waking up tight, and by week nine the crepiness on my neck had softened. My lines are still there and they don't pretend otherwise, which is honestly why I trusted it."
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "name": "Priya, 51",
+            "quote": "I stopped using retinol two years ago because my skin could not take it. This doesn't sting at all and something is still happening. Week six and my skin feels like skin in the morning."
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "name": "Marianne, 56",
+            "quote": "My neck was the thing. It hasn't fixed it and I didn't expect it to. Nine weeks in it's softer and less papery, and it never stings."
+          }
+        }
+      },
+      "block_order": [
+        "reason_1",
+        "reason_2",
+        "reason_3",
+        "reason_4",
+        "reason_5",
+        "reason_6",
+        "reason_7",
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
+      "settings": {
+        "logo": "shopify://shop_images/Frame_2_1.png",
+        "top_bar": "Free shipping · 90 nights to try it · Keep the jar",
+        "eyebrow": "For skin that changed after 45",
+        "h1": "7 Reasons Women Over 45 Are Switching to This Korean Red Rice Night Cream",
+        "standfirst": "Most night creams are made for skin that still repairs itself overnight. Somewhere after 45 yours stopped, and this was built for exactly that.",
+        "meta": "Free shipping · 90 night guarantee · No harsh actives",
+        "limits_title": "What it will not do",
+        "limits_body": "<p>It will not lift or firm, and it will not replace lost volume. Nothing in a jar does that, whatever the jar says. It will not work in one night either. Most women tell us it takes a few weeks.</p><p>We would rather you knew now than found out in week three.</p>",
+        "revs_title": "What women are saying",
+        "close_title": "Made for your mornings, not for someone else's twenties",
+        "close_body": "<p>Noula Red Rice Recovery Cream. 50ml. One step at the end of the night you already have.</p><p>One jar, $59. Free shipping. 90 nights, and the jar is yours either way.</p>",
+        "cta_text": "See availability",
+        "cta_url": "/products/overnight-recovery-cream",
+        "sticky_text": "Red Rice Recovery Cream",
+        "sticky_sub": "$59 · Free shipping"
+      }
+    }
+  },
+  "order": [
+    "listicle"
+  ]
+}

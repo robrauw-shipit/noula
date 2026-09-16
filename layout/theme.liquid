@@ -311,9 +311,8 @@
       Advertorial/listicle templates run chrome-free: no header, no footer.
       Gated on the template suffix so every other page is untouched.
     {%- endcomment -%}
-    {%- assign nl_bare_templates = 'listicle' -%}
     {%- assign nl_is_bare = false -%}
-    {%- if template.suffix != blank and nl_bare_templates contains template.suffix -%}
+    {%- if template.suffix != blank and template.suffix contains 'listicle' -%}
       {%- assign nl_is_bare = true -%}
     {%- endif -%}
 

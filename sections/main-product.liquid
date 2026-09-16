@@ -76,34 +76,8 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-      {%- liquid
-        assign nv_cards = 0
-        if section.settings.card_text_1 != blank
-          assign nv_cards = nv_cards | plus: 1
-        endif
-        if section.settings.card_text_2 != blank
-          assign nv_cards = nv_cards | plus: 1
-        endif
-        if section.settings.card_text_3 != blank
-          assign nv_cards = nv_cards | plus: 1
-        endif
-      -%}
-      <div class="grid__item product__media-wrapper{% if nv_cards > 0 %} nv-has-cards{% endif %}">
+      <div class="grid__item product__media-wrapper">
         {% render 'product-media-gallery', variant_images: variant_images %}
-        {%- if nv_cards > 0 -%}
-          <div class="nv nv-gallery-cards">
-            {%- for i in (1..3) -%}
-              {%- assign t_key = 'card_text_' | append: i -%}
-              {%- assign i_key = 'card_icon_' | append: i -%}
-              {%- if section.settings[t_key] != blank -%}
-                <div class="nv-gallery-card">
-                  {% render 'noula-v2-icon', icon: section.settings[i_key] %}
-                  <p>{{ section.settings[t_key] }}</p>
-                </div>
-              {%- endif -%}
-            {%- endfor -%}
-          </div>
-        {%- endif -%}
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <section
@@ -2233,10 +2207,6 @@
     }
   ],
   "settings": [
-    { "type": "header", "content": "Noula v2 · Gallery benefit cards (beside the main image)" },
-    { "type": "select", "id": "card_icon_1", "label": "Card 1 icon", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "moon" }, { "type": "text", "id": "card_text_1", "label": "Card 1 text", "default": "Recovers while you sleep, not just the surface" },
-    { "type": "select", "id": "card_icon_2", "label": "Card 2 icon", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "sparkle" }, { "type": "text", "id": "card_text_2", "label": "Card 2 text", "default": "Visibly more rested in 3–6 weeks" },
-    { "type": "select", "id": "card_icon_3", "label": "Card 3 icon", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "drop" }, { "type": "text", "id": "card_text_3", "label": "Card 3 text", "default": "Softer by morning — never greasy" },
     {
       "type": "checkbox",
       "id": "enable_sticky_info",

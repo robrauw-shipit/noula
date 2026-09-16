@@ -193,12 +193,6 @@
         "klaviyo_atc"
       ],
       "settings": {
-        "card_icon_1": "moon",
-        "card_text_1": "Recovers while you sleep, not just the surface",
-        "card_icon_2": "sparkle",
-        "card_text_2": "Visibly more rested in 3–6 weeks",
-        "card_icon_3": "drop",
-        "card_text_3": "Softer by morning — never greasy",
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "medium",

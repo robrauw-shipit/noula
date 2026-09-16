@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -9,6 +18,16 @@
             "text": "Rated 4.8 (476 reviews)",
             "tag": ""
           }
+        },
+        "nv_title_price": {
+          "type": "nv_title_price",
+          "settings": {
+            "badge": "Bestseller"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {}
         },
         "nv_benefits": {
           "type": "nv_benefits",
@@ -25,6 +44,7 @@
         },
         "nv_offer_label": {
           "type": "nv_offer_label",
+          "disabled": true,
           "settings": {
             "text": "Select your offer"
           }
@@ -34,13 +54,6 @@
           "settings": {
             "product": "{{product}}",
             "manual_deal_block_id": "1"
-          }
-        },
-        "nv_guarantee": {
-          "type": "nv_guarantee",
-          "settings": {
-            "heading": "90-night sleep-on-it guarantee",
-            "text": "Try it worry-free. If your mornings don't look more rested after 90 nights, we'll refund you and you keep the jar."
           }
         },
         "buy_buttons": {
@@ -53,6 +66,21 @@
         "nv_pay": {
           "type": "nv_pay",
           "settings": {}
+        },
+        "nv_stock": {
+          "type": "nv_stock",
+          "settings": {
+            "title": "Low stock",
+            "sold": 91,
+            "note": "Restocking takes several weeks"
+          }
+        },
+        "nv_guarantee": {
+          "type": "nv_guarantee",
+          "settings": {
+            "heading": "90-night sleep-on-it guarantee",
+            "text": "Try it worry-free. If your mornings don't look more rested after 90 nights, we'll refund you and you keep the jar."
+          }
         },
         "nv_checks_bottom": {
           "type": "nv_checks",
@@ -127,6 +155,7 @@
       "type": "noula-v2-proof",
       "settings": {
         "background": "cream",
+        "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_2_1.png?v=1780830581",
         "eyebrow": "The cream itself",
         "heading": "You can see it before you feel it",
         "text": "<p>Noula is pink because of what is in it, not because of a dye. Red rice extract gives the cream its colour, and that colour is the reason the jar looks nothing like the white night creams already on your shelf.</p><p>It goes on cushiony, absorbs fully, and leaves nothing on your pillow.</p>",
@@ -182,6 +211,14 @@
     "how_it_works": {
       "type": "image-with-text",
       "blocks": {
+        "caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "How it works",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
         "heading": {
           "type": "heading",
           "settings": {
@@ -194,14 +231,6 @@
           "settings": {
             "text": "<p>Most night creams only sit on top of dry skin. Noula uses Red Rice Recovery Complex™ to comfort skin through the night, when your moisture barrier is most ready for support.</p><p>Inspired by Korean beauty rituals, red rice extract pairs with ceramides, hyaluronic acid and Vitamin B5 to help dry, dull skin feel cushioned, hydrated and calm by morning.</p><p>No greasy residue. No harsh overnight peel. Just soft, replenished skin that looks like it got the rest you did.</p>",
             "text_style": "body"
-          }
-        },
-        "caption": {
-          "type": "caption",
-          "settings": {
-            "caption": "How it works",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
           }
         }
       },
@@ -296,8 +325,8 @@
         "g2": {
           "type": "review",
           "settings": {
-            "name": "Priya S.",
             "image_url": "",
+            "name": "Priya S.",
             "rating": 5,
             "text": "Rich but never greasy. I wake up and my face looks calmer, less puffy. Nothing on the pillow either."
           }
@@ -314,8 +343,8 @@
         "g4": {
           "type": "review",
           "settings": {
-            "name": "Elena K.",
             "image_url": "",
+            "name": "Elena K.",
             "rating": 4,
             "text": "Took about two weeks for me but the difference in my mornings is real. My husband asked if I'd started facials."
           }
@@ -332,8 +361,8 @@
         "g6": {
           "type": "review",
           "settings": {
-            "name": "Nina T.",
             "image_url": "",
+            "name": "Nina T.",
             "rating": 5,
             "text": "The texture is lovely — cushiony, absorbs fully. My cheeks look plumper when I wake up."
           }
@@ -350,8 +379,8 @@
         "g8": {
           "type": "review",
           "settings": {
-            "name": "Hannah W.",
             "image_url": "",
+            "name": "Hannah W.",
             "rating": 4,
             "text": "Great cream, wish the jar was bigger. Skin looks fresher, especially around the eyes."
           }
@@ -359,8 +388,8 @@
         "g9": {
           "type": "review",
           "settings": {
-            "name": "Joy P.",
             "image_url": "",
+            "name": "Joy P.",
             "rating": 5,
             "text": "Mornings look less 'exhausted' — that's the only way I can describe it. Repurchased."
           }
@@ -368,8 +397,8 @@
         "g10": {
           "type": "review",
           "settings": {
-            "name": "Amy D.",
             "image_url": "",
+            "name": "Amy D.",
             "rating": 5,
             "text": "Quite amazing. I follow the routine nightly and my skin looks plump, refreshed and has a glow."
           }
@@ -377,8 +406,8 @@
         "g11": {
           "type": "review",
           "settings": {
-            "name": "Lina H.",
             "image_url": "",
+            "name": "Lina H.",
             "rating": 5,
             "text": "Six weeks in and the dullness around my mouth has lifted. Very happy."
           }
@@ -386,8 +415,8 @@
         "g12": {
           "type": "review",
           "settings": {
-            "name": "Bukky S.",
             "image_url": "",
+            "name": "Bukky S.",
             "rating": 5,
             "text": "Doesn't stain my pillowcase, and after ten days my skin looks brighter."
           }
@@ -395,8 +424,8 @@
         "g13": {
           "type": "review",
           "settings": {
-            "name": "Valeria",
             "image_url": "",
+            "name": "Valeria",
             "rating": 5,
             "text": "Three months in and my skin has never looked this rested. Better than anything my derm gave me."
           }
@@ -404,8 +433,8 @@
         "g14": {
           "type": "review",
           "settings": {
-            "name": "Courtney E.",
             "image_url": "",
+            "name": "Courtney E.",
             "rating": 5,
             "text": "Fine lines are way softer. My face looks refreshed and radiant. Love it."
           }
@@ -486,9 +515,8 @@
         "eyebrow": "Verified buyers",
         "heading": "Better mornings [[in a jar]]",
         "lead": "",
-        "initial": 10,
-        "count_suffix": "reviews",
-        "count_text": "476 reviews"
+        "count_text": "476 reviews",
+        "initial": 10
       }
     },
     "faq": {
@@ -499,7 +527,8 @@
           "settings": {
             "heading": "What makes it different?",
             "icon": "none",
-            "row_content": "<p>Most night creams just sit on the surface. Noula's Red Rice Recovery Complex targets the look of tired, depleted skin — restoring the overnight nourishment skin loses with age, so you wake up looking rested, not just moisturised.</p>"
+            "row_content": "<p>Most night creams just sit on the surface. Noula's Red Rice Recovery Complex targets the look of tired, depleted skin — restoring the overnight nourishment skin loses with age, so you wake up looking rested, not just moisturised.</p>",
+            "page": ""
           }
         },
         "f2": {
@@ -507,7 +536,8 @@
           "settings": {
             "heading": "Does it work on my skin?",
             "icon": "none",
-            "row_content": "<p>Yes. Noula is formulated for all skin types, including sensitive and reactive skin. It's fragrance-light, non-greasy, and comfortable to wear every night.</p>"
+            "row_content": "<p>Yes. Noula is formulated for all skin types, including sensitive and reactive skin. It's fragrance-light, non-greasy, and comfortable to wear every night.</p>",
+            "page": ""
           }
         },
         "f3": {
@@ -515,7 +545,8 @@
           "settings": {
             "heading": "How do I use it?",
             "icon": "none",
-            "row_content": "<p>As the last step of your evening routine, smooth a small amount over cleansed skin. It absorbs fully overnight — no residue on your pillow.</p>"
+            "row_content": "<p>As the last step of your evening routine, smooth a small amount over cleansed skin. It absorbs fully overnight — no residue on your pillow.</p>",
+            "page": ""
           }
         },
         "f4": {
@@ -523,7 +554,8 @@
           "settings": {
             "heading": "How long until I see results?",
             "icon": "none",
-            "row_content": "<p>Most women notice softer, fresher-looking skin the first morning. The rested look builds over the following weeks with nightly use.</p>"
+            "row_content": "<p>Most women notice softer, fresher-looking skin the first morning. The rested look builds over the following weeks with nightly use.</p>",
+            "page": ""
           }
         },
         "f5": {
@@ -531,7 +563,8 @@
           "settings": {
             "heading": "Is it safe for sensitive skin?",
             "icon": "none",
-            "row_content": "<p>Yes — no harsh actives, no overnight peel. If you're unsure, patch test behind the ear first.</p>"
+            "row_content": "<p>Yes — no harsh actives, no overnight peel. If you're unsure, patch test behind the ear first.</p>",
+            "page": ""
           }
         },
         "f6": {
@@ -539,7 +572,8 @@
           "settings": {
             "heading": "How does the guarantee work?",
             "icon": "none",
-            "row_content": "<p>Sleep on it for 90 nights. If you don't look more rested, contact us for a full refund — keep the jar.</p>"
+            "row_content": "<p>Sleep on it for 90 nights. If you don't look more rested, contact us for a full refund — keep the jar.</p>",
+            "page": ""
           }
         }
       },
@@ -592,10 +626,10 @@
       ],
       "settings": {
         "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/model_916_v1.jpg?v=1781526384",
+        "eyebrow": "Ready when you are",
         "heading": "Why Noula is the better choice",
         "cta_text": "Add to cart",
-        "cta_url": "/products/overnight-recovery-cream",
-        "eyebrow": "Ready when you are"
+        "cta_url": "/products/overnight-recovery-cream"
       }
     },
     "sticky_bar": {

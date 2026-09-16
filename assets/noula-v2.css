@@ -162,17 +162,8 @@ product-info.color-scheme-1 { background: var(--noula-paper); }
 .nv-offer-label { display: flex; align-items: center; gap: 14px; margin: 0 !important; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--noula-ink); }
 .nv-offer-label::before, .nv-offer-label::after { content: ''; flex: 1; height: 1px; background: var(--noula-ink-15); }
 
-/* KaChing rows inside the band: set on paper so they separate from clay */
-.nv-band .kaching-bundles__bar-container, .nv-band .kaching-bundles__bar-main { background: var(--noula-paper) !important; }
-.nv-band .kaching-bundles__block-title { color: var(--noula-ink) !important; }
-.nv-band .kaching-bundles__bar-price { color: var(--noula-accent) !important; font-weight: 800; }
-.nv-band .kaching-bundles__bar-label { background: var(--noula-accent) !important; color: var(--noula-paper) !important; }
-.nv-band .kaching-bundles__bar-most-popular { background: var(--noula-ink) !important; color: var(--noula-paper) !important; }
-.nv-band .kaching-bundles__bar-most-popular__content { color: var(--noula-paper) !important; }
-.nv-band .kaching-bundles__bar { border-color: var(--noula-ink-15) !important; }
-.nv-band .kaching-bundles__bar--selected .kaching-bundles__bar-container { border-color: var(--noula-ink) !important; }
-/* free-gift / perk rows: ink at low opacity on paper */
-.nv-band .kaching-bundles__bar-perk, .nv-band .kaching-bundles__bar-gift, .nv-band .kaching-bundles__bar-bottom-lines, .nv-band .kaching-bundles__bar-bottom { background: var(--noula-ink-08) !important; color: var(--noula-ink) !important; }
+/* KaChing bundle widget: styled inside the app, not here. Only the band gives it room. */
+.nv-band .kaching-bundles { margin: 0 !important; }
 
 /* guarantee — second most prominent element after the button; the seal carries the accent */
 .nv-guarantee { display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: var(--noula-r); background: var(--noula-paper); border: 2px solid var(--noula-accent); }

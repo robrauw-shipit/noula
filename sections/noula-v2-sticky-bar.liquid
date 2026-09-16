@@ -7,7 +7,7 @@
     {%- endif -%}
     <div class="nv-sticky__info">
       <div class="nv-sticky__rating">{% render 'noula-v2-stars', rating: 5, class: 'nv-stars nv-stars--sm' %}<span>{{ section.settings.rating_text }}</span></div>
-      <div class="nv-sticky__title">{{ product.title }}</div>
+      <div class="nv-sticky__title">{{ product.title }} <span class="nv-sticky__price">{{ product.selected_or_first_available_variant.price | money_without_trailing_zeros }}</span></div>
     </div>
     <a class="nv-btn" href="#ProductInfo-{{ section.settings.watch_section_id | default: 'main' }}" data-scroll-to=".product-form__submit">{{ section.settings.cta_text }}</a>
   </div>
@@ -22,13 +22,13 @@
       "type": "text",
       "id": "rating_text",
       "label": "Rating text",
-      "default": "4.8/5 (476 reviews)"
+      "default": "{{ REAL_RATING }}/5 ({{ REAL_REVIEW_COUNT }} reviews)"
     },
     {
       "type": "text",
       "id": "cta_text",
       "label": "Button text",
-      "default": "Claim offer"
+      "default": "Add to cart"
     },
     {
       "type": "text",

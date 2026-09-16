@@ -1,5 +1,5 @@
 {%- comment -%} Noula v2 — "Why Noula?" comparison table {%- endcomment -%}
-<section class="nv nv-section nv-section--ivory" data-section-id="{{ section.id }}">
+<section class="nv nv-section nv-bg-{{ section.settings.background }}" data-section-id="{{ section.id }}">
   <div class="nv-wrap nv-center">
     {%- if section.settings.eyebrow != blank -%}<p class="nv-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
     <h2 class="nv-h2">{{ section.settings.heading | escape | replace: '[[', '<mark>' | replace: ']]', '</mark>' }}</h2>
@@ -15,7 +15,6 @@
           <span>{{ section.settings.us_label }}</span>
         </div>
         <div class="nv-compare__brand nv-compare__brand--them">
-          <span class="nv-compare__tube" aria-hidden="true"></span>
           <span>{{ section.settings.them_label }}</span>
         </div>
       </div>
@@ -35,9 +34,26 @@
   "name": "Noula: Comparison",
   "settings": [
     {
+      "type": "select",
+      "id": "background",
+      "label": "Background",
+      "options": [
+        {
+          "value": "paper",
+          "label": "Paper"
+        },
+        {
+          "value": "cream",
+          "label": "Cream"
+        }
+      ],
+      "default": "cream"
+    },
+    {
       "type": "text",
       "id": "eyebrow",
-      "label": "Eyebrow"
+      "label": "Eyebrow",
+      "default": "[[EYEBROW PLACEHOLDER]]"
     },
     {
       "type": "text",

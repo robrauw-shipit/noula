@@ -2,31 +2,6 @@
 (function () {
   'use strict';
 
-  /* ---------- countdown (rolling, per-visitor) ---------- */
-  function initCountdown(el) {
-    var hours = parseFloat(el.getAttribute('data-hours') || '12');
-    var key = 'nv_countdown_end_' + (el.getAttribute('data-key') || 'default');
-    var end;
-    try { end = parseInt(sessionStorage.getItem(key), 10); } catch (e) { end = NaN; }
-    var now = Date.now();
-    if (!end || isNaN(end) || end < now) {
-      end = now + hours * 3600 * 1000;
-      try { sessionStorage.setItem(key, String(end)); } catch (e) {}
-    }
-    var h = el.querySelector('[data-h]'), m = el.querySelector('[data-m]'), s = el.querySelector('[data-s]');
-    function pad(n) { return (n < 10 ? '0' : '') + n; }
-    function tick() {
-      var left = Math.max(0, end - Date.now());
-      var sec = Math.floor(left / 1000);
-      if (h) h.textContent = pad(Math.floor(sec / 3600));
-      if (m) m.textContent = pad(Math.floor((sec % 3600) / 60));
-      if (s) s.textContent = pad(sec % 60);
-    }
-    tick();
-    if (el._nvTimer) clearInterval(el._nvTimer);
-    el._nvTimer = setInterval(tick, 1000);
-  }
-
   /* ---------- accordion ---------- */
   function initAccordion(acc) {
     var single = acc.getAttribute('data-single') !== 'false';
@@ -145,7 +120,6 @@
 
   function init(root) {
     root = root || document;
-    root.querySelectorAll('[data-nv-countdown]').forEach(initCountdown);
     root.querySelectorAll('.nv-acc').forEach(initAccordion);
     root.querySelectorAll('.nv-scroller').forEach(initScroller);
     root.querySelectorAll('.nv-review').forEach(initReadMore);

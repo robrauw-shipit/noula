@@ -1,5 +1,5 @@
 {%- comment -%} Noula v2 — masonry review grid with "show more" {%- endcomment -%}
-<section class="nv nv-section nv-section--white" data-section-id="{{ section.id }}" data-nv-grid>
+<section class="nv nv-section nv-bg-paper" data-section-id="{{ section.id }}" data-nv-grid>
   <div class="nv-wrap">
     <div class="nv-center">
       {%- if section.settings.eyebrow != blank -%}<p class="nv-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
@@ -37,7 +37,8 @@
     {
       "type": "text",
       "id": "eyebrow",
-      "label": "Eyebrow"
+      "label": "Eyebrow",
+      "default": "[[EYEBROW PLACEHOLDER]]"
     },
     {
       "type": "text",
@@ -48,14 +49,13 @@
     {
       "type": "text",
       "id": "lead",
-      "label": "Lead",
-      "default": "Thousands already use it — here's what they said."
+      "label": "Lead"
     },
     {
       "type": "text",
       "id": "count_text",
       "label": "Count text",
-      "default": "476 reviews"
+      "default": "{{ REAL_REVIEW_COUNT }} reviews"
     },
     {
       "type": "range",

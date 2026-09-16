@@ -1,0 +1,32 @@
+{%- comment -%} 4 · The pink proof — image led, minimal text. PLACEHOLDER until image + copy are supplied. {%- endcomment -%}
+<section class="nv nv-section nv-bg-{{ section.settings.background }}" data-section-id="{{ section.id }}">
+  <div class="nv-wrap">
+    <div class="nv-proof">
+      <div class="nv-proof__media">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: section.settings.image.alt }}
+        {%- else -%}
+          <div class="nv-placeholder nv-placeholder--image">[[ IMAGE PLACEHOLDER — the pink cream, no product shot ]]</div>
+        {%- endif -%}
+      </div>
+      <div>
+        {%- if section.settings.eyebrow != blank -%}<p class="nv-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        <h2 class="nv-h2">{{ section.settings.heading }}</h2>
+        <div class="nv-lead nv-rte">{{ section.settings.text }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Noula: Pink proof",
+  "settings": [
+    { "type": "select", "id": "background", "label": "Background", "options": [ { "value": "paper", "label": "Paper" }, { "value": "cream", "label": "Cream" } ], "default": "paper" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "[[EYEBROW PLACEHOLDER]]" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "[[PINK PROOF HEADLINE — copy pending]]" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>[[PINK PROOF TEXT — copy pending]]</p>" }
+  ],
+  "presets": [{ "name": "Noula: Pink proof" }]
+}
+{% endschema %}

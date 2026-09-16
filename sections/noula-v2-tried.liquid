@@ -1,0 +1,31 @@
+{%- comment -%} 7 · What you have already tried — cream. PLACEHOLDER copy. {%- endcomment -%}
+<section class="nv nv-section nv-bg-cream" data-section-id="{{ section.id }}">
+  <div class="nv-wrap">
+    <div class="nv-center">
+      {%- if section.settings.eyebrow != blank -%}<p class="nv-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2 class="nv-h2">{{ section.settings.heading }}</h2>
+      {%- if section.settings.text != blank -%}<p class="nv-lead">{{ section.settings.text }}</p>{%- endif -%}
+    </div>
+    <ul class="nv-tried__list">
+      {%- for block in section.blocks -%}
+        <li {{ block.shopify_attributes }}>{% render 'noula-v2-icon', icon: 'check-circle' %}<div><b>{{ block.settings.title }}</b><span>{{ block.settings.text }}</span></div></li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Noula: Already tried",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "[[EYEBROW PLACEHOLDER]]" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "[[WHAT YOU HAVE ALREADY TRIED — copy pending]]" },
+    { "type": "text", "id": "text", "label": "Lead" }
+  ],
+  "blocks": [
+    { "type": "item", "name": "Item", "settings": [
+      { "type": "text", "id": "title", "label": "Title", "default": "[[ITEM — copy pending]]" },
+      { "type": "text", "id": "text", "label": "Text", "default": "[[why it did not work — copy pending]]" } ] }
+  ],
+  "presets": [{ "name": "Noula: Already tried", "blocks": [ { "type": "item" }, { "type": "item" }, { "type": "item" } ] }]
+}
+{% endschema %}

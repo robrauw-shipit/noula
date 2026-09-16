@@ -1,0 +1,43 @@
+{%- comment -%} 11 · What it does and does not do — ink full bleed, two columns. PLACEHOLDER copy. {%- endcomment -%}
+<section class="nv nv-section nv-bg-ink" data-section-id="{{ section.id }}">
+  <div class="nv-wrap">
+    <div class="nv-center">
+      {%- if section.settings.eyebrow != blank -%}<p class="nv-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2 class="nv-h2">{{ section.settings.heading }}</h2>
+    </div>
+    <div class="nv-cols">
+      <div class="nv-cols__col">
+        <h3>{{ section.settings.does_heading }}</h3>
+        <ul>
+          {%- for block in section.blocks -%}{%- if block.type == 'does' -%}
+            <li {{ block.shopify_attributes }}>{% render 'noula-v2-icon', icon: 'check' %}<span>{{ block.settings.text }}</span></li>
+          {%- endif -%}{%- endfor -%}
+        </ul>
+      </div>
+      <div class="nv-cols__col">
+        <h3>{{ section.settings.doesnt_heading }}</h3>
+        <ul>
+          {%- for block in section.blocks -%}{%- if block.type == 'doesnt' -%}
+            <li {{ block.shopify_attributes }}>{% render 'noula-v2-icon', icon: 'minus' %}<span>{{ block.settings.text }}</span></li>
+          {%- endif -%}{%- endfor -%}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Noula: Does / does not",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "[[EYEBROW PLACEHOLDER]]" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "[[WHAT IT DOES AND DOES NOT DO — copy pending]]" },
+    { "type": "text", "id": "does_heading", "label": "Left column heading", "default": "What it does" },
+    { "type": "text", "id": "doesnt_heading", "label": "Right column heading", "default": "What it does not do" }
+  ],
+  "blocks": [
+    { "type": "does", "name": "Does", "settings": [ { "type": "text", "id": "text", "label": "Text", "default": "[[does — copy pending]]" } ] },
+    { "type": "doesnt", "name": "Does not", "settings": [ { "type": "text", "id": "text", "label": "Text", "default": "[[does not — copy pending]]" } ] }
+  ],
+  "presets": [{ "name": "Noula: Does / does not", "blocks": [ { "type": "does" }, { "type": "does" }, { "type": "does" }, { "type": "doesnt" }, { "type": "doesnt" }, { "type": "doesnt" } ] }]
+}
+{% endschema %}

@@ -14,7 +14,8 @@
       {%- assign limit = section.settings.initial | default: 10 -%}
       {%- for block in section.blocks -%}
         <article class="nv-gcard{% if forloop.index > limit %} is-hidden{% endif %}" {{ block.shopify_attributes }}>
-          {%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 500 | image_tag: loading: 'lazy', alt: block.settings.name }}
+          {%- if block.settings.image != blank -%}{{ block.settings.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: block.settings.name }}
+          {%- elsif block.settings.asset != blank -%}<img src="{{ block.settings.asset | asset_url }}" loading="lazy" alt="{{ block.settings.name | escape }}" width="900" height="1200">
           {%- elsif block.settings.image_url != blank -%}<img src="{{ block.settings.image_url }}" loading="lazy" alt="{{ block.settings.name | escape }}">{%- endif -%}
           <div class="nv-gcard__body">
             <div class="nv-gcard__name">{{ block.settings.name }}<svg viewBox="0 0 24 24"><path d="m12 2 2.4 1.9 3-.4.9 2.9 2.7 1.4-.6 3 1.9 2.4-1.9 2.4.6 3-2.7 1.4-.9 2.9-3-.4L12 22l-2.4-1.9-3 .4-.9-2.9L3 16.2l.6-3L1.7 10.8l1.9-2.4-.6-3L5.7 4l.9-2.9 3 .4L12 2Zm-1.2 13.2 5.6-5.6-1.4-1.4-4.2 4.2-2-2-1.4 1.4 3.4 3.4Z"/></svg><small>Verified</small></div>
@@ -81,6 +82,11 @@
           "type": "text",
           "id": "image_url",
           "label": "Photo URL (fallback)"
+        },
+        {
+          "type": "text",
+          "id": "asset",
+          "label": "Theme asset filename (e.g. noula-selfie-1.jpg)"
         },
         {
           "type": "text",

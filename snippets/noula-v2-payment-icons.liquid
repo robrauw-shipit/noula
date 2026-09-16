@@ -1,8 +1,19 @@
-{%- comment -%} Payment icons from the shop's enabled payment types. {% render 'noula-v2-payment-icons', class: 'nv-pay' %} {%- endcomment -%}
-{%- if shop.enabled_payment_types.size > 0 -%}
+{%- comment -%}
+  Payment icons — US methods only (we sell US only), so EU-specific types
+  (bancontact, ideal, eps, giropay, sofort, klarna_eu, ...) are filtered out.
+  {% render 'noula-v2-payment-icons', class: 'nv-pay' %}
+{%- endcomment -%}
+{%- assign nv_us_types = 'visa,master,american_express,discover,diners_club,jcb,apple_pay,google_pay,shopify_pay,paypal,amazon_payments,venmo,afterpay,affirm,klarna' | split: ',' -%}
+{%- assign nv_has_icons = false -%}
+{%- for type in shop.enabled_payment_types -%}
+  {%- if nv_us_types contains type -%}{%- assign nv_has_icons = true -%}{%- break -%}{%- endif -%}
+{%- endfor -%}
+{%- if nv_has_icons -%}
 <div class="{{ class | default: 'nv-pay' }}" role="list" aria-label="Payment methods">
   {%- for type in shop.enabled_payment_types -%}
-    {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+    {%- if nv_us_types contains type -%}
+      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+    {%- endif -%}
   {%- endfor -%}
 </div>
 {%- endif -%}

@@ -263,11 +263,15 @@
                       {%- assign img_key = 'image_' | append: i -%}
                       {%- assign url_key = 'image_url_' | append: i -%}
                       {%- assign link_key = 'link_' | append: i -%}
+                      {%- assign asset_key = 'asset_' | append: i -%}
                       {%- assign img = block.settings[img_key] -%}
                       {%- assign url = block.settings[url_key] -%}
-                      {%- if img != blank or url != blank -%}
+                      {%- assign asset = block.settings[asset_key] -%}
+                      {%- if img != blank or url != blank or asset != blank -%}
                         <a class="nv-ugc__item" href="{{ block.settings[link_key] | default: '#' }}">
-                          {%- if img != blank -%}{{ img | image_url: width: 400 | image_tag: loading: 'lazy', alt: '' }}{%- else -%}<img src="{{ url }}" loading="lazy" alt="">{%- endif -%}
+                          {%- if img != blank -%}{{ img | image_url: width: 400 | image_tag: loading: 'lazy', alt: '' }}
+                          {%- elsif asset != blank -%}<img src="{{ asset | asset_url }}" loading="lazy" alt="" width="900" height="1600">
+                          {%- else -%}<img src="{{ url }}" loading="lazy" alt="">{%- endif -%}
                           <span class="nv-ugc__play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
                         </a>
                       {%- endif -%}
@@ -1490,6 +1494,11 @@
           "label": "Thumbnail 1 URL (fallback)"
         },
         {
+          "type": "text",
+          "id": "asset_1",
+          "label": "Thumbnail 1 theme asset"
+        },
+        {
           "type": "url",
           "id": "link_1",
           "label": "Link 1"
@@ -1503,6 +1512,11 @@
           "type": "text",
           "id": "image_url_2",
           "label": "Thumbnail 2 URL (fallback)"
+        },
+        {
+          "type": "text",
+          "id": "asset_2",
+          "label": "Thumbnail 2 theme asset"
         },
         {
           "type": "url",
@@ -1520,6 +1534,11 @@
           "label": "Thumbnail 3 URL (fallback)"
         },
         {
+          "type": "text",
+          "id": "asset_3",
+          "label": "Thumbnail 3 theme asset"
+        },
+        {
           "type": "url",
           "id": "link_3",
           "label": "Link 3"
@@ -1533,6 +1552,11 @@
           "type": "text",
           "id": "image_url_4",
           "label": "Thumbnail 4 URL (fallback)"
+        },
+        {
+          "type": "text",
+          "id": "asset_4",
+          "label": "Thumbnail 4 theme asset"
         },
         {
           "type": "url",

@@ -59,12 +59,10 @@
       {%- endif -%}
       {%- if section.settings.help_text != blank -%}<p>{{ section.settings.help_text }}</p>{%- endif -%}
 
-      {%- if section.settings.show_payment and shop.enabled_payment_types.size > 0 -%}
+      {%- if section.settings.show_payment -%}
         <div class="nv-footer__pay">
           <span>We accept</span>
-          {%- for type in shop.enabled_payment_types -%}
-            {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-          {%- endfor -%}
+          {% render 'noula-v2-payment-icons', class: 'nv-footer__pay-icons' %}
         </div>
       {%- endif -%}
 

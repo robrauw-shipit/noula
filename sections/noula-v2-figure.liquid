@@ -1,0 +1,104 @@
+{%- comment -%}
+  Full-width figure — for finished infographics (comparison, timeline, ingredients,
+  texture, review card). Image does the talking; optional eyebrow + heading above it.
+{%- endcomment -%}
+<section class="nv nv-section nv-bg-{{ section.settings.background }}" data-section-id="{{ section.id }}">
+  <div class="nv-wrap">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
+      <div class="nv-center nv-figure__head">
+        {%- if section.settings.eyebrow != blank -%}<p class="nv-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        {%- if section.settings.heading != blank -%}<h2 class="nv-h2">{{ section.settings.heading }}</h2>{%- endif -%}
+      </div>
+    {%- endif -%}
+    <figure class="nv-figure nv-figure--{{ section.settings.width }}">
+      {%- if section.settings.image != blank -%}
+        {{ section.settings.image | image_url: width: 1600 | image_tag: loading: 'lazy', alt: section.settings.alt }}
+      {%- elsif section.settings.asset != blank -%}
+        <img src="{{ section.settings.asset | asset_url }}" loading="lazy" alt="{{ section.settings.alt | escape }}" width="1254" height="1254">
+      {%- elsif section.settings.image_url != blank -%}
+        <img src="{{ section.settings.image_url }}" loading="lazy" alt="{{ section.settings.alt | escape }}" width="1200" height="1200">
+      {%- endif -%}
+      {%- if section.settings.caption != blank -%}<figcaption>{{ section.settings.caption }}</figcaption>{%- endif -%}
+    </figure>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Noula: Figure",
+  "settings": [
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Background",
+      "options": [
+        {
+          "value": "paper",
+          "label": "Paper"
+        },
+        {
+          "value": "cream",
+          "label": "Cream"
+        }
+      ],
+      "default": "paper"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_url",
+      "label": "Image URL (fallback)"
+    },
+    {
+      "type": "text",
+      "id": "asset",
+      "label": "Theme asset filename"
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Alt text"
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Width",
+      "options": [
+        {
+          "value": "narrow",
+          "label": "Narrow (720px)"
+        },
+        {
+          "value": "wide",
+          "label": "Wide (960px)"
+        }
+      ],
+      "default": "narrow"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption under the image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noula: Figure"
+    }
+  ]
+}
+{% endschema %}

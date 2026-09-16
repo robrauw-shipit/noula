@@ -67,11 +67,11 @@
           "type": "nv_ugc",
           "settings": {
             "heading": "See it in action",
-            "image_url_1": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-01.jpg?v=1782119454",
-            "image_url_2": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-06.jpg?v=1782119454",
-            "image_url_3": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-04.jpg?v=1782119454",
-            "image_url_4": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-02.jpg?v=1782119454",
-            "badge": "Over 4M views on Instagram"
+            "badge": "Over 4M views on Instagram",
+            "asset_1": "noula-selfie-1.jpg",
+            "asset_2": "noula-selfie-3.jpg",
+            "asset_3": "noula-selfie-5.jpg",
+            "asset_4": "noula-selfie-2.jpg"
           }
         },
         "description": {
@@ -131,67 +131,8 @@
         "heading": "You can see it before you feel it",
         "text": "<p>Noula is pink because of what is in it, not because of a dye. Red rice extract gives the cream its colour, and that colour is the reason the jar looks nothing like the white night creams already on your shelf.</p><p>It goes on cushiony, absorbs fully, and leaves nothing on your pillow.</p>",
         "image": "",
-        "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_2_1.png?v=1780830581"
-      }
-    },
-    "compare": {
-      "type": "noula-v2-compare",
-      "blocks": {
-        "c1": {
-          "type": "row",
-          "settings": {
-            "label": "Built for",
-            "us": "Tired-looking morning skin",
-            "them": "General moisture"
-          }
-        },
-        "c2": {
-          "type": "row",
-          "settings": {
-            "label": "Works while",
-            "us": "You sleep — a full night of contact",
-            "them": "Sits on top, rubs off on the pillow"
-          }
-        },
-        "c3": {
-          "type": "row",
-          "settings": {
-            "label": "Morning feel",
-            "us": "Rested, softer, fresher-looking",
-            "them": "Often just richer or heavier"
-          }
-        },
-        "c4": {
-          "type": "row",
-          "settings": {
-            "label": "Texture",
-            "us": "Rich cream, no pillow-grease",
-            "them": "Can feel coated by morning"
-          }
-        },
-        "c5": {
-          "type": "row",
-          "settings": {
-            "label": "Actives",
-            "us": "Recovery support without harsh actives",
-            "them": "Stinging or peeling to \"work\""
-          }
-        }
-      },
-      "block_order": [
-        "c1",
-        "c2",
-        "c3",
-        "c4",
-        "c5"
-      ],
-      "settings": {
-        "eyebrow": "How it compares",
-        "heading": "Why Noula?",
-        "product_image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_2_1.png?v=1780830581",
-        "us_label": "Noula",
-        "them_label": "Regular night creams",
-        "background": "paper"
+        "image_url": "",
+        "asset": "noula-texture.jpg"
       }
     },
     "recognition": {
@@ -279,67 +220,10 @@
         "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
         "mobile_content_alignment": "left",
-        "section_color_scheme": "scheme-1",
-        "color_scheme": "scheme-1",
+        "section_color_scheme": "scheme-3",
+        "color_scheme": "scheme-3",
         "padding_top": 64,
         "padding_bottom": 64
-      }
-    },
-    "ingredients": {
-      "type": "multicolumn",
-      "blocks": {
-        "i1": {
-          "type": "column",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ig_017798eba84234ca016a2ff8f929648191b9b9d8d8dd5f53fd.jpg?v=1781529292",
-            "title": "Red Rice Extract",
-            "text": "<p>K-beauty inspired nourishment for tired-looking skin.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "i2": {
-          "type": "column",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ig_017798eba84234ca016a2ffa2c25c48191a8e775af1e4b7aee.jpg?v=1781529292",
-            "title": "Ceramides + Vitamin B5",
-            "text": "<p>Comfort dry skin and support the moisture barrier overnight.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "i3": {
-          "type": "column",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ig_017798eba84234ca016a2ff9bdcdbc819191ec302ab8c2b571.jpg?v=1781529291",
-            "title": "Hyaluronic Acid",
-            "text": "<p>Draws in moisture for softer, fresher-looking skin by morning.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "i1",
-        "i2",
-        "i3"
-      ],
-      "settings": {
-        "title": "Why red rice",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "square",
-        "button_label": "",
-        "button_link": "",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "background_style": "none",
-        "color_scheme": "scheme-3",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 64,
-        "padding_bottom": 64,
-        "eyebrow": "What is inside"
       }
     },
     "does_doesnt": {
@@ -404,7 +288,7 @@
           "type": "review",
           "settings": {
             "name": "Maria M.",
-            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-01.jpg?v=1782119454",
+            "image_url": "",
             "rating": 5,
             "text": "I love this cream! My skin looks brighter in the morning and my fine lines look softer. It's now a staple in my night routine."
           }
@@ -422,7 +306,7 @@
           "type": "review",
           "settings": {
             "name": "Dana R.",
-            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-04.jpg?v=1782119454",
+            "image_url": "",
             "rating": 5,
             "text": "No sting, no peel. Just softer skin that looks less tired by morning. Three jars in."
           }
@@ -440,7 +324,7 @@
           "type": "review",
           "settings": {
             "name": "Claire B.",
-            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-06.jpg?v=1782119454",
+            "image_url": "",
             "rating": 5,
             "text": "I'd basically given up on night creams. This one I'm keeping."
           }
@@ -458,7 +342,7 @@
           "type": "review",
           "settings": {
             "name": "Sofia L.",
-            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-02.jpg?v=1782119454",
+            "image_url": "",
             "rating": 5,
             "text": "Sensitive skin here and zero reaction. Finally something that works while I sleep."
           }
@@ -525,13 +409,68 @@
             "rating": 5,
             "text": "Fine lines are way softer. My face looks refreshed and radiant. Love it."
           }
+        },
+        "sel1": {
+          "type": "review",
+          "settings": {
+            "asset": "noula-selfie-3.jpg",
+            "image_url": "",
+            "name": "Margaret H.",
+            "rating": 5,
+            "text": "I'm 58 and my skin went downhill fast after menopause. This is the first cream where I stopped waking up tight."
+          }
+        },
+        "sel2": {
+          "type": "review",
+          "settings": {
+            "asset": "noula-selfie-1.jpg",
+            "image_url": "",
+            "name": "Carol D.",
+            "rating": 5,
+            "text": "Three months in. The crepiness along my neck has genuinely softened and nothing else had touched it."
+          }
+        },
+        "sel3": {
+          "type": "review",
+          "settings": {
+            "asset": "noula-selfie-5.jpg",
+            "image_url": "",
+            "name": "Yvonne P.",
+            "rating": 5,
+            "text": "No sting, no flaking, no purge. At my age I don't have patience for a cream that has to hurt first."
+          }
+        },
+        "sel4": {
+          "type": "review",
+          "settings": {
+            "asset": "noula-selfie-2.jpg",
+            "image_url": "",
+            "name": "Sunita R.",
+            "rating": 5,
+            "text": "I use tretinoin twice a week and this sits fine alongside it. My derm had no issue with it."
+          }
+        },
+        "sel5": {
+          "type": "review",
+          "settings": {
+            "asset": "noula-selfie-4.jpg",
+            "image_url": "",
+            "name": "Lynn M.",
+            "rating": 4,
+            "text": "Took about five weeks for me. Worth it — my face looks rested in the morning instead of drained."
+          }
         }
       },
       "block_order": [
+        "sel1",
         "g1",
+        "sel2",
         "g2",
+        "sel3",
         "g3",
+        "sel4",
         "g4",
+        "sel5",
         "g5",
         "g6",
         "g7",
@@ -664,17 +603,99 @@
       "settings": {
         "cta_text": "Add to cart"
       }
+    },
+    "mechanism": {
+      "type": "noula-v2-figure",
+      "settings": {
+        "background": "paper",
+        "image_url": "",
+        "alt": "Most creams are gone by 2am — Noula stays sealed in all night",
+        "width": "wide",
+        "eyebrow": "",
+        "heading": "",
+        "caption": "",
+        "asset": "noula-mechanism.jpg"
+      }
+    },
+    "compare": {
+      "type": "noula-v2-figure",
+      "settings": {
+        "background": "cream",
+        "image_url": "",
+        "alt": "Why another moisturiser will not change your mornings",
+        "width": "wide",
+        "eyebrow": "",
+        "heading": "",
+        "caption": "",
+        "asset": "noula-compare.jpg"
+      }
+    },
+    "texture": {
+      "type": "noula-v2-figure",
+      "settings": {
+        "background": "paper",
+        "image_url": "",
+        "alt": "Rich, not heavy — applied and ten minutes later on four skin tones",
+        "width": "wide",
+        "eyebrow": "",
+        "heading": "",
+        "caption": "",
+        "asset": "noula-texture.jpg"
+      }
+    },
+    "timeline": {
+      "type": "noula-v2-figure",
+      "settings": {
+        "background": "cream",
+        "image_url": "",
+        "alt": "What to expect: the honest timeline",
+        "width": "wide",
+        "eyebrow": "",
+        "heading": "",
+        "caption": "",
+        "asset": "noula-timeline.jpg"
+      }
+    },
+    "ingredients_fig": {
+      "type": "noula-v2-figure",
+      "settings": {
+        "background": "paper",
+        "image_url": "",
+        "alt": "The ingredients that do the work",
+        "width": "wide",
+        "eyebrow": "",
+        "heading": "",
+        "caption": "",
+        "asset": "noula-ingredients.jpg"
+      }
+    },
+    "review_denise": {
+      "type": "noula-v2-figure",
+      "settings": {
+        "background": "cream",
+        "image_url": "",
+        "alt": "Denise, night 1 versus night 63",
+        "width": "wide",
+        "eyebrow": "",
+        "heading": "",
+        "caption": "",
+        "asset": "noula-review-denise.jpg"
+      }
     }
   },
   "order": [
     "main",
     "proof",
+    "mechanism",
     "compare",
     "recognition",
     "tried",
+    "texture",
     "how_it_works",
-    "ingredients",
+    "ingredients_fig",
+    "timeline",
     "does_doesnt",
+    "review_denise",
     "reviews_grid",
     "faq",
     "offer_banner",

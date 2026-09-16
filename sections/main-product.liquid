@@ -210,6 +210,10 @@
                 </p>
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
+              {%- when 'nv_title_price' -%}
+                <div {{ block.shopify_attributes }}>{% render 'noula-v2-title-price', product: product, badge: block.settings.badge, section_id: section.id %}</div>
+              {%- when 'nv_stock_bar' -%}
+                <div class="nv" {{ block.shopify_attributes }}>{% render 'noula-v2-stock-bar', title: block.settings.title, text: block.settings.text, claimed: block.settings.claimed, hours: block.settings.hours, key: block.id %}</div>
               {%- when 'nv_rating' -%}
                 <div class="nv nv-rating" {{ block.shopify_attributes }}>
                   {% render 'noula-v2-stars', rating: 5 %}
@@ -1010,6 +1014,25 @@
           "label": "t:sections.custom-liquid.settings.custom_liquid.label",
           "info": "t:sections.custom-liquid.settings.custom_liquid.info"
         }
+      ]
+    },
+    {
+      "type": "nv_title_price",
+      "name": "Noula: Title + price",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "badge", "label": "Badge", "default": "Bestseller" }
+      ]
+    },
+    {
+      "type": "nv_stock_bar",
+      "name": "Noula: Stock bar",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title", "default": "Selling out fast" },
+        { "type": "text", "id": "text", "label": "Text", "default": "Due to high demand, limited quantities available" },
+        { "type": "range", "id": "claimed", "label": "Claimed %", "min": 50, "max": 99, "step": 1, "default": 89 },
+        { "type": "range", "id": "hours", "label": "Countdown hours (rolls per visitor)", "min": 1, "max": 48, "step": 1, "default": 12 }
       ]
     },
     {

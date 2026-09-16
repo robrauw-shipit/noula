@@ -1,0 +1,18 @@
+{%- comment -%}
+  Noula — title + price row (live-site layout).
+  Compare-at = struck-through red, variant price = main, no decimals, Bestseller badge.
+  {% render 'noula-v2-title-price', product: product, badge: block.settings.badge, section_id: section.id %}
+{%- endcomment -%}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- assign current_price = current_variant.price -%}
+{%- assign current_compare_at_price = current_variant.compare_at_price -%}
+<div class="nla blk nv-title-price">
+  <h1 class="title">{{ product.title | escape }}</h1>
+  <div class="pricerow" id="price-{{ section_id }}" role="status">
+    {%- if current_compare_at_price > current_price -%}
+      <s class="old-price variant-item__old-price">{{ current_compare_at_price | money_without_trailing_zeros }}</s>
+    {%- endif -%}
+    <span class="main-price">{{ current_price | money_without_trailing_zeros }}</span>
+    {%- if badge != blank -%}<span class="badge">{{ badge }}</span>{%- endif -%}
+  </div>
+</div>

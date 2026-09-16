@@ -1,61 +1,49 @@
-{%- comment -%} Noula v2 — announcement bar with rolling countdown {%- endcomment -%}
-<div class="nv nv-topbar" data-section-id="{{ section.id }}">
-  <div class="nv-topbar__inner">
-    <span>{{ section.settings.text }}{% if section.settings.highlight != blank %} <strong>{{ section.settings.highlight }}</strong>{% endif %}</span>
-    {%- if section.settings.show_timer -%}
-      <span class="nv-topbar__timer" data-nv-countdown data-hours="{{ section.settings.hours }}" data-key="{{ section.id }}">
-        <span class="nv-topbar__unit"><b data-h>00</b><small>hrs</small></span><span class="nv-topbar__sep">:</span>
-        <span class="nv-topbar__unit"><b data-m>00</b><small>min</small></span><span class="nv-topbar__sep">:</span>
-        <span class="nv-topbar__unit"><b data-s>00</b><small>sec</small></span>
-      </span>
-    {%- endif -%}
-    {%- if section.settings.link_text != blank and section.settings.link != blank -%}
-      <a href="{{ section.settings.link }}">{{ section.settings.link_text }}</a>
-    {%- endif -%}
-  </div>
+{%- comment -%} Noula — sticky announcement bar (live-site layout) {%- endcomment -%}
+<style>
+  .noula-announcement-bar{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    width:100%;
+    background:#2C251E;
+    color:#fff;
+    text-align:center;
+    font-family:inherit;
+    font-size:13px;
+    font-weight:500;
+    line-height:1.3;
+    padding:12px 16px;
+    letter-spacing:.01em;
+  }
+  .noula-announcement-bar strong{
+    font-weight:800;
+    color:#F2C9BE;
+  }
+  .noula-announcement-bar a{ color:inherit; text-decoration:underline; text-underline-offset:3px; }
+  .noula-announcement-bar__timer{ display:inline-flex; gap:4px; margin-left:8px; font-variant-numeric:tabular-nums; font-weight:700; color:#F2C9BE; }
+</style>
+
+<div class="noula-announcement-bar" data-section-id="{{ section.id }}">
+  {{ section.settings.text }}{% if section.settings.highlight != blank %} <strong>{{ section.settings.highlight }}</strong>{% endif %}
+  {%- if section.settings.show_timer -%}
+    <span class="noula-announcement-bar__timer" data-nv-countdown data-hours="{{ section.settings.hours }}" data-key="{{ section.id }}"><b data-h>00</b>:<b data-m>00</b>:<b data-s>00</b></span>
+  {%- endif -%}
+  {%- if section.settings.link_text != blank and section.settings.link != blank -%}
+    <a href="{{ section.settings.link }}">{{ section.settings.link_text }}</a>
+  {%- endif -%}
 </div>
 
 {% schema %}
 {
   "name": "Noula: Top bar",
-  "class": "nv-section-topbar",
   "settings": [
-    {
-      "type": "text",
-      "id": "text",
-      "label": "Text",
-      "default": "Buy 1, Get 1 Free — ends in"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_timer",
-      "label": "Show countdown",
-      "default": true
-    },
-    {
-      "type": "range",
-      "id": "hours",
-      "label": "Countdown length (hours, rolls per visitor)",
-      "min": 1,
-      "max": 48,
-      "step": 1,
-      "default": 12
-    },
-    {
-      "type": "text",
-      "id": "link_text",
-      "label": "Link text"
-    },
-    {
-      "type": "url",
-      "id": "link",
-      "label": "Link"
-    }
+    { "type": "text", "id": "text", "label": "Text", "default": "Secret Deal:" },
+    { "type": "text", "id": "highlight", "label": "Highlighted text (bold, pink)", "default": "save $66 + Free Gifts" },
+    { "type": "checkbox", "id": "show_timer", "label": "Show countdown", "default": false },
+    { "type": "range", "id": "hours", "label": "Countdown length (hours, rolls per visitor)", "min": 1, "max": 48, "step": 1, "default": 12 },
+    { "type": "text", "id": "link_text", "label": "Link text" },
+    { "type": "url", "id": "link", "label": "Link" }
   ],
-  "presets": [
-    {
-      "name": "Noula: Top bar"
-    }
-  ]
+  "presets": [{ "name": "Noula: Top bar" }]
 }
 {% endschema %}

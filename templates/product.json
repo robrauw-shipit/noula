@@ -10,10 +10,6 @@
             "tag": ""
           }
         },
-        "title": {
-          "type": "title",
-          "settings": {}
-        },
         "nv_benefits": {
           "type": "nv_benefits",
           "settings": {
@@ -153,15 +149,25 @@
             "content": "<p>Free shipping on every order. Ships within 24 hours from our US warehouse. Returns are covered by the 90-night guarantee.</p>"
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {}
+        "nv_title_price": {
+          "type": "nv_title_price",
+          "settings": {
+            "badge": "Bestseller"
+          }
+        },
+        "nv_stock_bar": {
+          "type": "nv_stock_bar",
+          "settings": {
+            "title": "Selling out fast",
+            "text": "Due to high demand, limited quantities available",
+            "claimed": 89,
+            "hours": 12
+          }
         }
       },
       "block_order": [
         "nv_rating",
-        "title",
-        "price",
+        "nv_title_price",
         "description",
         "nv_benefits",
         "nv_offer_label",
@@ -170,6 +176,7 @@
         "nv_checks_top",
         "buy_buttons",
         "nv_pay",
+        "nv_stock_bar",
         "nv_checks_bottom",
         "nv_ugc",
         "faq_1",

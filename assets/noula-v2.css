@@ -76,18 +76,8 @@ body { background: var(--nv-white); color: var(--nv-cocoa); }
 .nv-arrow--prev { left: -16px; } .nv-arrow--next { right: -16px; }
 @media (min-width: 990px) { .nv-arrow { display: inline-flex; } .nv-track { margin: 0; padding-left: 0; padding-right: 0; } }
 
-/* ==========================================================================
-   TOP BAR
-   ========================================================================== */
-.nv-topbar { background: #2c251e; color: #fff; text-align: center; padding: 8px 14px; font-size: 13.5px; font-weight: 500; letter-spacing: 0.01em; line-height: 1.3; }
-.nv-topbar strong { font-weight: 800; color: #f2c9be; }
-.nv-topbar__inner { display: inline-flex; align-items: center; gap: 12px; flex-wrap: wrap; justify-content: center; }
-.nv-topbar__timer { display: inline-flex; gap: 6px; align-items: baseline; font-variant-numeric: tabular-nums; }
-.nv-topbar__unit { display: inline-flex; flex-direction: column; align-items: center; line-height: 1; background: rgba(255,255,255,.12); border-radius: 6px; padding: 3px 6px 2px; min-width: 30px; }
-.nv-topbar__unit b { font-size: 14px; }
-.nv-topbar__unit small { font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 2px; }
-.nv-topbar__sep { opacity: .5; }
-.nv-topbar a { color: inherit; }
+/* top bar: styles live in sections/noula-v2-topbar.liquid (live-site layout) */
+.shopify-section-group-header-group:has(.noula-announcement-bar) { position: sticky; top: 0; z-index: 9999; }
 
 /* ==========================================================================
    HEADER (native Sense header, restyled)
@@ -174,19 +164,28 @@ product-info.color-scheme-1 { background: #fff; }
 .product__info-container .product__title { margin-top: 12px !important; }
 .product__title h1, .product__title h2 { font-family: var(--nv-head); font-weight: 700; font-size: clamp(30px, 3vw, 38px); line-height: 1.1; letter-spacing: -0.01em; margin: 0; color: var(--nv-cocoa); }
 
-/* native price block: current price, struck compare-at, Bestseller badge */
-.product__info-container .price { font-family: var(--nv-font); }
-.product__info-container .price--large { font-size: 24px; }
-.product__info-container .price__container { display: flex; align-items: center; gap: 10px; }
-.product__info-container .price .price-item--sale { font-weight: 700; color: var(--nv-cocoa); }
-.product__info-container .price .price__sale .price-item--regular { color: #c0392b; text-decoration: line-through; font-size: 18px; font-weight: 500; }
-.product__info-container .price__badge-sale { background: var(--nv-cocoa) !important; color: #fff !important; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-radius: 5px; padding: 5px 8px; margin-left: 4px; }
-.product__info-container .price__sale { display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-.product__info-container .price__sale .price-item--regular { order: 2; }
-.product__info-container .price__sale .price-item--sale { order: 1; }
-.product__info-container .price__sale .price__badge-sale { order: 3; }
-.product__info-container .product__title + * { margin-top: 6px !important; }
-.product__info-container .price + * { margin-top: 16px !important; }
+/* title + price row (live-site layout, snippet noula-v2-title-price) */
+.nla { --cocoa: #2D241D; --sale-red: #C43A2F; font-family: inherit; color: var(--cocoa); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+.nla, .nla * { box-sizing: border-box; font-family: inherit; }
+.nla.blk { margin-top: 0 !important; padding-top: 0 !important; }
+.nla h1.title { font-family: var(--nv-head); font-size: 33px; font-weight: 700; margin: 12px 0 16px !important; padding-top: 0 !important; line-height: 1.05; letter-spacing: -.03em; white-space: nowrap; }
+@media (max-width: 420px) { .nla h1.title { font-size: 28px; } }
+@media (max-width: 360px) { .nla h1.title { font-size: 25px; white-space: normal; } }
+.nla .pricerow { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; line-height: 1; }
+.nla .old-price { display: inline-flex !important; align-items: center; font-size: 21px; font-weight: 500; color: var(--sale-red); text-decoration-line: line-through; text-decoration-thickness: 1.5px; text-decoration-color: var(--sale-red); }
+.nla .main-price { display: inline-flex; align-items: center; font-size: 24px; font-weight: 800; color: #111; letter-spacing: -.02em; }
+.nla .badge { display: inline-flex; align-items: center; background: #2C251E; color: #fff; font-size: 10px; font-weight: 800; letter-spacing: .04em; padding: 5px 7px; border-radius: 6px; text-transform: uppercase; line-height: 1; }
+.product__info-container .nv-rating + * { margin-top: 0 !important; }
+
+/* stock bar + countdown (live-site layout, snippet noula-v2-stock-bar) */
+.noula-stock-meter { display: grid; gap: 9px; font-family: inherit; line-height: 1.25; }
+.noula-stock-meter__title { margin: 0; color: #2D241D; font-family: var(--nv-head); font-size: 18px; font-weight: 600; line-height: 1.15; letter-spacing: -.01em; }
+.noula-stock-meter__text { margin: 0; color: rgba(43,31,26,.7); font-size: 13px; line-height: 1.5; }
+.noula-stock-meter__track { overflow: hidden; height: 10px; border-radius: 999px; background: rgba(43,31,26,.08); }
+.noula-stock-meter__fill { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg,#E7B4AA,#D2978B); }
+.noula-stock-meter__bottom { display: flex; justify-content: space-between; gap: 12px; color: #2D241D; font-size: 13px; font-weight: 700; line-height: 1.15; }
+.noula-stock-meter__timer { color: #B5765C; font-variant-numeric: tabular-nums; }
+.noula-stock-meter__timer b { font-weight: 700; }
 
 /* native description */
 .product__description, .product__description p, .product__description span { color: var(--nv-body) !important; font-size: var(--nv-t-body) !important; line-height: 1.6 !important; font-family: var(--nv-font) !important; margin: 0; }
@@ -383,9 +382,6 @@ product-info.color-scheme-1 { background: #fff; }
    ========================================================================== */
 @media (max-width: 749px) {
   .nv { font-size: 15.5px; }
-  .product__title h1, .product__title h2 { font-size: 26px; }
-  .product__info-container .price--large { font-size: 22px; }
-  .product__info-container .price .price__sale .price-item--regular { font-size: 16px; }
   .product__description, .product__description p, .product__description span { font-size: 15.5px !important; }
   .product__info-container > * + * { margin-top: 18px !important; }
   .nv-rating { font-size: 14px; }

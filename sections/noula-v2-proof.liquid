@@ -1,12 +1,14 @@
-{%- comment -%} 4 · The pink proof — image led, minimal text. PLACEHOLDER until image + copy are supplied. {%- endcomment -%}
+{%- comment -%} The pink proof — image led, minimal text. {%- endcomment -%}
 <section class="nv nv-section nv-bg-{{ section.settings.background }}" data-section-id="{{ section.id }}">
   <div class="nv-wrap">
     <div class="nv-proof">
       <div class="nv-proof__media">
         {%- if section.settings.image != blank -%}
           {{ section.settings.image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: section.settings.image.alt }}
-        {%- else -%}
-          <div class="nv-placeholder nv-placeholder--image">[[ IMAGE PLACEHOLDER — the pink cream, no product shot ]]</div>
+        {%- elsif section.settings.image_url != blank -%}
+          <img src="{{ section.settings.image_url }}" loading="lazy" alt="">
+        {%- elsif product.featured_image != blank -%}
+          {{ product.featured_image | image_url: width: 1400 | image_tag: loading: 'lazy', alt: product.title }}
         {%- endif -%}
       </div>
       <div>
@@ -21,12 +23,55 @@
 {
   "name": "Noula: Pink proof",
   "settings": [
-    { "type": "select", "id": "background", "label": "Background", "options": [ { "value": "paper", "label": "Paper" }, { "value": "cream", "label": "Cream" } ], "default": "paper" },
-    { "type": "image_picker", "id": "image", "label": "Image" },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "[[EYEBROW PLACEHOLDER]]" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "[[PINK PROOF HEADLINE — copy pending]]" },
-    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>[[PINK PROOF TEXT — copy pending]]</p>" }
+    {
+      "type": "select",
+      "id": "background",
+      "label": "Background",
+      "options": [
+        {
+          "value": "paper",
+          "label": "Paper"
+        },
+        {
+          "value": "cream",
+          "label": "Cream"
+        }
+      ],
+      "default": "paper"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_url",
+      "label": "Image URL (fallback)"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "The cream itself"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "You can see it before you feel it"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Red rice extract gives the cream its colour.</p>"
+    }
   ],
-  "presets": [{ "name": "Noula: Pink proof" }]
+  "presets": [
+    {
+      "name": "Noula: Pink proof"
+    }
+  ]
 }
 {% endschema %}

@@ -8,6 +8,8 @@
   --noula-ink:    #2B211E;
   --noula-clay:   #D9A79C;
   --noula-accent: #C4756A;
+  --noula-accent-bright: #F2A8A0;   /* header savings + gift text */
+  --noula-blush: #FBEBE7;          /* soft pink chip behind USP icons */
   /* derived (opacity) values of the tokens above — the only other colours allowed */
   --noula-ink-70: rgba(43, 33, 30, 0.70);
   --noula-ink-50: rgba(43, 33, 30, 0.50);
@@ -70,11 +72,7 @@ body { background: var(--noula-paper); color: var(--noula-ink); }
 .nv-icon { width: 24px; height: 24px; flex: 0 0 auto; color: var(--noula-ink); }
 .nv-icon svg { width: 100%; height: 100%; display: block; stroke: currentColor; fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 
-.nv-placeholder { border: 1px dashed var(--noula-ink-50); border-radius: var(--noula-r); padding: 24px; font-family: var(--noula-body); font-size: 14px; letter-spacing: .04em; text-transform: uppercase; color: var(--noula-ink-70); text-align: center; }
-.nv-bg-ink .nv-placeholder { border-color: var(--noula-cream-70); color: var(--noula-cream-70); }
-.nv-placeholder--image { aspect-ratio: 4 / 5; display: flex; align-items: center; justify-content: center; background: var(--noula-ink-08); }
-.nv-bg-ink .nv-placeholder--image { background: var(--noula-cream-15); }
-
+.nv-bg-ink .nv-bg-ink 
 /* ==========================================================================
    1 · ANNOUNCEMENT BAR (ink) — styles live in the section, tokens only
    ========================================================================== */
@@ -144,31 +142,15 @@ product-info.color-scheme-1 { background: var(--noula-paper); }
 /* benefits — plain line icons in ink, no circles */
 .nv-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px; margin: 0; padding: 0; list-style: none; }
 .nv-benefits li { display: flex; align-items: center; gap: 10px; font-size: 15px; line-height: 1.35; font-weight: 500; color: var(--noula-ink); }
-.nv-benefits .nv-icon { width: 24px; height: 24px; }
+.nv-benefits .nv-icon { width: 42px; height: 42px; padding: 10px; border-radius: 50%; background: var(--noula-blush); color: var(--noula-accent); }
 
-/* the clay band: offer label + KaChing offer + guarantee + ATC + payment icons */
-.nv-band { background: var(--noula-clay); margin-left: -20px !important; margin-right: -20px !important; padding: 0 20px; margin-top: 0 !important; }
-.nv-band--first { margin-top: 24px !important; padding-top: 24px; }
-.nv-band--last { padding-bottom: 24px; }
-.nv-band > * + * { margin-top: 16px; }
-@media (min-width: 990px) {
-  .nv-band { margin-left: 0 !important; margin-right: 0 !important; padding-left: 24px; padding-right: 24px; }
-  .nv-band--first { border-radius: var(--noula-r) var(--noula-r) 0 0; }
-  .nv-band--last { border-radius: 0 0 var(--noula-r) var(--noula-r); }
-}
-.nv-band + .nv-band { margin-top: 0 !important; }
-.nv-band + :not(.nv-band) { margin-top: 24px !important; }
-
-.nv-offer-label { display: flex; align-items: center; gap: 14px; margin: 0 !important; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--noula-ink); }
-.nv-offer-label::before, .nv-offer-label::after { content: ''; flex: 1; height: 1px; background: var(--noula-ink-15); }
-
-/* KaChing bundle widget: styled inside the app, not here. Only the band gives it room. */
-.nv-band .kaching-bundles { margin: 0 !important; }
+/* KaChing bundle widget: styled inside the app, not here. */
+.product__info-container .kaching-bundles { margin: 0 !important; }
 
 /* guarantee — second most prominent element after the button; the seal carries the accent */
-.nv-guarantee { display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: var(--noula-r); background: var(--noula-paper); border: 2px solid var(--noula-accent); }
-.nv-guarantee .nv-icon { width: 44px; height: 44px; margin-top: 2px; color: var(--noula-accent); }
-.nv-guarantee h3 { margin: 0 0 5px; font-family: var(--noula-head); font-size: 20px; font-weight: 700; line-height: 1.15; color: var(--noula-ink); }
+.nv-guarantee { display: flex; gap: 14px; align-items: flex-start; padding: 16px 18px; border-radius: var(--noula-r); background: var(--noula-cream); }
+.nv-guarantee .nv-icon { width: 34px; height: 34px; margin-top: 2px; color: var(--noula-accent); }
+.nv-guarantee h3 { margin: 0 0 4px; font-family: var(--noula-head); font-size: 17px; font-weight: 700; line-height: 1.2; color: var(--noula-ink); }
 .nv-guarantee p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--noula-ink); }
 
 /* checks — ink at 70% */
@@ -188,8 +170,21 @@ product-info.color-scheme-1 { background: var(--noula-paper); }
 .product-form__submit[disabled] { background: var(--noula-ink-50) !important; }
 .nv-atc-compare { opacity: .6; font-weight: 500; text-decoration: line-through; margin-left: 2px; }
 
+/* stock level — real number, no timer */
+.nv-stock { display: grid; gap: 8px; }
+.nv-stock__head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.nv-stock__title { margin: 0; font-family: var(--noula-head); font-size: 17px; font-weight: 700; }
+.nv-stock__pct { margin: 0; font-size: 15px; font-weight: 700; color: var(--noula-accent); }
+.nv-stock__track { height: 10px; border-radius: 999px; background: var(--noula-ink-08); overflow: hidden; }
+.nv-stock__fill { display: block; height: 100%; border-radius: inherit; background: var(--noula-accent); }
+.nv-stock__note { margin: 0; font-size: 14px; color: var(--noula-ink-70); }
+
 /* see it in action (row kept, gradient pill deleted) */
-.nv-ugc h3 { margin: 0 0 12px; font-family: var(--noula-head); font-size: 22px; font-weight: 700; }
+.nv-ugc h3 { margin: 0 0 10px; font-family: var(--noula-head); font-size: 22px; font-weight: 700; }
+.nv-ugc__badge { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 600; border-radius: 999px; padding: 6px 12px; margin-bottom: 14px; position: relative; background: var(--noula-paper); }
+.nv-ugc__badge::before { content: ''; position: absolute; inset: 0; border-radius: 999px; padding: 1.5px; background: linear-gradient(90deg, #f9ce34, #ee2a7b, #6228d7); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+.nv-ugc__badge span { background: linear-gradient(90deg, #f9ce34 0%, #ee2a7b 45%, #6228d7 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.nv-ugc__badge svg { width: 16px; height: 16px; stroke: #ee2a7b; fill: none; stroke-width: 1.8; }
 .nv-ugc__row { display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
 .nv-ugc__row::-webkit-scrollbar { display: none; }
 .nv-ugc__item { position: relative; flex: 0 0 34%; aspect-ratio: 9 / 16; border-radius: var(--noula-r); overflow: hidden; background: var(--noula-cream); scroll-snap-align: start; }
@@ -245,19 +240,27 @@ product-info.color-scheme-1 { background: var(--noula-paper); }
 .nv-proof__media { border-radius: var(--noula-r); overflow: hidden; }
 .nv-proof__media img { width: 100%; height: auto; display: block; }
 
-/* 5 · comparison table */
-.nv-compare { max-width: 680px; margin: 28px auto 0; background: var(--noula-paper); border: 1px solid var(--noula-ink-15); border-radius: var(--noula-r); padding: 28px 16px 10px; }
-.nv-bg-paper .nv-compare { background: var(--noula-cream); border-color: transparent; }
-@media (min-width: 750px) { .nv-compare { padding: 36px 36px 14px; } }
-.nv-compare__head { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 10px; align-items: end; padding-bottom: 14px; border-bottom: 2px solid var(--noula-ink); }
-.nv-compare__brand { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; }
-.nv-compare__brand img { height: 56px; width: auto; object-fit: contain; }
-.nv-compare__brand--them { color: var(--noula-ink-70); font-weight: 500; }
-.nv-compare__row { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 10px; padding: 16px 0; border-bottom: 1px solid var(--noula-ink-15); font-size: 15px; line-height: 1.4; align-items: center; }
+/* 5 · comparison table — stacks on mobile, three columns from 750px */
+.nv-compare { max-width: 680px; margin: 28px auto 0; background: var(--noula-paper); border-radius: var(--noula-r); padding: 8px 16px; }
+.nv-bg-paper .nv-compare { background: var(--noula-cream); }
+.nv-compare__head { display: none; }
+.nv-compare__row { display: grid; grid-template-columns: 1fr; gap: 6px; padding: 18px 0; border-bottom: 1px solid var(--noula-ink-15); font-size: 15px; line-height: 1.45; }
 .nv-compare__row:last-child { border-bottom: 0; }
-.nv-compare__row > :first-child { font-weight: 700; }
-.nv-compare__row .nv-us { color: var(--noula-ink); }
+.nv-compare__row > :first-child { font-weight: 700; font-size: 16px; }
+.nv-compare__row .nv-us, .nv-compare__row .nv-them { display: flex; gap: 8px; align-items: baseline; }
+.nv-compare__row .nv-us::before { content: attr(data-label); flex: 0 0 auto; font-weight: 700; color: var(--noula-ink); }
+.nv-compare__row .nv-them::before { content: attr(data-label); flex: 0 0 auto; font-weight: 500; color: var(--noula-ink-50); }
 .nv-compare__row .nv-them { color: var(--noula-ink-70); }
+@media (min-width: 750px) {
+  .nv-compare { padding: 8px 32px; }
+  .nv-compare__head { display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 12px; align-items: end; padding: 24px 0 14px; border-bottom: 2px solid var(--noula-ink); }
+  .nv-compare__brand { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 15px; font-weight: 700; }
+  .nv-compare__brand img { height: 52px; width: auto; object-fit: contain; }
+  .nv-compare__brand--them { color: var(--noula-ink-70); font-weight: 500; }
+  .nv-compare__row { grid-template-columns: 1.1fr 1fr 1fr; gap: 12px; align-items: center; padding: 16px 0; }
+  .nv-compare__row .nv-us::before, .nv-compare__row .nv-them::before { content: none; }
+  .nv-compare__row .nv-us, .nv-compare__row .nv-them { display: block; }
+}
 
 /* 6 · recognition — ink full bleed, big type, cream text */
 .nv-statement { max-width: 880px; margin: 0 auto; }
@@ -355,16 +358,10 @@ product-info.color-scheme-1 { background: var(--noula-paper); }
 .nv-footer__legal a { color: inherit; text-decoration: none; }
 
 /* ==========================================================================
-   STICKY ATC BAR — rating, name, price, button; appears after the buy box
+   STICKY ATC BAR — one full-width button, no rating
    ========================================================================== */
 .nv-sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: var(--noula-paper); border-top: 1px solid var(--noula-ink-15); transform: translateY(110%); transition: transform .25s ease; }
 .nv-sticky.is-visible { transform: translateY(0); }
-.nv-sticky__inner { max-width: var(--noula-max); margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 12px; }
-.nv-sticky__thumb { width: 48px; height: 48px; border-radius: 8px; object-fit: cover; background: var(--noula-cream); flex: 0 0 auto; }
-.nv-sticky__info { min-width: 0; flex: 1; }
-.nv-sticky__rating { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--noula-ink-70); }
-.nv-sticky__title { font-size: 15px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.nv-sticky__price { font-size: 15px; font-weight: 800; color: var(--noula-accent); }
-.nv-sticky .nv-btn { min-height: 48px; padding: 0 22px; font-size: 14px; }
-@media (max-width: 749px) { .nv-sticky__thumb { display: none; } }
+.nv-sticky__inner { max-width: 640px; margin: 0 auto; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); }
+.nv-sticky .nv-btn { width: 100%; min-height: 56px; font-size: 16px; }
 @media (prefers-reduced-motion: reduce) { .nv-sticky { transition: none; } }

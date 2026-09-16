@@ -1,4 +1,4 @@
-{%- comment -%} 7 · What you have already tried — cream. PLACEHOLDER copy. {%- endcomment -%}
+{%- comment -%} 7 · What you have already tried — cream. {%- endcomment -%}
 <section class="nv nv-section nv-bg-cream" data-section-id="{{ section.id }}">
   <div class="nv-wrap">
     <div class="nv-center">
@@ -17,15 +17,57 @@
 {
   "name": "Noula: Already tried",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "[[EYEBROW PLACEHOLDER]]" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "[[WHAT YOU HAVE ALREADY TRIED — copy pending]]" },
-    { "type": "text", "id": "text", "label": "Lead" }
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Why nothing has worked"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "You have already tried the obvious things"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Lead"
+    }
   ],
   "blocks": [
-    { "type": "item", "name": "Item", "settings": [
-      { "type": "text", "id": "title", "label": "Title", "default": "[[ITEM — copy pending]]" },
-      { "type": "text", "id": "text", "label": "Text", "default": "[[why it did not work — copy pending]]" } ] }
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
   ],
-  "presets": [{ "name": "Noula: Already tried", "blocks": [ { "type": "item" }, { "type": "item" }, { "type": "item" } ] }]
+  "presets": [
+    {
+      "name": "Noula: Already tried",
+      "blocks": [
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        },
+        {
+          "type": "item"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

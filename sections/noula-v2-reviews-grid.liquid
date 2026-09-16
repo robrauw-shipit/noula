@@ -7,9 +7,8 @@
       {%- if section.settings.lead != blank -%}<p class="nv-lead">{{ section.settings.lead }}</p>{%- endif -%}
     </div>
     <div class="nv-grid__meta">
-{%- assign REAL_RATING = settings.real_rating | default: 'REAL_RATING' -%}{%- assign REAL_REVIEW_COUNT = settings.real_review_count | default: 'REAL_REVIEW_COUNT' -%}
       {% render 'noula-v2-stars', rating: 5 %}
-      <span>{{ REAL_REVIEW_COUNT }} {{ section.settings.count_suffix }}</span>
+      <span>{{ section.settings.count_text }}</span>
     </div>
     <div class="nv-grid">
       {%- assign limit = section.settings.initial | default: 10 -%}
@@ -39,7 +38,7 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "[[EYEBROW PLACEHOLDER]]"
+      "default": "Verified buyers"
     },
     {
       "type": "text",
@@ -54,9 +53,9 @@
     },
     {
       "type": "text",
-      "id": "count_suffix",
-      "label": "Word after the review count",
-      "default": "reviews"
+      "id": "count_text",
+      "label": "Count text",
+      "default": "476 reviews"
     },
     {
       "type": "range",

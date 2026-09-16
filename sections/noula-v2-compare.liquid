@@ -21,8 +21,8 @@
       {%- for block in section.blocks -%}
         <div class="nv-compare__row" {{ block.shopify_attributes }}>
           <span>{{ block.settings.label }}</span>
-          <span class="nv-us">{{ block.settings.us }}</span>
-          <span class="nv-them">{{ block.settings.them }}</span>
+          <span class="nv-us" data-label="{{ section.settings.us_label }}:">{{ block.settings.us }}</span>
+          <span class="nv-them" data-label="{{ section.settings.them_label }}:">{{ block.settings.them }}</span>
         </div>
       {%- endfor -%}
     </div>
@@ -53,7 +53,7 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow",
-      "default": "[[EYEBROW PLACEHOLDER]]"
+      "default": "How it compares"
     },
     {
       "type": "text",

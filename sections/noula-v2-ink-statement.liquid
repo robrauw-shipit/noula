@@ -12,10 +12,29 @@
 {
   "name": "Noula: Ink statement",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "((EYEBROW PLACEHOLDER))" },
-    { "type": "text", "id": "heading", "label": "Heading (wrap words in [[ ]] for the highlight marker)", "default": "((RECOGNITION HEADLINE — copy pending))" },
-    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>((RECOGNITION TEXT — copy pending))</p>" }
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "If this sounds familiar"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading (wrap words in [[ ]] for the highlight marker)",
+      "default": "You sleep eight hours and still [[look tired]]"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>The mirror says something your body does not.</p>"
+    }
   ],
-  "presets": [{ "name": "Noula: Ink statement" }]
+  "presets": [
+    {
+      "name": "Noula: Ink statement"
+    }
+  ]
 }
 {% endschema %}

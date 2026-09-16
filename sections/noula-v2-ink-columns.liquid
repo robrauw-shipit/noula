@@ -1,4 +1,4 @@
-{%- comment -%} 11 · What it does and does not do — ink full bleed, two columns. PLACEHOLDER copy. {%- endcomment -%}
+{%- comment -%} 11 · What it does and does not do — ink full bleed, two columns. {%- endcomment -%}
 <section class="nv nv-section nv-bg-ink" data-section-id="{{ section.id }}">
   <div class="nv-wrap">
     <div class="nv-center">
@@ -29,15 +29,79 @@
 {
   "name": "Noula: Does / does not",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "[[EYEBROW PLACEHOLDER]]" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "[[WHAT IT DOES AND DOES NOT DO — copy pending]]" },
-    { "type": "text", "id": "does_heading", "label": "Left column heading", "default": "What it does" },
-    { "type": "text", "id": "doesnt_heading", "label": "Right column heading", "default": "What it does not do" }
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Straight answers"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "What it does, and what it does not"
+    },
+    {
+      "type": "text",
+      "id": "does_heading",
+      "label": "Left column heading",
+      "default": "What it does"
+    },
+    {
+      "type": "text",
+      "id": "doesnt_heading",
+      "label": "Right column heading",
+      "default": "What it does not do"
+    }
   ],
   "blocks": [
-    { "type": "does", "name": "Does", "settings": [ { "type": "text", "id": "text", "label": "Text", "default": "[[does — copy pending]]" } ] },
-    { "type": "doesnt", "name": "Does not", "settings": [ { "type": "text", "id": "text", "label": "Text", "default": "[[does not — copy pending]]" } ] }
+    {
+      "type": "does",
+      "name": "Does",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "doesnt",
+      "name": "Does not",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
   ],
-  "presets": [{ "name": "Noula: Does / does not", "blocks": [ { "type": "does" }, { "type": "does" }, { "type": "does" }, { "type": "doesnt" }, { "type": "doesnt" }, { "type": "doesnt" } ] }]
+  "presets": [
+    {
+      "name": "Noula: Does / does not",
+      "blocks": [
+        {
+          "type": "does"
+        },
+        {
+          "type": "does"
+        },
+        {
+          "type": "does"
+        },
+        {
+          "type": "doesnt"
+        },
+        {
+          "type": "doesnt"
+        },
+        {
+          "type": "doesnt"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

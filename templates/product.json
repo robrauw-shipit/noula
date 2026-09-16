@@ -6,8 +6,7 @@
         "nv_rating": {
           "type": "nv_rating",
           "settings": {
-            "prefix": "Rated",
-            "suffix": "reviews",
+            "text": "Rated 4.8 (476 reviews)",
             "tag": ""
           }
         },
@@ -71,7 +70,8 @@
             "image_url_1": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-01.jpg?v=1782119454",
             "image_url_2": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-06.jpg?v=1782119454",
             "image_url_3": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-04.jpg?v=1782119454",
-            "image_url_4": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-02.jpg?v=1782119454"
+            "image_url_4": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-02.jpg?v=1782119454",
+            "badge": "Over 4M views on Instagram"
           }
         },
         "description": {
@@ -83,6 +83,14 @@
           "settings": {
             "badge": "Bestseller"
           }
+        },
+        "nv_stock": {
+          "type": "nv_stock",
+          "settings": {
+            "title": "Low stock",
+            "sold": 91,
+            "note": "Restocking takes several weeks"
+          }
         }
       },
       "block_order": [
@@ -90,10 +98,11 @@
         "nv_title_price",
         "description",
         "nv_benefits",
+        "nv_stock",
         "nv_offer_label",
         "kaching_bundles_app_block_6WNQzB",
-        "nv_guarantee",
         "buy_buttons",
+        "nv_guarantee",
         "nv_pay",
         "nv_checks_bottom",
         "nv_ugc"
@@ -118,9 +127,11 @@
       "type": "noula-v2-proof",
       "settings": {
         "background": "cream",
-        "eyebrow": "[[EYEBROW PLACEHOLDER]]",
-        "heading": "[[PINK PROOF HEADLINE — copy pending]]",
-        "text": "<p>[[PINK PROOF TEXT — copy pending]]</p>"
+        "eyebrow": "The cream itself",
+        "heading": "You can see it before you feel it",
+        "text": "<p>Noula is pink because of what is in it, not because of a dye. Red rice extract gives the cream its colour, and that colour is the reason the jar looks nothing like the white night creams already on your shelf.</p><p>It goes on cushiony, absorbs fully, and leaves nothing on your pillow.</p>",
+        "image": "",
+        "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_2_1.png?v=1780830581"
       }
     },
     "compare": {
@@ -175,7 +186,7 @@
         "c5"
       ],
       "settings": {
-        "eyebrow": "[[EYEBROW PLACEHOLDER]]",
+        "eyebrow": "How it compares",
         "heading": "Why Noula?",
         "product_image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_2_1.png?v=1780830581",
         "us_label": "Noula",
@@ -186,9 +197,9 @@
     "recognition": {
       "type": "noula-v2-ink-statement",
       "settings": {
-        "eyebrow": "((EYEBROW PLACEHOLDER))",
-        "heading": "((RECOGNITION HEADLINE — copy pending))",
-        "text": "<p>((RECOGNITION TEXT — copy pending))</p>"
+        "eyebrow": "If this sounds familiar",
+        "heading": "You sleep eight hours and still [[look tired]]",
+        "text": "<p>The mirror says something your body does not. Skin looks dry, flat and older than it did a few years ago, and no amount of sleep seems to fix it by morning.</p>"
       }
     },
     "tried": {
@@ -196,15 +207,24 @@
       "blocks": {
         "t1": {
           "type": "item",
-          "settings": {}
+          "settings": {
+            "title": "More sleep",
+            "text": "It helps how you feel. It does not repair a moisture barrier that has been thinning for years."
+          }
         },
         "t2": {
           "type": "item",
-          "settings": {}
+          "settings": {
+            "title": "A richer night cream",
+            "text": "Most sit on the surface and rub off on the pillow within a couple of hours."
+          }
         },
         "t3": {
           "type": "item",
-          "settings": {}
+          "settings": {
+            "title": "Strong actives",
+            "text": "Retinol and acids can leave 50+ skin tight, flaky and more irritated than when you started."
+          }
         }
       },
       "block_order": [
@@ -213,8 +233,8 @@
         "t3"
       ],
       "settings": {
-        "eyebrow": "[[EYEBROW PLACEHOLDER]]",
-        "heading": "[[WHAT YOU HAVE ALREADY TRIED — copy pending]]",
+        "eyebrow": "Why nothing has worked",
+        "heading": "You have already tried the obvious things",
         "text": ""
       }
     },
@@ -238,7 +258,7 @@
         "caption": {
           "type": "caption",
           "settings": {
-            "caption": "[[EYEBROW PLACEHOLDER]]",
+            "caption": "How it works",
             "text_style": "caption-with-letter-spacing",
             "text_size": "medium"
           }
@@ -250,7 +270,7 @@
         "text"
       ],
       "settings": {
-        "image_url": "",
+        "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/model_916_v1.jpg?v=1781526384",
         "height": "adapt",
         "desktop_image_width": "medium",
         "layout": "text_first",
@@ -319,15 +339,7 @@
         "swipe_on_mobile": false,
         "padding_top": 64,
         "padding_bottom": 64,
-        "eyebrow": "[[EYEBROW PLACEHOLDER]]"
-      }
-    },
-    "lauren": {
-      "type": "noula-v2-quote",
-      "settings": {
-        "eyebrow": "[[EYEBROW PLACEHOLDER]]",
-        "quote": "[[LAUREN QUOTE — copy pending]]",
-        "name": "Lauren, founder"
+        "eyebrow": "What is inside"
       }
     },
     "does_doesnt": {
@@ -335,27 +347,39 @@
       "blocks": {
         "d1": {
           "type": "does",
-          "settings": {}
+          "settings": {
+            "text": "Comforts dry, depleted skin through the night"
+          }
         },
         "d2": {
           "type": "does",
-          "settings": {}
+          "settings": {
+            "text": "Leaves skin softer and calmer by morning"
+          }
         },
         "d3": {
           "type": "does",
-          "settings": {}
+          "settings": {
+            "text": "Absorbs fully, with nothing left on your pillow"
+          }
         },
         "n1": {
           "type": "doesnt",
-          "settings": {}
+          "settings": {
+            "text": "Fill deep lines or replace a clinical treatment"
+          }
         },
         "n2": {
           "type": "doesnt",
-          "settings": {}
+          "settings": {
+            "text": "Work overnight in one use — give it a few weeks"
+          }
         },
         "n3": {
           "type": "doesnt",
-          "settings": {}
+          "settings": {
+            "text": "Sting, peel or leave skin sun-sensitive"
+          }
         }
       },
       "block_order": [
@@ -367,8 +391,8 @@
         "n3"
       ],
       "settings": {
-        "eyebrow": "[[EYEBROW PLACEHOLDER]]",
-        "heading": "[[WHAT IT DOES AND DOES NOT DO — copy pending]]",
+        "eyebrow": "Straight answers",
+        "heading": "What it does, and what it does not",
         "does_heading": "What it does",
         "doesnt_heading": "What it does not do"
       }
@@ -520,11 +544,12 @@
         "g14"
       ],
       "settings": {
-        "eyebrow": "[[EYEBROW PLACEHOLDER]]",
+        "eyebrow": "Verified buyers",
         "heading": "Better mornings [[in a jar]]",
         "lead": "",
         "initial": 10,
-        "count_suffix": "reviews"
+        "count_suffix": "reviews",
+        "count_text": "476 reviews"
       }
     },
     "faq": {
@@ -588,7 +613,7 @@
         "f6"
       ],
       "settings": {
-        "caption": "[[EYEBROW PLACEHOLDER]]",
+        "caption": "Questions",
         "heading": "Frequently asked questions",
         "heading_size": "h1",
         "heading_alignment": "center",
@@ -631,14 +656,13 @@
         "heading": "Why Noula is the better choice",
         "cta_text": "Add to cart",
         "cta_url": "/products/overnight-recovery-cream",
-        "eyebrow": "[[EYEBROW PLACEHOLDER]]"
+        "eyebrow": "Ready when you are"
       }
     },
     "sticky_bar": {
       "type": "noula-v2-sticky-bar",
       "settings": {
-        "cta_text": "Add to cart",
-        "watch_section_id": "main"
+        "cta_text": "Add to cart"
       }
     }
   },
@@ -650,7 +674,6 @@
     "tried",
     "how_it_works",
     "ingredients",
-    "lauren",
     "does_doesnt",
     "reviews_grid",
     "faq",

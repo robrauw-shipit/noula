@@ -1451,24 +1451,5 @@
         "default": "scheme-1"
       }
     ]
-  },
-  {
-    "name": "Noula: real numbers",
-    "settings": [
-      {
-        "type": "paragraph",
-        "content": "Leave empty until the numbers are real. Empty renders the literal placeholders REAL_RATING / REAL_REVIEW_COUNT on the page."
-      },
-      {
-        "type": "text",
-        "id": "real_rating",
-        "label": "Real rating (e.g. 4.8)"
-      },
-      {
-        "type": "text",
-        "id": "real_review_count",
-        "label": "Real review count (e.g. 476)"
-      }
-    ]
   }
 ]

@@ -14,7 +14,7 @@
     "noula_v2_topbar": {
       "type": "noula-v2-topbar",
       "settings": {
-        "text": "Limited time: Buy 1, Get 1 Free — ends in",
+        "text": "Buy 1, Get 1 Free — ends in",
         "show_timer": true,
         "hours": 12,
         "link_text": "",

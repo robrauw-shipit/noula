@@ -54,6 +54,8 @@
                 | image_url: width: 1500
                 | image_tag: sizes: sizes, widths: widths, fetchpriority: fetch_priority
               }}
+            {%- elsif section.settings.image_url != blank -%}
+              <img src="{{ section.settings.image_url }}" alt="" loading="lazy" style="width:100%;height:auto;display:block">
             {%- else -%}
               {{ 'detailed-apparel-1' | placeholder_svg_tag: 'placeholder-svg' }}
             {%- endif -%}
@@ -119,6 +121,11 @@
       "type": "image_picker",
       "id": "image",
       "label": "t:sections.image-with-text.settings.image.label"
+    },
+    {
+      "type": "text",
+      "id": "image_url",
+      "label": "Image URL (fallback until an image is picked)"
     },
     {
       "type": "select",

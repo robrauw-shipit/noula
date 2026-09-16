@@ -242,8 +242,6 @@
                   <span class="nv-rating__count">{{ block.settings.text }}</span>
                   {%- if block.settings.tag != blank -%}<span class="nv-rating__tag">{{ block.settings.tag }}</span>{%- endif -%}
                 </div>
-              {%- when 'nv_subhead' -%}
-                <p class="nv nv-subhead" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
               {%- when 'nv_benefits' -%}
                 <ul class="nv nv-benefits" {{ block.shopify_attributes }}>
                   {%- if block.settings.text_1 != blank -%}<li>{% render 'noula-v2-icon', icon: block.settings.icon_1 %}<span>{{ block.settings.text_1 }}</span></li>{%- endif -%}
@@ -290,19 +288,6 @@
                       {%- endif -%}
                     {%- endfor -%}
                   </div>
-                </div>
-              {%- when 'nv_faq' -%}
-                <div class="nv nv-acc" data-single="true" {{ block.shopify_attributes }}>
-                  {%- for i in (1..6) -%}
-                    {%- assign q_key = 'q_' | append: i -%}
-                    {%- assign a_key = 'a_' | append: i -%}
-                    {%- if block.settings[q_key] != blank -%}
-                      <div class="nv-acc__item">
-                        <button class="nv-acc__q" type="button" aria-expanded="false">{{ block.settings[q_key] }}<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
-                        <div class="nv-acc__a"><div class="nv-acc__a-inner">{{ block.settings[a_key] }}</div></div>
-                      </div>
-                    {%- endif -%}
-                  {%- endfor -%}
                 </div>
               {%- when 'collapsible_tab' -%}
                 <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
@@ -1063,14 +1048,6 @@
       ]
     },
     {
-      "type": "nv_subhead",
-      "name": "Noula v2 · Subheadline",
-      "limit": 1,
-      "settings": [
-        { "type": "textarea", "id": "text", "label": "Text", "default": "Stop waking up to a face that looks more exhausted than you feel. Noula comforts dry, dull, tired-looking skin while you sleep, so you wake up looking fresher, softer and more rested." }
-      ]
-    },
-    {
       "type": "nv_benefits",
       "name": "Noula v2 · Benefits 2×2",
       "limit": 1,
@@ -1123,19 +1100,6 @@
         { "type": "image_picker", "id": "image_2", "label": "Thumbnail 2" }, { "type": "text", "id": "image_url_2", "label": "Thumbnail 2 URL (fallback)" }, { "type": "url", "id": "link_2", "label": "Link 2" },
         { "type": "image_picker", "id": "image_3", "label": "Thumbnail 3" }, { "type": "text", "id": "image_url_3", "label": "Thumbnail 3 URL (fallback)" }, { "type": "url", "id": "link_3", "label": "Link 3" },
         { "type": "image_picker", "id": "image_4", "label": "Thumbnail 4" }, { "type": "text", "id": "image_url_4", "label": "Thumbnail 4 URL (fallback)" }, { "type": "url", "id": "link_4", "label": "Link 4" }
-      ]
-    },
-    {
-      "type": "nv_faq",
-      "name": "Noula v2 · Quick FAQ",
-      "limit": 1,
-      "settings": [
-        { "type": "text", "id": "q_1", "label": "Question 1", "default": "What makes it different?" }, { "type": "richtext", "id": "a_1", "label": "Answer 1", "default": "<p>Most night creams just sit on the surface. Noula's Red Rice Recovery Complex targets the look of tired, depleted skin so you wake up looking rested, not just moisturised.</p>" },
-        { "type": "text", "id": "q_2", "label": "Question 2", "default": "Does it work on my skin?" }, { "type": "richtext", "id": "a_2", "label": "Answer 2", "default": "<p>Yes. Noula is formulated for all skin types, including sensitive and reactive skin. It's fragrance-light, non-greasy, and comfortable to wear every night.</p>" },
-        { "type": "text", "id": "q_3", "label": "Question 3", "default": "How do I use it?" }, { "type": "richtext", "id": "a_3", "label": "Answer 3", "default": "<p>As the last step of your evening routine, smooth a small amount over cleansed skin. It absorbs fully overnight — no residue on your pillow.</p>" },
-        { "type": "text", "id": "q_4", "label": "Question 4", "default": "How does the guarantee work?" }, { "type": "richtext", "id": "a_4", "label": "Answer 4", "default": "<p>Sleep on it for 90 nights. If you don't look more rested, contact us for a full refund — keep the jar.</p>" },
-        { "type": "text", "id": "q_5", "label": "Question 5" }, { "type": "richtext", "id": "a_5", "label": "Answer 5" },
-        { "type": "text", "id": "q_6", "label": "Question 6" }, { "type": "richtext", "id": "a_6", "label": "Answer 6" }
       ]
     },
     {

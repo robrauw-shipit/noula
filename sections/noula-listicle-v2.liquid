@@ -64,15 +64,15 @@
   }
 
   /* ---------- hero ---------- */
-  .nlist-hero{padding:22px 0 30px;}
+  .nlist-hero{padding-top:22px;padding-bottom:32px;}
   .nlist-hero__grid{display:flex;flex-direction:column;}
   .nlist-hero__media{order:-1;}
-  .nlist-hero__h1{margin:0;font-size:30px;line-height:1.16;font-weight:800;letter-spacing:-.02em;}
-  .nlist-hero__stand{margin:14px 0 0;font-size:16px;line-height:1.6;color:var(--ink-soft);}
-  .nlist-hero__media{margin:0 0 20px;overflow:hidden;background:var(--band);}
-  .nlist-hero__media img{width:100%;aspect-ratio:1/1;object-fit:cover;}
-  .nlist-usps{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:12px;}
-  .nlist-usps li{display:flex;align-items:flex-start;gap:10px;font-size:15.5px;line-height:1.4;}
+  .nlist-hero__h1{margin:0;font-size:29px;line-height:1.2;font-weight:800;letter-spacing:-.015em;}
+  .nlist-hero__stand{margin:14px 0 0;font-size:17px;line-height:1.65;color:var(--ink-soft);}
+  .nlist-hero__media{position:relative;width:100%;padding-top:100%;margin:0 0 22px;overflow:hidden;background:var(--band);}
+  .nlist-hero__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;}
+  .nlist-usps{list-style:none;margin:22px auto 0;padding:0;display:grid;gap:12px;width:max-content;max-width:100%;}
+  .nlist-usps li{display:flex;align-items:flex-start;gap:10px;font-size:16px;line-height:1.45;font-weight:500;}
   .nlist-usps img{width:17px;height:17px;flex:0 0 auto;margin-top:2px;}
   .nlist-usps strong{font-weight:700;}
   .nlist-cta{
@@ -82,20 +82,20 @@
     font-size:15px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;
   }
   .nlist-risk{
-    margin:14px 0 0;font-size:14px;line-height:1.5;color:var(--ink-soft);
+    margin:12px 0 0;font-size:14.5px;line-height:1.5;color:var(--ink-soft);text-align:center;
   }
 
   /* ---------- reason ---------- */
   .nlist-reason{padding:30px 0;}
   .nlist-reason--band{background:var(--band);}
-  .nlist-reason__media{margin:0 0 18px;overflow:hidden;background:var(--band);}
-  .nlist-reason__media img{width:100%;aspect-ratio:1/1;object-fit:cover;}
-  .nlist-reason__h2{margin:0 0 12px;font-size:23px;line-height:1.24;font-weight:800;letter-spacing:-.01em;}
-  .nlist-reason__body p{margin:0 0 12px;font-size:16px;line-height:1.6;color:var(--ink-soft);}
+  .nlist-reason__media{position:relative;width:100%;padding-top:100%;margin:0 0 18px;overflow:hidden;background:var(--band);}
+  .nlist-reason__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;}
+  .nlist-reason__h2{margin:0 0 12px;font-size:24px;line-height:1.25;font-weight:800;letter-spacing:-.01em;}
+  .nlist-reason__body p{margin:0 0 14px;font-size:17px;line-height:1.65;color:var(--ink-soft);}
   .nlist-reason__body p:last-child{margin-bottom:0;}
 
   /* ---------- honest limits ---------- */
-  .nlist-limits{padding:26px 0 30px;}
+  .nlist-limits{padding-top:26px;padding-bottom:30px;}
   .nlist-limits__box{border:1px solid var(--line);background:var(--band);padding:18px;}
   .nlist-limits__title{margin:0 0 10px;font-size:16px;font-weight:800;}
   .nlist-limits__box p{margin:0 0 10px;font-size:14.5px;line-height:1.6;color:var(--ink-soft);}
@@ -117,7 +117,7 @@
   .nlist-rev__badge img{width:11px;height:11px;}
 
   /* ---------- close ---------- */
-  .nlist-close{padding:30px 0 40px;border-top:1px solid var(--line);}
+  .nlist-close{padding-top:32px;padding-bottom:40px;border-top:1px solid var(--line);}
   .nlist-close__title{margin:0 0 12px;font-size:26px;line-height:1.2;font-weight:800;letter-spacing:-.02em;}
   .nlist-close p{margin:0 0 10px;font-size:16px;line-height:1.6;color:var(--ink-soft);}
 
@@ -141,13 +141,15 @@
     .nlist-ann{font-size:13px;padding:11px 16px;}
     .nlist-head__logo{height:26px;}
 
-    .nlist-hero{padding:40px 0 48px;}
+    .nlist-hero{padding-top:40px;padding-bottom:48px;}
     .nlist-hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
     .nlist-hero__media{order:0;}
     .nlist-hero__h1{font-size:46px;line-height:1.1;}
     .nlist-hero__stand{font-size:18px;}
     .nlist-hero__media{margin:0;}
     .nlist-cta{width:auto;min-width:340px;}
+    .nlist-usps{margin-left:0;}
+    .nlist-risk{text-align:left;}
 
     /* square image LEFT on every reason, per the reference */
     .nlist-reason{padding:0;}
@@ -336,7 +338,7 @@
     { "type": "header", "content": "Call to action" },
     { "type": "text", "id": "cta_text", "label": "Button text", "default": "See availability" },
     { "type": "url", "id": "cta_url", "label": "Button link" },
-    { "type": "text", "id": "risk_reversal", "label": "Risk reversal under the button", "default": "Free shipping · 90 night guarantee · Keep the jar" },
+    { "type": "text", "id": "risk_reversal", "label": "Risk reversal under the button", "default": "Free shipping · 90 night guarantee" },
     { "type": "header", "content": "Honest limits" },
     { "type": "text", "id": "limits_title", "label": "Title", "default": "What it will not do" },
     { "type": "richtext", "id": "limits_body", "label": "Body", "default": "<p>It will not lift or firm, and it will not replace lost volume. Nothing in a jar does that, whatever the jar says. It will not work in one night either. Most women tell us it takes a few weeks.</p><p>We would rather you knew now than found out in week three.</p>" },

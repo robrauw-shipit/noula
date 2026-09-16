@@ -137,12 +137,12 @@
       "type": "noula-v2-proof",
       "settings": {
         "background": "cream",
-        "image_url": "",
+        "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_2_1.png?v=1780830581",
         "eyebrow": "The cream itself",
         "heading": "You can see it before you feel it",
         "text": "<p>Noula is pink because of what is in it, not because of a dye. Red rice extract gives the cream its colour, and that colour is the reason the jar looks nothing like the white night creams already on your shelf.</p><p>It goes on cushiony, absorbs fully, and leaves nothing on your pillow.</p>",
         "image": "",
-        "asset": "noula-texture.jpg"
+        "asset": ""
       }
     },
     "recognition": {

@@ -67,7 +67,8 @@
   .nlist-hero{padding-top:0;padding-bottom:32px;}
   .nlist-hero__grid{display:flex;flex-direction:column;}
   .nlist-hero__media{order:-1;}
-  .nlist-hero__h1{margin:0;font-size:25px;line-height:1.2;font-weight:800;letter-spacing:-.02em;}
+  .nlist-hero__h1{margin:0;font-family:var(--font-heading-family,inherit);font-size:25.5px;line-height:1.15;font-weight:800;letter-spacing:-.01em;}
+  @media screen and (min-width:390px){.nlist-hero__h1{font-size:28px;}}
   .nlist-hero__stand{margin:14px 0 0;font-size:17px;line-height:1.65;color:var(--ink-soft);}
   .nlist-hero__media{position:relative;width:calc(100% + var(--pad) * 2);margin:0 calc(var(--pad) * -1) 22px;padding-top:calc(100% + var(--pad) * 2);overflow:hidden;background:var(--band);}
   .nlist-hero__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;}
@@ -90,7 +91,7 @@
   .nlist-reason--band{background:var(--band);}
   .nlist-reason__media{position:relative;width:100%;padding-top:100%;margin:0 0 18px;overflow:hidden;background:var(--band);}
   .nlist-reason__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;}
-  .nlist-reason__h2{margin:0 0 12px;font-size:24px;line-height:1.25;font-weight:800;letter-spacing:-.01em;}
+  .nlist-reason__h2{margin:0 0 12px;font-family:var(--font-heading-family,inherit);font-size:27px;line-height:1.2;font-weight:800;letter-spacing:-.01em;}
   .nlist-reason__body p{margin:0 0 14px;font-size:17px;line-height:1.65;color:var(--ink-soft);}
   .nlist-reason__body p:last-child{margin-bottom:0;}
 
@@ -103,7 +104,7 @@
 
   /* ---------- testimonials ---------- */
   .nlist-revs{padding:28px 0;border-top:1px solid var(--line);}
-  .nlist-revs__title{margin:0 0 18px;font-size:23px;line-height:1.24;font-weight:800;text-align:center;}
+  .nlist-revs__title{margin:0 0 18px;font-family:var(--font-heading-family,inherit);font-size:26px;line-height:1.2;font-weight:800;text-align:center;}
   .nlist-rev{border:1px solid var(--line);background:var(--paper);padding:16px;margin-bottom:12px;}
   .nlist-rev:last-child{margin-bottom:0;}
   .nlist-rev__stars{color:#E8A33D;font-size:14px;letter-spacing:1px;line-height:1;}
@@ -120,7 +121,7 @@
   .nlist-close{background:var(--band);padding-top:32px;padding-bottom:36px;}
   .nlist-close__rating{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink-soft);}
   .nlist-close__rating b{color:#E8A33D;font-size:15px;letter-spacing:1px;line-height:1;}
-  .nlist-close__title{margin:12px 0 0;font-size:27px;line-height:1.2;font-weight:800;letter-spacing:-.02em;}
+  .nlist-close__title{margin:12px 0 0;font-family:var(--font-heading-family,inherit);font-size:29px;line-height:1.15;font-weight:800;letter-spacing:-.015em;}
   .nlist-close__price{margin:12px 0 0;font-size:15.5px;line-height:1.5;color:var(--ink-soft);}
   .nlist-close .nlist-cta{margin-top:18px;}
   .nlist-close__media{margin:24px auto 0;max-width:340px;}
@@ -149,7 +150,7 @@
     .nlist-hero__media{width:100%;margin:0;padding-top:100%;}
     .nlist-hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
     .nlist-hero__media{order:0;}
-    .nlist-hero__h1{font-size:46px;line-height:1.1;}
+    .nlist-hero__h1{font-size:50px;line-height:1.08;}
     .nlist-hero__stand{font-size:18px;}
     .nlist-hero__media{margin:0;}
     .nlist-cta{width:auto;min-width:340px;}
@@ -163,14 +164,14 @@
       padding:48px 0;
     }
     .nlist-reason__media{margin:0;}
-    .nlist-reason__h2{font-size:30px;}
+    .nlist-reason__h2{font-size:34px;}
     .nlist-reason__body p{font-size:17px;}
 
     .nlist-revs__list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start;}
     .nlist-rev{margin-bottom:0;}
     .nlist-close{padding-top:56px;padding-bottom:56px;}
     .nlist-close__grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;}
-    .nlist-close__title{font-size:38px;}
+    .nlist-close__title{font-size:42px;}
     .nlist-close__media{margin:0;max-width:none;}
   }
 </style>

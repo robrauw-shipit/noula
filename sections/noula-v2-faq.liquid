@@ -1,0 +1,50 @@
+{%- comment -%} Noula v2 — FAQ, two-column accordion cards {%- endcomment -%}
+<section class="nv nv-section nv-section--ivory nv-faq" data-section-id="{{ section.id }}">
+  <div class="nv-wrap">
+    <div class="nv-center">
+      {%- if section.settings.eyebrow != blank -%}<p class="nv-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      <h2 class="nv-h2">{{ section.settings.heading | escape | replace: '[[', '<mark>' | replace: ']]', '</mark>' }}</h2>
+    </div>
+    <div class="nv-acc nv-acc--cards" data-single="false">
+      {%- for block in section.blocks -%}
+        <div class="nv-acc__item" {{ block.shopify_attributes }}>
+          <button class="nv-acc__q" type="button" aria-expanded="false">{{ block.settings.q }}<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+          <div class="nv-acc__a"><div class="nv-acc__a-inner">{{ block.settings.a }}</div></div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Noula v2 · FAQ",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Frequently asked questions" }
+  ],
+  "blocks": [
+    {
+      "type": "qa",
+      "name": "Question",
+      "settings": [
+        { "type": "text", "id": "q", "label": "Question", "default": "What makes it different?" },
+        { "type": "richtext", "id": "a", "label": "Answer", "default": "<p>Most night creams just sit on the surface. Noula's Red Rice Recovery Complex targets the look of tired, depleted skin so you wake up looking rested, not just moisturised.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noula v2 · FAQ",
+      "blocks": [
+        { "type": "qa", "settings": { "q": "What makes it different?", "a": "<p>Most night creams just sit on the surface. Noula's Red Rice Recovery Complex targets the look of tired, depleted skin — restoring the overnight nourishment skin loses with age, so you wake up looking rested, not just moisturised.</p>" } },
+        { "type": "qa", "settings": { "q": "Does it work on my skin?", "a": "<p>Yes. Noula is formulated for all skin types, including sensitive and reactive skin. It's fragrance-light, non-greasy, and comfortable to wear every night.</p>" } },
+        { "type": "qa", "settings": { "q": "How do I use it?", "a": "<p>As the last step of your evening routine, smooth a small amount over cleansed skin. It absorbs fully overnight — no residue on your pillow.</p>" } },
+        { "type": "qa", "settings": { "q": "How long until I see results?", "a": "<p>Most women notice softer, fresher-looking skin the first morning. The rested look builds over the following weeks with nightly use.</p>" } },
+        { "type": "qa", "settings": { "q": "Is it safe for sensitive skin?", "a": "<p>Yes — no harsh actives, no overnight peel. If you're unsure, patch test behind the ear first.</p>" } },
+        { "type": "qa", "settings": { "q": "How does the guarantee work?", "a": "<p>Sleep on it for 90 nights. If you don't look more rested, contact us for a full refund — keep the jar.</p>" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

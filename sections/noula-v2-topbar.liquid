@@ -1,0 +1,31 @@
+{%- comment -%} Noula v2 — announcement bar with rolling countdown {%- endcomment -%}
+<div class="nv nv-topbar" data-section-id="{{ section.id }}">
+  <div class="nv-topbar__inner">
+    <span>{{ section.settings.text }}</span>
+    {%- if section.settings.show_timer -%}
+      <span class="nv-topbar__timer" data-nv-countdown data-hours="{{ section.settings.hours }}" data-key="{{ section.id }}">
+        <span class="nv-topbar__unit"><b data-h>00</b><small>hrs</small></span><span class="nv-topbar__sep">:</span>
+        <span class="nv-topbar__unit"><b data-m>00</b><small>min</small></span><span class="nv-topbar__sep">:</span>
+        <span class="nv-topbar__unit"><b data-s>00</b><small>sec</small></span>
+      </span>
+    {%- endif -%}
+    {%- if section.settings.link_text != blank and section.settings.link != blank -%}
+      <a href="{{ section.settings.link }}">{{ section.settings.link_text }}</a>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Noula v2 · Top bar",
+  "class": "nv-section-topbar",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Text", "default": "Limited time: Buy 1, Get 1 Free — ends in" },
+    { "type": "checkbox", "id": "show_timer", "label": "Show countdown", "default": true },
+    { "type": "range", "id": "hours", "label": "Countdown length (hours, rolls per visitor)", "min": 1, "max": 48, "step": 1, "default": 12 },
+    { "type": "text", "id": "link_text", "label": "Link text" },
+    { "type": "url", "id": "link", "label": "Link" }
+  ],
+  "presets": [{ "name": "Noula v2 · Top bar" }]
+}
+{% endschema %}

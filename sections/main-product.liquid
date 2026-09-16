@@ -76,8 +76,34 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
   <div class="page-width">
     <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-      <div class="grid__item product__media-wrapper">
+      {%- liquid
+        assign nv_cards = 0
+        if section.settings.card_text_1 != blank
+          assign nv_cards = nv_cards | plus: 1
+        endif
+        if section.settings.card_text_2 != blank
+          assign nv_cards = nv_cards | plus: 1
+        endif
+        if section.settings.card_text_3 != blank
+          assign nv_cards = nv_cards | plus: 1
+        endif
+      -%}
+      <div class="grid__item product__media-wrapper{% if nv_cards > 0 %} nv-has-cards{% endif %}">
         {% render 'product-media-gallery', variant_images: variant_images %}
+        {%- if nv_cards > 0 -%}
+          <div class="nv nv-gallery-cards">
+            {%- for i in (1..3) -%}
+              {%- assign t_key = 'card_text_' | append: i -%}
+              {%- assign i_key = 'card_icon_' | append: i -%}
+              {%- if section.settings[t_key] != blank -%}
+                <div class="nv-gallery-card">
+                  {% render 'noula-v2-icon', icon: section.settings[i_key] %}
+                  <p>{{ section.settings[t_key] }}</p>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
       </div>
       <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
         <section
@@ -210,6 +236,74 @@
                 </p>
               {%- when 'custom_liquid' -%}
                 {{ block.settings.custom_liquid }}
+              {%- when 'nv_rating' -%}
+                <div class="nv nv-rating" {{ block.shopify_attributes }}>
+                  {% render 'noula-v2-stars', rating: 5 %}
+                  <span class="nv-rating__count">{{ block.settings.text }}</span>
+                  {%- if block.settings.tag != blank -%}<span class="nv-rating__tag">{{ block.settings.tag }}</span>{%- endif -%}
+                </div>
+              {%- when 'nv_subhead' -%}
+                <p class="nv nv-subhead" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+              {%- when 'nv_benefits' -%}
+                <ul class="nv nv-benefits" {{ block.shopify_attributes }}>
+                  {%- if block.settings.text_1 != blank -%}<li>{% render 'noula-v2-icon', icon: block.settings.icon_1 %}<span>{{ block.settings.text_1 }}</span></li>{%- endif -%}
+                  {%- if block.settings.text_2 != blank -%}<li>{% render 'noula-v2-icon', icon: block.settings.icon_2 %}<span>{{ block.settings.text_2 }}</span></li>{%- endif -%}
+                  {%- if block.settings.text_3 != blank -%}<li>{% render 'noula-v2-icon', icon: block.settings.icon_3 %}<span>{{ block.settings.text_3 }}</span></li>{%- endif -%}
+                  {%- if block.settings.text_4 != blank -%}<li>{% render 'noula-v2-icon', icon: block.settings.icon_4 %}<span>{{ block.settings.text_4 }}</span></li>{%- endif -%}
+                </ul>
+              {%- when 'nv_offer_label' -%}
+                <p class="nv nv-offer-label" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+              {%- when 'nv_guarantee' -%}
+                <div class="nv nv-guarantee" {{ block.shopify_attributes }}>
+                  {% render 'noula-v2-icon', icon: 'seal' %}
+                  <div>
+                    <h3>{{ block.settings.heading }}</h3>
+                    <p>{{ block.settings.text }}</p>
+                  </div>
+                </div>
+              {%- when 'nv_checks' -%}
+                <ul class="nv nv-checks{% if block.settings.layout == 'stack' %} nv-checks--stack{% endif %}" {{ block.shopify_attributes }}>
+                  {%- if block.settings.text_1 != blank -%}<li>{% render 'noula-v2-icon', icon: 'check-circle' %}<span>{{ block.settings.text_1 }}</span></li>{%- endif -%}
+                  {%- if block.settings.text_2 != blank -%}<li>{% render 'noula-v2-icon', icon: 'check-circle' %}<span>{{ block.settings.text_2 }}</span></li>{%- endif -%}
+                  {%- if block.settings.text_3 != blank -%}<li>{% render 'noula-v2-icon', icon: 'check-circle' %}<span>{{ block.settings.text_3 }}</span></li>{%- endif -%}
+                </ul>
+              {%- when 'nv_pay' -%}
+                <div class="nv" {{ block.shopify_attributes }}>{% render 'noula-v2-payment-icons', class: 'nv-pay' %}</div>
+              {%- when 'nv_ugc' -%}
+                <div class="nv nv-ugc" {{ block.shopify_attributes }}>
+                  <h3>{{ block.settings.heading }}</h3>
+                  {%- if block.settings.badge != blank -%}
+                    <span class="nv-ugc__badge"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg>{{ block.settings.badge }}</span>
+                  {%- endif -%}
+                  <div class="nv-ugc__row">
+                    {%- for i in (1..4) -%}
+                      {%- assign img_key = 'image_' | append: i -%}
+                      {%- assign url_key = 'image_url_' | append: i -%}
+                      {%- assign link_key = 'link_' | append: i -%}
+                      {%- assign img = block.settings[img_key] -%}
+                      {%- assign url = block.settings[url_key] -%}
+                      {%- if img != blank or url != blank -%}
+                        <a class="nv-ugc__item" href="{{ block.settings[link_key] | default: '#' }}">
+                          {%- if img != blank -%}{{ img | image_url: width: 400 | image_tag: loading: 'lazy', alt: '' }}{%- else -%}<img src="{{ url }}" loading="lazy" alt="">{%- endif -%}
+                          <span class="nv-ugc__play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+                        </a>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                </div>
+              {%- when 'nv_faq' -%}
+                <div class="nv nv-acc" data-single="true" {{ block.shopify_attributes }}>
+                  {%- for i in (1..6) -%}
+                    {%- assign q_key = 'q_' | append: i -%}
+                    {%- assign a_key = 'a_' | append: i -%}
+                    {%- if block.settings[q_key] != blank -%}
+                      <div class="nv-acc__item">
+                        <button class="nv-acc__q" type="button" aria-expanded="false">{{ block.settings[q_key] }}<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+                        <div class="nv-acc__a"><div class="nv-acc__a-inner">{{ block.settings[a_key] }}</div></div>
+                      </div>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
               {%- when 'collapsible_tab' -%}
                 <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                   <details id="Details-{{ block.id }}-{{ section.id }}">
@@ -957,6 +1051,91 @@
           "label": "t:sections.custom-liquid.settings.custom_liquid.label",
           "info": "t:sections.custom-liquid.settings.custom_liquid.info"
         }
+      ]
+    },
+    {
+      "type": "nv_rating",
+      "name": "Noula v2 · Rating line",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "text", "label": "Text", "default": "Rated 4.8 (476 reviews)" },
+        { "type": "text", "id": "tag", "label": "Tag", "default": "Bestseller" }
+      ]
+    },
+    {
+      "type": "nv_subhead",
+      "name": "Noula v2 · Subheadline",
+      "limit": 1,
+      "settings": [
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Stop waking up to a face that looks more exhausted than you feel. Noula comforts dry, dull, tired-looking skin while you sleep, so you wake up looking fresher, softer and more rested." }
+      ]
+    },
+    {
+      "type": "nv_benefits",
+      "name": "Noula v2 · Benefits 2×2",
+      "limit": 1,
+      "settings": [
+        { "type": "select", "id": "icon_1", "label": "Icon 1", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "sun" }, { "type": "text", "id": "text_1", "label": "Benefit 1", "default": "Wake up looking less tired" },
+        { "type": "select", "id": "icon_2", "label": "Icon 2", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "face" }, { "type": "text", "id": "text_2", "label": "Benefit 2", "default": "Softer, fresher-looking skin" },
+        { "type": "select", "id": "icon_3", "label": "Icon 3", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "shield" }, { "type": "text", "id": "text_3", "label": "Benefit 3", "default": "Comforts dry, sensitive skin" },
+        { "type": "select", "id": "icon_4", "label": "Icon 4", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "moon" }, { "type": "text", "id": "text_4", "label": "Benefit 4", "default": "Recovers while you sleep" }
+      ]
+    },
+    {
+      "type": "nv_offer_label",
+      "name": "Noula v2 · Offer label",
+      "limit": 1,
+      "settings": [ { "type": "text", "id": "text", "label": "Text", "default": "Select your offer" } ]
+    },
+    {
+      "type": "nv_guarantee",
+      "name": "Noula v2 · Guarantee box",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "90-night sleep-on-it guarantee" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Try it worry-free. If your mornings don't look more rested after 90 nights, we'll refund you and you keep the jar." }
+      ]
+    },
+    {
+      "type": "nv_checks",
+      "name": "Noula v2 · Check list",
+      "settings": [
+        { "type": "select", "id": "layout", "label": "Layout", "options": [ { "value": "grid", "label": "Two columns" }, { "value": "stack", "label": "Stacked" } ], "default": "grid" },
+        { "type": "text", "id": "text_1", "label": "Item 1", "default": "Free shipping included" },
+        { "type": "text", "id": "text_2", "label": "Item 2", "default": "Ships within 24 hours" },
+        { "type": "text", "id": "text_3", "label": "Item 3" }
+      ]
+    },
+    {
+      "type": "nv_pay",
+      "name": "Noula v2 · Payment icons",
+      "limit": 1,
+      "settings": []
+    },
+    {
+      "type": "nv_ugc",
+      "name": "Noula v2 · See it in action",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading", "default": "See it in action" },
+        { "type": "text", "id": "badge", "label": "Badge", "default": "Over 4M views on Instagram" },
+        { "type": "image_picker", "id": "image_1", "label": "Thumbnail 1" }, { "type": "text", "id": "image_url_1", "label": "Thumbnail 1 URL (fallback)" }, { "type": "url", "id": "link_1", "label": "Link 1" },
+        { "type": "image_picker", "id": "image_2", "label": "Thumbnail 2" }, { "type": "text", "id": "image_url_2", "label": "Thumbnail 2 URL (fallback)" }, { "type": "url", "id": "link_2", "label": "Link 2" },
+        { "type": "image_picker", "id": "image_3", "label": "Thumbnail 3" }, { "type": "text", "id": "image_url_3", "label": "Thumbnail 3 URL (fallback)" }, { "type": "url", "id": "link_3", "label": "Link 3" },
+        { "type": "image_picker", "id": "image_4", "label": "Thumbnail 4" }, { "type": "text", "id": "image_url_4", "label": "Thumbnail 4 URL (fallback)" }, { "type": "url", "id": "link_4", "label": "Link 4" }
+      ]
+    },
+    {
+      "type": "nv_faq",
+      "name": "Noula v2 · Quick FAQ",
+      "limit": 1,
+      "settings": [
+        { "type": "text", "id": "q_1", "label": "Question 1", "default": "What makes it different?" }, { "type": "richtext", "id": "a_1", "label": "Answer 1", "default": "<p>Most night creams just sit on the surface. Noula's Red Rice Recovery Complex targets the look of tired, depleted skin so you wake up looking rested, not just moisturised.</p>" },
+        { "type": "text", "id": "q_2", "label": "Question 2", "default": "Does it work on my skin?" }, { "type": "richtext", "id": "a_2", "label": "Answer 2", "default": "<p>Yes. Noula is formulated for all skin types, including sensitive and reactive skin. It's fragrance-light, non-greasy, and comfortable to wear every night.</p>" },
+        { "type": "text", "id": "q_3", "label": "Question 3", "default": "How do I use it?" }, { "type": "richtext", "id": "a_3", "label": "Answer 3", "default": "<p>As the last step of your evening routine, smooth a small amount over cleansed skin. It absorbs fully overnight — no residue on your pillow.</p>" },
+        { "type": "text", "id": "q_4", "label": "Question 4", "default": "How does the guarantee work?" }, { "type": "richtext", "id": "a_4", "label": "Answer 4", "default": "<p>Sleep on it for 90 nights. If you don't look more rested, contact us for a full refund — keep the jar.</p>" },
+        { "type": "text", "id": "q_5", "label": "Question 5" }, { "type": "richtext", "id": "a_5", "label": "Answer 5" },
+        { "type": "text", "id": "q_6", "label": "Question 6" }, { "type": "richtext", "id": "a_6", "label": "Answer 6" }
       ]
     },
     {
@@ -2090,6 +2269,10 @@
     }
   ],
   "settings": [
+    { "type": "header", "content": "Noula v2 · Gallery benefit cards (beside the main image)" },
+    { "type": "select", "id": "card_icon_1", "label": "Card 1 icon", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "moon" }, { "type": "text", "id": "card_text_1", "label": "Card 1 text", "default": "Recovers while you sleep, not just the surface" },
+    { "type": "select", "id": "card_icon_2", "label": "Card 2 icon", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "sparkle" }, { "type": "text", "id": "card_text_2", "label": "Card 2 text", "default": "Visibly more rested in 3–6 weeks" },
+    { "type": "select", "id": "card_icon_3", "label": "Card 3 icon", "options": [ {"value":"sun","label":"Sun"},{"value":"moon","label":"Moon"},{"value":"drop","label":"Drop"},{"value":"shield","label":"Shield"},{"value":"sparkle","label":"Sparkle"},{"value":"clock","label":"Clock"},{"value":"layers","label":"Layers"},{"value":"face","label":"Face"},{"value":"leaf","label":"Leaf"},{"value":"heart","label":"Heart"},{"value":"seal","label":"Seal"},{"value":"jar","label":"Jar"},{"value":"truck","label":"Truck"},{"value":"refresh","label":"Refresh"},{"value":"wallet","label":"Wallet"} ], "default": "drop" }, { "type": "text", "id": "card_text_3", "label": "Card 3 text", "default": "Softer by morning — never greasy" },
     {
       "type": "checkbox",
       "id": "enable_sticky_info",

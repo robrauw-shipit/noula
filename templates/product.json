@@ -12,50 +12,63 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "custom_liquid_GqNKdY": {
-          "type": "custom_liquid",
+        "nv_rating": {
+          "type": "nv_rating",
           "settings": {
-            "custom_liquid": "{% comment %}\n  NOULA — SUBHEADLINE BAR\n{% endcomment %}\n\n<style>\n  .noula-subheadline{\n    background:#FBF8F4;\n    border-radius:10px;\n    padding:0px 0px;\n    text-align:center;\n    margin:8px 0;\n    font-family:inherit;\nborder:1px solid #EAE1D2;\n  }\n\n  .noula-subheadline span{\n    font-family:inherit;\n    font-size:12px;\n    font-weight:500;\n    line-height:1.3;\n    color:#2D241D;\n    letter-spacing:-0.01em;\n  }\n</style>\n\n<div class=\"noula-subheadline\">\n  <span>The overnight cream for tired-looking mornings</span>\n</div>"
+            "text": "Rated 4.8 (476 reviews)",
+            "tag": "Bestseller"
           }
         },
         "title": {
           "type": "title",
-          "disabled": true,
           "settings": {}
         },
-        "custom_liquid_noula_review": {
-          "type": "custom_liquid",
+        "nv_subhead": {
+          "type": "nv_subhead",
           "settings": {
-            "custom_liquid": "{% comment %}\n  BLOCK 03 — SOCIAL PROOF + REVIEW ROW\n  Self-contained. Theme-font friendly.\n{% endcomment %}\n\n<style>\n  .nla-proof {\n    --rose-deep: #D2978B;\n    --white: #FFFFFF;\n    --stone: #D2C5AF;\n    --cocoa: #2D241D;\n    --cocoa-soft: #3E332B;\n    font-family: inherit;\n    color: var(--cocoa);\n    line-height: 1.35;\n    -webkit-font-smoothing: antialiased;\n    margin-top: 14px;\n  }\n\n  .nla-proof,\n  .nla-proof * {\n    box-sizing: border-box;\n    font-family: inherit;\n  }\n\n  .nla-proof__row {\n    display: flex;\n    align-items: center;\n    gap: 10px;\n    min-width: 0;\n  }\n\n  .nla-proof__stack {\n    display: flex;\n    align-items: center;\n    flex-shrink: 0;\n  }\n\n  .nla-proof__avatar {\n    width: 26px;\n    height: 26px;\n    border-radius: 50%;\n    border: 2px solid var(--white);\n    margin-left: -9px;\n    background: var(--stone);\n    overflow: hidden;\n    box-shadow: 0 2px 8px rgba(45, 36, 29, 0.08);\n  }\n\n  .nla-proof__avatar:first-child {\n    margin-left: 0;\n  }\n\n  .nla-proof__avatar img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    display: block;\n  }\n\n  .nla-proof__copy {\n    display: flex;\n    align-items: center;\n    gap: 5px;\n    min-width: 0;\n    color: var(--cocoa-soft);\n    font-size: 15px;\n    line-height: 1.25;\n    letter-spacing: 0;\n    white-space: nowrap;\n  }\n\n  .nla-proof__name {\n    color: var(--cocoa);\n    font-weight: 800;\n  }\n\n  .nla-proof__verified {\n    width: 14px;\n    height: 14px;\n    display: block;\n    flex-shrink: 0;\n  }\n\n  .nla-proof__rating {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n    margin-top: 8px;\n  }\n\n  .nla-proof__stars {\n    color: var(--rose-deep);\n    font-size: 18px;\n    line-height: 1;\n    letter-spacing: 1px;\n  }\n\n  .nla-proof__reviews {\n    color: var(--cocoa);\n    font-size: 12px;\n    line-height: 1.2;\n    font-weight: 500;\n    letter-spacing: 0;\n  }\n\n  @media screen and (max-width: 390px) {\n    .nla-proof__avatar {\n      width: 24px;\n      height: 24px;\n      margin-left: -8px;\n    }\n\n    .nla-proof__row {\n      gap: 8px;\n    }\n\n    .nla-proof__copy {\n      font-size: 12px;\n      white-space: normal;\n      gap: 4px;\n    }\n\n    .nla-proof__verified {\n      width: 14px;\n      height: 14px;\n    }\n\n    .nla-proof__stars {\n      font-size: 14px;\n      letter-spacing: 0.5px;\n    }\n\n    .nla-proof__reviews {\n      font-size: 12px;\n    }\n  }\n</style>\n\n<div class=\"nla-proof\">\n  <div class=\"nla-proof__row\">\n    <div class=\"nla-proof__stack\">\n      <span class=\"nla-proof__avatar\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_47.png?v=1782106073\" alt=\"\">\n      </span>\n      <span class=\"nla-proof__avatar\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_46.png?v=1782106073\" alt=\"\">\n      </span>\n      <span class=\"nla-proof__avatar\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_48.png?v=1782106072\" alt=\"\">\n      </span>\n    </div>\n\n    <div class=\"nla-proof__copy\">\n      <span class=\"nla-proof__name\">Maria</span>\n      <img\n        class=\"nla-proof__verified\"\n        src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/google-verified-1.svg?v=1782106303\"\n        alt=\"Verified\"\n      >\n      <span>and 12,000+ others purchased</span>\n    </div>\n  </div>\n\n  <div class=\"nla-proof__rating\">\n    <span class=\"nla-proof__stars\">★★★★★</span>\n    <span class=\"nla-proof__reviews\">4.8/5 (476+ reviews)</span>\n  </div>\n</div>"
+            "text": "Stop waking up to a face that looks more exhausted than you feel. Noula comforts dry, dull, tired-looking skin while you sleep, so you wake up looking fresher, softer and more rested."
           }
         },
-        "custom_liquid_hyAKDc": {
-          "type": "custom_liquid",
+        "nv_benefits": {
+          "type": "nv_benefits",
           "settings": {
-            "custom_liquid": "{% comment %}\n  BLOCK 04 — TITLE + PRICE\n  Correct Shopify pricing display:\n  - Compare-at price = old/struck-through price\n  - Variant price = current/main price\n  - No decimals\n  - Uses theme font\n{% endcomment %}\n\n{% assign current_variant = product.selected_or_first_available_variant %}\n{% assign current_price = current_variant.price %}\n{% assign current_compare_at_price = current_variant.compare_at_price %}\n\n<style>\n  .nla{\n    --cocoa:#2D241D;\n    --sale-red:#C43A2F;\n    --white:#FFFFFF;\n    font-family:inherit;\n    color:var(--cocoa);\n    line-height:1.6;\n    -webkit-font-smoothing:antialiased;\n  }\n\n  .nla,\n  .nla *{\n    box-sizing:border-box;\n    font-family:inherit;\n  }\n\n  .nla.blk{\n    margin-top:0 !important;\n    padding-top:0 !important;\n  }\n\n  .nla h1{\n    font-weight:700;\n    margin:0;\n  }\n\n  .nla h1.title{\n    font-size:33px;\n    margin:12px 0 16px !important;\n    padding-top:0 !important;\n    line-height:1.05;\n    letter-spacing:-.03em;\n    white-space:nowrap;\n  }\n\n  @media(max-width:420px){\n    .nla h1.title{\n      font-size:28px;\n    }\n  }\n\n  @media(max-width:360px){\n    .nla h1.title{\n      font-size:25px;\n      white-space:normal;\n    }\n  }\n\n  .nla .pricerow{\n    display:flex;\n    align-items:center;\n    gap:9px;\n    flex-wrap:wrap;\n    line-height:1;\n  }\n\n  .nla .old-price{\n    display:inline-flex !important;\n    align-items:center;\n    font-size:21px;\n    font-weight:500;\n    color:var(--sale-red);\n    text-decoration-line:line-through;\n    text-decoration-thickness:1.5px;\n    text-decoration-color:var(--sale-red);\n  }\n\n  .nla .main-price{\n    display:inline-flex;\n    align-items:center;\n    font-size:24px;\n    font-weight:800;\n    color:#111;\n    letter-spacing:-.02em;\n  }\n\n  .nla .badge{\n    display:inline-flex;\n    align-items:center;\n    background:#2C251E;\n    color:#fff;\n    font-size:10px;\n    font-weight:800;\n    letter-spacing:.04em;\n    padding:5px 7px;\n    border-radius:6px;\n    text-transform:uppercase;\n    line-height:1;\n  }\n</style>\n\n<div class=\"nla blk\">\n\n  <h1 class=\"title\">{{ product.title }}</h1>\n\n  <div class=\"pricerow\">\n\n    {% if current_compare_at_price > current_price %}\n      <s class=\"old-price variant-item__old-price\">\n        {{ current_compare_at_price | money_without_trailing_zeros }}\n      </s>\n    {% endif %}\n\n    <span class=\"main-price\" id=\"price\">\n      {{ current_price | money_without_trailing_zeros }}\n    </span>\n\n    <span class=\"badge\">\n      Bestseller\n    </span>\n\n  </div>\n\n</div>"
+            "icon_1": "sun",
+            "text_1": "Wake up looking less tired",
+            "icon_2": "face",
+            "text_2": "Softer, fresher-looking skin",
+            "icon_3": "shield",
+            "text_3": "Comforts dry, sensitive skin",
+            "icon_4": "moon",
+            "text_4": "Recovers while you sleep"
           }
         },
-        "custom_liquid_nQNyfU": {
-          "type": "custom_liquid",
+        "nv_offer_label": {
+          "type": "nv_offer_label",
           "settings": {
-            "custom_liquid": "{% assign customer_country = localization.country.iso_code | default: '' | upcase %}\n\n{% if customer_country == 'US' %}\n  <div class=\"custom-shop-pay-line\">\n    or 2 interest-free payments of\n    <strong class=\"custom-shop-pay-installment\">$0.00</strong>\n    with\n    <img\n      src=\"https://cdn.shopify.com/s/files/1/0864/5165/0895/files/Shop_Pay_logo_svg.png?v=1781252724\"\n      alt=\"Shop Pay\"\n      class=\"custom-shop-pay-logo\"\n    >\n  </div>\n\n  <script>\n    document.addEventListener('DOMContentLoaded', function () {\n      function parsePrice(text) {\n        return Number(text.replace(/[^0-9.,]/g, '').replace(',', '.'));\n      }\n\n      function updateShopPayInstallment() {\n        var mainPrice = document.querySelector('.pricerow .main-price, #price');\n        var installmentEl = document.querySelector('.custom-shop-pay-installment');\n\n        if (!mainPrice || !installmentEl) return;\n\n        var price = parsePrice(mainPrice.textContent);\n        if (!price || Number.isNaN(price)) return;\n\n        var installment = price / 2;\n\n        installmentEl.textContent = new Intl.NumberFormat('en-US', {\n          style: 'currency',\n          currency: 'USD',\n          minimumFractionDigits: 2,\n          maximumFractionDigits: 2\n        }).format(installment);\n      }\n\n      updateShopPayInstallment();\n\n      var priceEl = document.querySelector('.pricerow .main-price, #price');\n      if (priceEl) {\n        new MutationObserver(updateShopPayInstallment).observe(priceEl, {\n          childList: true,\n          characterData: true,\n          subtree: true\n        });\n      }\n\n      document.addEventListener('variant:change', updateShopPayInstallment);\n      document.addEventListener('change', updateShopPayInstallment);\n    });\n  </script>\n{% endif %}\n\n<style>\n  .custom-shop-pay-line{\n    display:flex;\n    align-items:center;\n    gap:5px;\n    margin-top:-6px;\n    margin-bottom:14px;\n    font-family:inherit;\n    font-size:13px;\n    line-height:1.4;\n    color:rgba(22,22,22,.82);\n    flex-wrap:wrap;\n  }\n\n  .custom-shop-pay-line strong{\n    font-weight:700;\n    color:#161616;\n  }\n\n  .custom-shop-pay-logo{\n    height:14px;\n    width:auto;\n    display:inline-block;\n  }\n</style>"
+            "text": "Select your offer"
           }
-        },
-        "custom_liquid_e3BEP3": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{% comment %}\n  BLOCK 05 — BENEFIT CHIPS (2×2)\n  Four quick benefits. Edit the text of each chip below.\n{% endcomment %}\n\n<style>\n  .nla{\n    --rose-deep:#D2978B;\n    --rose-wash:#F6E2DC;\n    --ivory-2:#FBF8F3;\n    --cocoa:#2D241D;\n    --line:#EAE1D2;\n    font-family:inherit;\n    color:var(--cocoa);\n    line-height:1.6;\n    -webkit-font-smoothing:antialiased;\n  }\n\n  .nla,\n  .nla *{\n    box-sizing:border-box;\n    font-family:inherit;\n  }\n\n  .nla.blk{\n    margin-top:22px;\n  }\n\n  .nla .chips{\n    display:grid;\n    grid-template-columns:1fr 1fr;\n    gap:9px;\n  }\n\n  .nla .chip{\n    display:flex;\n    align-items:center;\n    gap:9px;\n    background:var(--ivory-2);\n    border:1px solid var(--line);\n    border-radius:10px;\n    padding:11px 12px;\n    font-size:12px;\n    font-weight:500;\n    line-height:1.2;\n  }\n\n  .nla .chip .ic{\n    width:26px;\n    height:26px;\n    flex-shrink:0;\n    object-fit:contain;\n  }\n</style>\n\n<div class=\"nla blk\">\n  <div class=\"chips\">\n\n    <div class=\"chip\">\n      <img class=\"ic\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_7.png?v=1781139084\" alt=\"\">\n      Wake up looking less tired\n    </div>\n\n    <div class=\"chip\">\n      <img class=\"ic\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_8.png?v=1781139084\" alt=\"\">\n      Softer, fresher-looking skin\n    </div>\n\n    <div class=\"chip\">\n      <img class=\"ic\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_11.png?v=1781139084\" alt=\"\">\n      Comforts dry, sensitive skin\n    </div>\n\n    <div class=\"chip\">\n      <img class=\"ic\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_10.png?v=1781139083\" alt=\"\">\n      Recovers while you sleep\n    </div>\n\n  </div>\n</div>"
-          }
-        },
-        "description": {
-          "type": "description",
-          "settings": {}
         },
         "kaching_bundles_app_block_6WNQzB": {
           "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
           "settings": {
             "product": "{{product}}",
             "manual_deal_block_id": "1"
+          }
+        },
+        "nv_guarantee": {
+          "type": "nv_guarantee",
+          "settings": {
+            "heading": "90-night sleep-on-it guarantee",
+            "text": "Try it worry-free. If your mornings don't look more rested after 90 nights, we'll refund you and you keep the jar."
+          }
+        },
+        "nv_checks_top": {
+          "type": "nv_checks",
+          "settings": {
+            "layout": "grid",
+            "text_1": "Softer, fresher-looking by morning",
+            "text_2": "Gentle — no harsh actives",
+            "text_3": ""
           }
         },
         "buy_buttons": {
@@ -65,31 +78,48 @@
             "show_gift_card_recipient": false
           }
         },
-        "custom_liquid_JgenB8": {
-          "type": "custom_liquid",
+        "nv_pay": {
+          "type": "nv_pay",
+          "settings": {}
+        },
+        "nv_checks_bottom": {
+          "type": "nv_checks",
           "settings": {
-            "custom_liquid": "{% render 'noula-shipping-location-row' %}"
+            "layout": "stack",
+            "text_1": "Free shipping included",
+            "text_2": "Ships within 24 hours",
+            "text_3": "90-night money-back guarantee"
           }
         },
-        "custom_liquid_VzmrAg": {
-          "type": "custom_liquid",
+        "nv_ugc": {
+          "type": "nv_ugc",
           "settings": {
-            "custom_liquid": "{% comment %}\n  BLOCK 10 — STOCK BAR + COUNTDOWN  (matches noula-stock-meter design-system classes)\n  Rolling 12-hour timer (resets per visitor). Edit labels + claimed % below.\n  • Headline uses Assistant. • Body text inherits your theme/page font.\n  • Fill colour + width are inline so no theme rule can override them.\n{% endcomment %}\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@600;700;800&display=swap');\n  .noula-stock-meter{display:grid;gap:9px;font-family:inherit;line-height:1.25;margin-top:22px;}\n  .noula-stock-meter__title{margin:0;color:#2D241D;font-family:\"Assistant\",system-ui,sans-serif;font-size:18px;font-weight:600;line-height:1.15;letter-spacing:-.01em;}\n  .noula-stock-meter__text{margin:0;color:rgba(43,31,26,.7);font-size:13px;line-height:1.5;}\n  .noula-stock-meter__track{overflow:hidden;height:10px;border-radius:999px;background:rgba(43,31,26,.08);}\n  .noula-stock-meter__fill{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#E7B4AA,#D2978B);}\n  .noula-stock-meter__bottom{display:flex;justify-content:space-between;gap:12px;color:#2D241D;font-size:13px;font-weight:700;line-height:1.15;}\n  .noula-stock-meter__timer{color:#B5765C;font-variant-numeric:tabular-nums;}\n</style>\n\n<div class=\"noula-stock-meter\">\n  <p class=\"noula-stock-meter__title\">Selling out fast</p>\n  <p class=\"noula-stock-meter__text\">Due to high demand, limited quantities available</p>\n  <div class=\"noula-stock-meter__track\">\n    <span class=\"noula-stock-meter__fill\" style=\"width:89%;background:linear-gradient(90deg,#E7B4AA,#D2978B);\"></span>\n  </div>\n  <div class=\"noula-stock-meter__bottom\">\n    <span>89% claimed</span>\n    <span class=\"noula-stock-meter__timer\">Ends in <span id=\"noula-countdown\">11:59:59</span></span>\n  </div>\n</div>\n\n<script>\n(function(){\n  var cd=document.getElementById('noula-countdown'); if(!cd) return;\n  var KEY='noula_deal_end', end=parseInt(localStorage.getItem(KEY)||'0',10);\n  if(!end||end<Date.now()){end=Date.now()+12*3600*1000;localStorage.setItem(KEY,end);}\n  function tick(){\n    var d=Math.max(0,end-Date.now());\n    var h=String(Math.floor(d/3600000)).padStart(2,'0');\n    var m=String(Math.floor(d%3600000/60000)).padStart(2,'0');\n    var s=String(Math.floor(d%60000/1000)).padStart(2,'0');\n    cd.textContent=h+':'+m+':'+s;\n    if(d<=0){end=Date.now()+12*3600*1000;localStorage.setItem(KEY,end);}\n  }\n  tick(); setInterval(tick,1000);\n})();\n</script>"
+            "heading": "See it in action",
+            "badge": "Over 4M views on Instagram",
+            "image_url_1": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-01.jpg?v=1782119454",
+            "image_url_2": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-06.jpg?v=1782119454",
+            "image_url_3": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-04.jpg?v=1782119454",
+            "image_url_4": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-02.jpg?v=1782119454"
           }
         },
-        "custom_liquid_gFjUeT": {
-          "type": "custom_liquid",
+        "nv_faq": {
+          "type": "nv_faq",
           "settings": {
-            "custom_liquid": "{% comment %}\n  BLOCK 11 — 90-NIGHT GUARANTEE\n  Theme-font friendly. Custom Noula guarantee icon.\n{% endcomment %}\n\n<style>\n  .nla-guar {\n    --ivory-2: #FBF8F3;\n    --cocoa: #2D241D;\n    --cocoa-soft: #6B5C4F;\n    --line: #EAE1D2;\n    font-family: inherit;\n    color: var(--cocoa);\n    line-height: 1.6;\n    -webkit-font-smoothing: antialiased;\n    margin-top: 22px;\n  }\n\n  .nla-guar,\n  .nla-guar * {\n    box-sizing: border-box;\n    font-family: inherit;\n  }\n\n  .nla-guar__box {\n    border: 1px solid var(--line);\n    border-radius: 12px;\n    background: var(--ivory-2);\n    padding: 12px;\n  }\n\n  .nla-guar__top {\n    display: flex;\n    align-items: center;\n    gap: 8px;\n  }\n\n  .nla-guar__seal {\n    width: 48px;\n    height: 48px;\n    flex-shrink: 0;\n    object-fit: contain;\n    display: block;\n  }\n\n  .nla-guar__title {\n    margin: 0;\n    color: var(--cocoa);\n    font-size: 18px;\n    line-height: 1.15;\n    font-weight: 700;\n    letter-spacing: 0;\n  }\n\n  .nla-guar__text {\n    margin: 2px 0 0;\n    color: var(--cocoa-soft);\n    font-size: 13.5px;\n    line-height: 1.5;\n    letter-spacing: 0;\n  }\n</style>\n\n<div class=\"nla-guar\">\n  <div class=\"nla-guar__box\">\n    <div class=\"nla-guar__top\">\n      <img\n        class=\"nla-guar__seal\"\n        src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_25_1.png?v=1781141439\"\n        alt=\"90 Night Guarantee\"\n        loading=\"lazy\"\n      >\n\n      <h3 class=\"nla-guar__title\">90-night sleep-on-it guarantee</h3>\n    </div>\n\n    <p class=\"nla-guar__text\">\n      Try it worry-free. If your mornings don't look more rested after 90 nights, we'll refund you and you keep the jar.\n    </p>\n  </div>\n</div>"
+            "q_1": "What makes it different?",
+            "a_1": "<p>Most night creams just sit on the surface. Noula's Red Rice Recovery Complex targets the look of tired, depleted skin — restoring the overnight nourishment skin loses with age, so you wake up looking rested, not just moisturised.</p>",
+            "q_2": "Does it work on my skin?",
+            "a_2": "<p>Yes. Noula is formulated for all skin types, including sensitive and reactive skin. It's fragrance-light, non-greasy, and comfortable to wear every night.</p>",
+            "q_3": "How do I use it?",
+            "a_3": "<p>As the last step of your evening routine, smooth a small amount over cleansed skin. It absorbs fully overnight — no residue on your pillow.</p>",
+            "q_4": "How long until I see results?",
+            "a_4": "<p>Most women notice softer, fresher-looking skin the first morning. The rested look builds over the following weeks with nightly use.</p>",
+            "q_5": "How does the guarantee work?",
+            "a_5": "<p>Sleep on it for 90 nights. If you don't look more rested, contact us for a full refund — keep the jar.</p>",
+            "q_6": "Shipping & returns",
+            "a_6": "<p>Free shipping on every order. Ships within 24 hours from our US warehouse. Returns are covered by the 90-night guarantee.</p>"
           }
         },
-        "custom_liquid_KDDpqG": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "{% comment %}\n  BLOCK 12 — QUICK FAQ (accordion)\n  Self-contained: styles + markup + JS. Theme-font friendly.\n{% endcomment %}\n\n<style>\n  .nla {\n    --clay: #B5765C;\n    --cocoa: #2D241D;\n    --line: #EAE1D2;\n    font-family: inherit;\n    color: var(--cocoa);\n    line-height: 1.6;\n    -webkit-font-smoothing: antialiased;\n  }\n\n  .nla * {\n    box-sizing: border-box;\n    font-family: inherit;\n  }\n\n  .nla.blk {\n    margin-top: 22px;\n  }\n\n  .nla .acc .item {\n    border-bottom: 1px solid var(--line);\n  }\n\n  .nla .acc .item:first-child {\n    border-top: 1px solid var(--line);\n  }\n\n  .nla .acc .q {\n    width: 100%;\n    background: none;\n    border: none;\n    text-align: left;\n    color: var(--cocoa);\n    font-size: 18px;\n    line-height: 1.35;\n    font-weight: 600;\n    letter-spacing: 0;\n    padding: 18px 38px 18px 0;\n    cursor: pointer;\n    position: relative;\n  }\n\n  .nla .acc .q::after {\n    content: \"+\";\n    position: absolute;\n    right: 4px;\n    top: 50%;\n    transform: translateY(-50%);\n    color: var(--clay);\n    font-size: 24px;\n    line-height: 1;\n    font-weight: 400;\n  }\n\n  .nla .acc .item.open .q::after {\n    content: \"–\";\n  }\n\n  .nla .acc .a {\n    max-height: 0;\n    overflow: hidden;\n    transition: max-height 0.3s ease;\n  }\n\n  .nla .acc .a .inner {\n    padding: 0 0 18px;\n    color: #4A3D31;\n    font-size: 14.5px;\n    line-height: 1.55;\n    letter-spacing: 0;\n  }\n</style>\n\n<div class=\"nla blk\">\n  <div class=\"acc\">\n    <div class=\"item\">\n      <button type=\"button\" class=\"q\">What makes it different?</button>\n      <div class=\"a\"><div class=\"inner\">Most night creams just sit on the surface. Noula's Red Rice Recovery Complex targets the look of tired, depleted skin — restoring the overnight nourishment skin loses with age, so you wake up looking rested, not just moisturised.</div></div>\n    </div>\n\n    <div class=\"item\">\n      <button type=\"button\" class=\"q\">Does it work on my skin?</button>\n      <div class=\"a\"><div class=\"inner\">Yes. Noula is formulated for all skin types, including sensitive and reactive skin. It's fragrance-light, non-greasy, and comfortable to wear every night.</div></div>\n    </div>\n\n    <div class=\"item\">\n      <button type=\"button\" class=\"q\">How do I use it?</button>\n      <div class=\"a\"><div class=\"inner\">As the last step of your evening routine, smooth a small amount over cleansed skin. It absorbs fully overnight — no residue on your pillow.</div></div>\n    </div>\n\n    <div class=\"item\">\n      <button type=\"button\" class=\"q\">How does the guarantee work?</button>\n      <div class=\"a\"><div class=\"inner\">Sleep on it for 90 nights. If you don't look more rested, contact us for a full refund — keep the jar.</div></div>\n    </div>\n  </div>\n</div>\n\n<script>\n  (function () {\n    document.querySelectorAll('.nla .acc').forEach(function (acc) {\n      acc.querySelectorAll('.item .q').forEach(function (q) {\n        q.addEventListener('click', function () {\n          var item = q.parentElement;\n          var a = item.querySelector('.a');\n          var open = item.classList.contains('open');\n\n          acc.querySelectorAll('.item').forEach(function (i) {\n            i.classList.remove('open');\n            i.querySelector('.a').style.maxHeight = null;\n          });\n\n          if (!open) {\n            item.classList.add('open');\n            a.style.maxHeight = a.scrollHeight + 'px';\n          }\n        });\n      });\n    });\n  })();\n</script>"
-          }
-        },
-        "custom_liquid_K8pzkh": {
+        "klaviyo_atc": {
           "type": "custom_liquid",
           "settings": {
             "custom_liquid": "<script>\n\nwindow.addEventListener('load', function() {\n\nvar _learnq = window._learnq || [];\n\nfunction addedToCart() {\n\n  fetch(`$/cart.js`)\n\n  .then(res => res.clone().json().then(data => {\n\n    var cart = {\n\n      total_price: data.total_price/100,\n\n      $value: data.total_price/100,\n\n      total_discount: data.total_discount,\n\n      original_total_price: data.original_total_price/100,\n\n      items: data.items\n\n    }\n\n    if (item !== 'undefined') {\n\n      cart = Object.assign(cart, item)\n\n    }\n\n    if (klAjax) {\n\n        _learnq.push(['track', 'Added to Cart', cart]);\n\n        klAjax = false;\n\n      }\n\n  }))\n\n};\n\n(function (ns, fetch) {\n\n  ns.fetch = function() {\n\n    const response = fetch.apply(this, arguments);\n\n    response.then(res => {\n\n      if (`$/cart/add.js`\n\n       .includes(res.url)) {\n\n         addedToCart()\n\n      }\n\n    });\n\n    return response\n\n  }\n\n}(window, window.fetch));\n\nvar klAjax = true;\n\nvar atcButtons = document.querySelectorAll("
@@ -97,27 +127,28 @@
         }
       },
       "block_order": [
-        "custom_liquid_GqNKdY",
+        "nv_rating",
         "title",
-        "custom_liquid_noula_review",
-        "custom_liquid_hyAKDc",
-        "custom_liquid_nQNyfU",
-        "custom_liquid_e3BEP3",
-        "description",
+        "nv_subhead",
+        "nv_benefits",
+        "nv_offer_label",
         "kaching_bundles_app_block_6WNQzB",
+        "nv_guarantee",
+        "nv_checks_top",
         "buy_buttons",
-        "custom_liquid_JgenB8",
-        "custom_liquid_VzmrAg",
-        "custom_liquid_gFjUeT",
-        "custom_liquid_KDDpqG",
-        "custom_liquid_K8pzkh"
-      ],
-      "custom_css": [
-        ".product__description {margin-top: 8px;}",
-        ".product__description p,.product__description span {margin: 0; color: rgba(43, 31, 26, 0.7); font-size: 14px; font-weight: 400; line-height: 1.5; font-family: inherit;}",
-        ".product__media-item {margin-bottom: 0 !important; padding-bottom: 0 !important;}"
+        "nv_pay",
+        "nv_checks_bottom",
+        "nv_ugc",
+        "nv_faq",
+        "klaviyo_atc"
       ],
       "settings": {
+        "card_icon_1": "moon",
+        "card_text_1": "Recovers while you sleep, not just the surface",
+        "card_icon_2": "sparkle",
+        "card_text_2": "Visibly more rested in 3–6 weeks",
+        "card_icon_3": "drop",
+        "card_text_3": "Softer by morning — never greasy",
         "enable_sticky_info": true,
         "color_scheme": "scheme-1",
         "media_size": "medium",
@@ -129,119 +160,553 @@
         "image_zoom": "hover",
         "hide_variants": true,
         "enable_video_looping": false,
-        "padding_top": 0,
-        "padding_bottom": 0
+        "padding_top": 24,
+        "padding_bottom": 24
       }
     },
-    "noula-loved-by": {
-      "type": "noula-loved-by",
-      "disabled": true,
+    "loved_by": {
+      "type": "noula-v2-loved-by",
+      "blocks": {
+        "r1": {
+          "type": "review",
+          "settings": {
+            "name": "Maria",
+            "age": "43",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-01.jpg?v=1782119454",
+            "rating": 5,
+            "text": "“Over the years I've spent a fortune on night creams. Most did nothing. This is the first one where my skin actually looks rested in the morning, not just moisturized.”"
+          }
+        },
+        "r2": {
+          "type": "review",
+          "settings": {
+            "name": "Priya",
+            "age": "41",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-06.jpg?v=1782119454",
+            "rating": 5,
+            "text": "“It feels rich, but never greasy. My skin looks calmer when I wake up and my pillow stays clean.”"
+          }
+        },
+        "r3": {
+          "type": "review",
+          "settings": {
+            "name": "Dana",
+            "age": "45",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-04.jpg?v=1782119454",
+            "rating": 5,
+            "text": "“No harsh tingle. Just softer skin that looks less tired by morning. I almost didn't try it — glad I did.”"
+          }
+        },
+        "r4": {
+          "type": "review",
+          "settings": {
+            "name": "Elena",
+            "age": "44",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-02.jpg?v=1782119454",
+            "rating": 5,
+            "text": "“I wake up looking fresher, even on mornings when I feel tired. That's all I wanted.”"
+          }
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3",
+        "r4"
+      ],
       "settings": {
-        "eyebrow": "Customer proof",
-        "heading": "Made for women who wake up looking tired."
+        "eyebrow": "",
+        "heading": "Loved by [[12,000+]]",
+        "lead": "Real women waking up to softer, fresher-looking skin."
       }
     },
-    "related-products": {
-      "type": "related-products",
-      "disabled": true,
+    "made_for": {
+      "type": "noula-v2-split",
+      "blocks": {
+        "b1": {
+          "type": "bullet",
+          "settings": {
+            "icon": "sun",
+            "text": "Wakes up dull, tired-looking skin"
+          }
+        },
+        "b2": {
+          "type": "bullet",
+          "settings": {
+            "icon": "sparkle",
+            "text": "Softens the look of tired lines"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2"
+      ],
       "settings": {
-        "heading": "You may also like",
-        "heading_size": "h2",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "padding_top": 36,
-        "padding_bottom": 68
+        "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ba_47_v3.jpg",
+        "image_side": "left",
+        "background": "bone",
+        "eyebrow": "",
+        "heading": "Made for [[tired-looking mornings]]",
+        "text": "<p>Meet the overnight cream built for the morning mirror moment: dry, dull skin that still looks tired after a full night's sleep.</p><p>Most night creams stop at moisture and rub off on the pillow within hours. Noula seals Red Rice Recovery Complex™, ceramides, hyaluronic acid and Vitamin B5 against your skin for the full night — the contact time skin actually needs.</p><p>You wake up softer the first morning, and your skin keeps looking more rested over the following weeks.</p>"
       }
     },
-    "custom_liquid_9VELEq": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+    "how_it_works": {
+      "type": "noula-v2-split",
+      "blocks": {
+        "b1": {
+          "type": "bullet",
+          "settings": {
+            "icon": "clock",
+            "text": "Works ~8 hours overnight"
+          }
+        },
+        "b2": {
+          "type": "bullet",
+          "settings": {
+            "icon": "layers",
+            "text": "Comforts the moisture barrier"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2"
+      ],
       "settings": {
-        "custom_liquid": "{% comment %}\n  SECTION 13 — LOVED BY + REVIEWS CAROUSEL\n  Self-contained Custom Liquid. Theme-font friendly.\n{% endcomment %}\n\n<style>\n  .noula-loved {\n    font-family: inherit;\n    color: #2D241D;\n    line-height: 1.5;\n    padding: 42px 0 12px;\n    border-top: 1px solid #EAE1D2;\n  }\n\n  .noula-loved *,\n  .noula-loved *::before,\n  .noula-loved *::after {\n    box-sizing: border-box;\n    font-family: inherit;\n  }\n\n  .noula-loved__head {\n    max-width: 680px;\n    margin: 0 auto;\n    padding: 0 18px;\n    text-align: center;\n  }\n\n  .noula-loved__title {\n    margin: 0;\n    color: #2D241D;\n    font-size: clamp(27px, 7vw, 34px);\n    line-height: 1.12;\n    font-weight: 800;\n    letter-spacing: 0;\n  }\n\n  .noula-loved__circ {\n    position: relative;\n    display: inline-block;\n    white-space: nowrap;\n  }\n\n  .noula-loved__circ svg {\n    position: absolute;\n    left: -9px;\n    top: -5px;\n    width: calc(100% + 18px);\n    height: calc(100% + 10px);\n    overflow: visible;\n    pointer-events: none;\n  }\n\n  .noula-loved__lead {\n    margin: 11px 0 0;\n    color: #6B5C4F;\n    font-size: 14px;\n    line-height: 1.45;\n  }\n\n  .noula-revs-wrap {\n    max-width: 1280px;\n    margin: 0 auto;\n    padding: 0;\n  }\n\n  .noula-revs {\n    display: flex;\n    gap: 14px;\n    overflow-x: auto;\n    scroll-snap-type: x mandatory;\n    -webkit-overflow-scrolling: touch;\n    padding: 22px 18px 12px !important;\n    margin: 0;\n    scroll-padding-left: 18px;\n    scroll-padding-right: 18px;\n    scrollbar-width: none;\n  }\n\n  .noula-revs::-webkit-scrollbar {\n    display: none;\n  }\n\n  .noula-rev {\n    scroll-snap-align: start;\n    flex: 0 0 calc(84% - 8px);\n    max-width: 360px;\n    overflow: hidden;\n    border: 1px solid #EAE1D2;\n    border-radius: 14px;\n    background: #FFFFFF;\n    box-shadow: 0 8px 24px rgba(45, 36, 29, 0.045);\n  }\n\n  .noula-rev__img {\n    width: 100%;\n    aspect-ratio: 1 / 1;\n    object-fit: cover;\n    object-position: center center;\n    display: block;\n    background: #F3E8D8;\n  }\n\n  .noula-rev__body {\n    padding: 15px 16px 16px;\n  }\n\n  .noula-rev__top {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    gap: 12px;\n  }\n\n  .noula-rev__name {\n    color: #2D241D;\n    font-size: 16px;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: 0;\n  }\n\n  .noula-rev__stars {\n    color: #D2978B;\n    letter-spacing: 1px;\n    font-size: 13px;\n    line-height: 1;\n    white-space: nowrap;\n  }\n\n  .noula-rev__verified {\n    display: flex;\n    align-items: center;\n    gap: 6px;\n    margin-top: 11px;\n    color: #D2978B;\n    font-size: 11px;\n    line-height: 1.2;\n    font-weight: 800;\n    letter-spacing: 0.06em;\n    text-transform: uppercase;\n  }\n\n  .noula-rev__verified img {\n    width: 15px;\n    height: 15px;\n    display: block;\n    flex-shrink: 0;\n  }\n\n  .noula-rev__quote {\n    margin: 14px 0 0;\n    color: #5F5147;\n    font-size: 14px;\n    line-height: 1.55;\n  }\n\n  .noula-rev__more {\n    display: block;\n    margin-top: 18px;\n    color: #D2978B;\n    font-size: 13px;\n    line-height: 1;\n    font-weight: 800;\n    text-align: center;\n    text-decoration: none;\n  }\n\n  @media screen and (min-width: 750px) {\n    .noula-loved {\n      padding: 46px 0 18px;\n    }\n\n    .noula-loved__head {\n      padding: 0 24px;\n    }\n\n    .noula-loved__lead {\n      font-size: 15px;\n    }\n\n    .noula-revs-wrap {\n      padding: 0 32px;\n    }\n\n    .noula-revs {\n      justify-content: center;\n      gap: 18px;\n      overflow: visible;\n      padding: 26px 0 14px !important;\n    }\n\n    .noula-rev {\n      flex: 1 1 0;\n      max-width: 290px;\n      min-width: 0;\n    }\n\n    .noula-rev__body {\n      padding: 18px 18px 20px;\n    }\n\n    .noula-rev__name {\n      font-size: 17px;\n    }\n\n    .noula-rev__quote {\n      font-size: 14.5px;\n    }\n  }\n\n  @media screen and (min-width: 1200px) {\n    .noula-revs-wrap {\n      padding: 0 48px;\n    }\n\n    .noula-rev {\n      max-width: 300px;\n    }\n  }\n</style>\n\n<div class=\"noula-loved\">\n  <div class=\"noula-loved__head\">\n    <h2 class=\"noula-loved__title\">\n      Loved by\n      <span class=\"noula-loved__circ\">\n        12,000+\n        <svg viewBox=\"0 0 200 70\" preserveAspectRatio=\"none\" aria-hidden=\"true\">\n          <ellipse cx=\"100\" cy=\"35\" rx=\"95\" ry=\"30\" fill=\"none\" stroke=\"#D2978B\" stroke-width=\"2.5\" transform=\"rotate(-3 100 35)\" />\n        </svg>\n      </span>\n    </h2>\n    <p class=\"noula-loved__lead\">Real women waking up to softer, fresher-looking skin.</p>\n  </div>\n\n  <div class=\"noula-revs-wrap\">\n    <div class=\"noula-revs\">\n      <div class=\"noula-rev\">\n        <img class=\"noula-rev__img\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-01.jpg?v=1782119454\" alt=\"Maria, 43\" loading=\"lazy\">\n        <div class=\"noula-rev__body\">\n          <div class=\"noula-rev__top\">\n            <span class=\"noula-rev__name\">Maria, 43</span>\n            <span class=\"noula-rev__stars\">★★★★★</span>\n          </div>\n          <div class=\"noula-rev__verified\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/google-verified-1.svg?v=1782106303\" alt=\"\">\n            Verified purchase\n          </div>\n          <p class=\"noula-rev__quote\">“My skin finally looks rested in the morning, not just moisturized.”</p>\n          <a class=\"noula-rev__more\" href=\"#reviews\">Read More</a>\n        </div>\n      </div>\n\n      <div class=\"noula-rev\">\n        <img class=\"noula-rev__img\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-06.jpg?v=1782119454\" alt=\"Priya, 41\" loading=\"lazy\">\n        <div class=\"noula-rev__body\">\n          <div class=\"noula-rev__top\">\n            <span class=\"noula-rev__name\">Priya, 41</span>\n            <span class=\"noula-rev__stars\">★★★★★</span>\n          </div>\n          <div class=\"noula-rev__verified\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/google-verified-1.svg?v=1782106303\" alt=\"\">\n            Verified purchase\n          </div>\n          <p class=\"noula-rev__quote\">“It feels rich, but never greasy. My skin looks calmer when I wake up.”</p>\n          <a class=\"noula-rev__more\" href=\"#reviews\">Read More</a>\n        </div>\n      </div>\n\n      <div class=\"noula-rev\">\n        <img class=\"noula-rev__img\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-04.jpg?v=1782119454\" alt=\"Dana, 45\" loading=\"lazy\">\n        <div class=\"noula-rev__body\">\n          <div class=\"noula-rev__top\">\n            <span class=\"noula-rev__name\">Dana, 45</span>\n            <span class=\"noula-rev__stars\">★★★★★</span>\n          </div>\n          <div class=\"noula-rev__verified\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/google-verified-1.svg?v=1782106303\" alt=\"\">\n            Verified purchase\n          </div>\n          <p class=\"noula-rev__quote\">“No harsh tingle. Just softer skin that looks less tired by morning.”</p>\n          <a class=\"noula-rev__more\" href=\"#reviews\">Read More</a>\n        </div>\n      </div>\n\n      <div class=\"noula-rev\">\n        <img class=\"noula-rev__img\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-02.jpg?v=1782119454\" alt=\"Elena, 44\" loading=\"lazy\">\n        <div class=\"noula-rev__body\">\n          <div class=\"noula-rev__top\">\n            <span class=\"noula-rev__name\">Elena, 44</span>\n            <span class=\"noula-rev__stars\">★★★★★</span>\n          </div>\n          <div class=\"noula-rev__verified\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/google-verified-1.svg?v=1782106303\" alt=\"\">\n            Verified purchase\n          </div>\n          <p class=\"noula-rev__quote\">“I wake up looking fresher, even on mornings when I feel tired.”</p>\n          <a class=\"noula-rev__more\" href=\"#reviews\">Read More</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/model_916_v1.jpg?v=1781526384",
+        "image_side": "right",
+        "background": "white",
+        "eyebrow": "",
+        "heading": "How does it work?",
+        "text": "<p>Most night creams only sit on top of dry skin. Noula uses Red Rice Recovery Complex™ to comfort skin through the night, when your moisture barrier is most ready for support.</p><p>Inspired by Korean beauty rituals, red rice extract pairs with ceramides, hyaluronic acid and Vitamin B5 to help dry, dull skin feel cushioned, hydrated and calm by morning.</p><p>No greasy residue. No harsh overnight peel. Just soft, replenished skin that looks like it got the rest you did.</p>"
       }
     },
-    "custom_liquid_zXPBPg": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+    "before_after": {
+      "type": "noula-v2-before-after",
       "settings": {
-        "custom_liquid": "{% comment %}\n  SECTION 14 — BEFORE / AFTER\n  Mobile-first, non-stretched, side-by-side layout.\n{% endcomment %}\n\n<style>\n  .noula-ba {\n    --noula-ba-image: url(\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ba_47_v3.jpg?v=1781526135\");\n    font-family: inherit;\n    padding: 18px 0;\n  }\n\n  .noula-ba__wrap {\n    max-width: 680px;\n    margin: 0 auto;\n    padding: 0 12px;\n  }\n\n  .noula-ba__grid {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 0;\n    overflow: hidden;\n    border: 1px solid #EAE1D2;\n    border-radius: 12px;\n    background: #F7F0E8;\n    box-shadow: 0 8px 22px rgba(45, 36, 29, 0.07);\n  }\n\n  .noula-ba__panel {\n    position: relative;\n    aspect-ratio: 1 / 2;\n    background-image: var(--noula-ba-image);\n    background-repeat: no-repeat;\n    background-size: 200% auto;\n  }\n\n  .noula-ba__panel--before {\n    background-position: left center;\n  }\n\n  .noula-ba__panel--after {\n    background-position: right center;\n    border-left: 1px solid rgba(255, 255, 255, 0.9);\n  }\n\n  .noula-ba__tag {\n    position: absolute;\n    left: 8px;\n    bottom: 8px;\n    z-index: 2;\n    max-width: calc(100% - 16px);\n    background: rgba(255, 255, 255, 0.94);\n    color: #2D241D;\n    font-size: 9px;\n    font-weight: 800;\n    line-height: 1;\n    letter-spacing: 0.08em;\n    text-transform: uppercase;\n    white-space: nowrap;\n    padding: 6px 8px;\n    border-radius: 999px;\n    box-shadow: 0 4px 12px rgba(45, 36, 29, 0.12);\n  }\n\n  .noula-ba__panel--after .noula-ba__tag {\n    background: #2D241D;\n    color: #fff;\n  }\n\n  @media screen and (min-width: 641px) {\n    .noula-ba {\n      padding: 24px 0;\n    }\n\n    .noula-ba__wrap {\n      padding: 0 20px;\n    }\n\n    .noula-ba__tag {\n      left: 12px;\n      bottom: 12px;\n      font-size: 11px;\n      padding: 7px 12px;\n    }\n  }\n</style>\n\n<div class=\"noula-ba\">\n  <div class=\"noula-ba__wrap\">\n    <div class=\"noula-ba__grid\" role=\"img\" aria-label=\"Before and after skin results after 4 weeks\">\n      <div class=\"noula-ba__panel noula-ba__panel--before\">\n        <span class=\"noula-ba__tag\">Before</span>\n      </div>\n\n      <div class=\"noula-ba__panel noula-ba__panel--after\">\n        <span class=\"noula-ba__tag\">After 8 weeks</span>\n      </div>\n    </div>\n  </div>\n</div>",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "eyebrow": "Real skin, real mornings",
+        "heading": "What [[8 weeks]] looks like",
+        "lead": "",
+        "composite": true,
+      "before_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ba_47_v3.jpg",
+        "before_label": "Before",
+        "after_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ba_47_v3.jpg",
+        "after_label": "After 8 weeks",
+        "note": "Individual results vary. Unretouched, same lighting."
       }
     },
-    "custom_liquid_jLQ6JK": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+    "stats": {
+      "type": "noula-v2-stats",
+      "blocks": {
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "number": "94%",
+            "text": "looked more rested in the morning",
+            "source": "Based on an 8-week consumer panel"
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "number": "9/10",
+            "text": "said skin felt softer & smoother",
+            "source": "Based on an 8-week consumer panel"
+          }
+        },
+        "s3": {
+          "type": "stat",
+          "settings": {
+            "number": "89%",
+            "text": "would repurchase & recommend",
+            "source": "Based on an 8-week consumer panel"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
       "settings": {
-        "custom_liquid": "{% comment %}\n  SECTION 15 — FEATURE HIGHLIGHT\n  Self-contained Custom Liquid. Mobile-optimized, theme-font friendly.\n{% endcomment %}\n\n<style>\n  .noula-feat {\n    font-family: inherit;\n    color: #2D241D;\n    padding: 36px 0;\n    border-top: 1px solid #EAE1D2;\n  }\n\n  .noula-feat * {\n    font-family: inherit;\n  }\n\n  .noula-feat__wrap {\n    max-width: 680px;\n    margin: 0 auto;\n    padding: 0 16px;\n  }\n\n  .noula-feat__title {\n    margin: 0;\n    color: #2D241D;\n    font-size: clamp(26px, 7vw, 34px);\n    line-height: 1.12;\n    font-weight: 800;\n    letter-spacing: 0;\n  }\n\n  .noula-feat__hl {\n    display: inline-block;\n    background: #E7B4AA;\n    color: #2D241D;\n    padding: 1px 10px 3px;\n    border-radius: 6px;\n  }\n\n  .noula-feat__p {\n    margin: 15px 0 0;\n    color: #4A3D31;\n    font-size: 15px;\n    line-height: 1.58;\n    letter-spacing: 0;\n  }\n\n  .noula-feat__list {\n    list-style: none;\n    margin: 20px 0 0;\n    padding: 0;\n    display: flex;\n    flex-direction: column;\n    gap: 13px;\n  }\n\n  .noula-feat__list li {\n    display: flex;\n    align-items: center;\n    gap: 12px;\n    color: #2D241D;\n    font-size: 15px;\n    font-weight: 700;\n    line-height: 1.35;\n  }\n\n  .noula-feat__icon {\n    width: 38px;\n    height: 38px;\n    border-radius: 50%;\n    flex-shrink: 0;\n    display: block;\n  }\n\n  .noula-feat__img {\n    width: 100%;\n    height: auto;\n    display: block;\n    border-radius: 12px;\n    margin-top: 24px;\n  }\n\n  @media screen and (min-width: 641px) {\n    .noula-feat {\n      padding: 46px 0;\n    }\n\n    .noula-feat__wrap {\n      padding: 0 20px;\n    }\n\n    .noula-feat__title {\n      font-size: 34px;\n      line-height: 1.14;\n      letter-spacing: 0;\n    }\n\n    .noula-feat__p {\n      font-size: 16px;\n      line-height: 1.6;\n    }\n\n    .noula-feat__img {\n      margin-top: 26px;\n    }\n  }\n</style>\n\n<div class=\"noula-feat\">\n  <div class=\"noula-feat__wrap\">\n    <h2 class=\"noula-feat__title\">\n      Recovery that works <span class=\"noula-feat__hl\">while you sleep</span>\n    </h2>\n\n    <p class=\"noula-feat__p\">\n      Most night creams stop at moisture. Noula is made for the morning mirror moment: dry, dull skin that still looks tired after a full night’s sleep.\n    </p>\n\n    <p class=\"noula-feat__p\">\n      Powered by Red Rice Recovery Complex™, ceramides, hyaluronic acid and Vitamin B5, it comforts and nourishes skin overnight so you wake up looking fresher, softer, and more rested.\n    </p>\n\n    <ul class=\"noula-feat__list\">\n      <li>\n        <img\n          class=\"noula-feat__icon\"\n          src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_33.png?v=1781526850\"\n          alt=\"\"\n          loading=\"lazy\"\n        >\n        <span>Wakes up dull, tired-looking skin</span>\n      </li>\n\n      <li>\n        <img\n          class=\"noula-feat__icon\"\n          src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_34.png?v=1781526850\"\n          alt=\"\"\n          loading=\"lazy\"\n        >\n        <span>Softens the look of tired lines</span>\n      </li>\n    </ul>\n\n    <img\n      class=\"noula-feat__img\"\n      src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/model_916_v1.jpg?v=1781526384\"\n      alt=\"Woman applying Noula night cream\"\n      loading=\"lazy\"\n    >\n  </div>\n</div>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "eyebrow": "",
+        "heading": "Real [[results]]",
+        "lead": ""
       }
     },
-    "custom_liquid_LbhTjy": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+    "compare": {
+      "type": "noula-v2-compare",
+      "blocks": {
+        "c1": {
+          "type": "row",
+          "settings": {
+            "label": "Built for",
+            "us": "Tired-looking morning skin",
+            "them": "General moisture"
+          }
+        },
+        "c2": {
+          "type": "row",
+          "settings": {
+            "label": "Works while",
+            "us": "You sleep — a full night of contact",
+            "them": "Sits on top, rubs off on the pillow"
+          }
+        },
+        "c3": {
+          "type": "row",
+          "settings": {
+            "label": "Morning feel",
+            "us": "Rested, softer, fresher-looking",
+            "them": "Often just richer or heavier"
+          }
+        },
+        "c4": {
+          "type": "row",
+          "settings": {
+            "label": "Texture",
+            "us": "Rich cream, no pillow-grease",
+            "them": "Can feel coated by morning"
+          }
+        },
+        "c5": {
+          "type": "row",
+          "settings": {
+            "label": "Actives",
+            "us": "Recovery support without harsh actives",
+            "them": "Stinging or peeling to \"work\""
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3",
+        "c4",
+        "c5"
+      ],
       "settings": {
-        "custom_liquid": "{% comment %}\n  SECTION 16 — HOW IT WORKS\n  Self-contained Custom Liquid. Mobile-optimized, theme-font friendly.\n{% endcomment %}\n\n<div id=\"how-it-works\" class=\"noula-how\">\n  <div class=\"noula-how__wrap\">\n\n<style>\n  .noula-how {\n    font-family: inherit;\n    color: #2D241D;\n    padding: 36px 0;\n    border-top: 1px solid #EAE1D2;\n  }\n\n  .noula-how * {\n    font-family: inherit;\n  }\n\n  .noula-how__wrap {\n    max-width: 680px;\n    margin: 0 auto;\n    padding: 0 16px;\n  }\n\n  .noula-how__title {\n    margin: 0;\n    color: #2D241D;\n    font-size: clamp(26px, 7vw, 34px);\n    line-height: 1.12;\n    font-weight: 800;\n    letter-spacing: 0;\n  }\n\n  .noula-how__p {\n    margin: 15px 0 0;\n    color: #4A3D31;\n    font-size: 15px;\n    line-height: 1.58;\n    letter-spacing: 0;\n  }\n\n  .noula-how__list {\n    list-style: none;\n    margin: 20px 0 0;\n    padding: 0;\n    display: flex;\n    flex-direction: column;\n    gap: 13px;\n  }\n\n  .noula-how__list li {\n    display: flex;\n    align-items: center;\n    gap: 12px;\n    color: #2D241D;\n    font-size: 15px;\n    font-weight: 700;\n    line-height: 1.35;\n  }\n\n  .noula-how__icon {\n    width: 38px;\n    height: 38px;\n    border-radius: 50%;\n    flex-shrink: 0;\n    display: block;\n  }\n\n  @media screen and (min-width: 641px) {\n    .noula-how {\n      padding: 46px 0;\n    }\n\n    .noula-how__wrap {\n      padding: 0 20px;\n    }\n\n    .noula-how__title {\n      font-size: 34px;\n      line-height: 1.14;\n      letter-spacing: 0;\n    }\n\n    .noula-how__p {\n      font-size: 16px;\n      line-height: 1.6;\n    }\n  }\n</style>\n\n<div class=\"noula-how\">\n  <div class=\"noula-how__wrap\">\n    <h2 class=\"noula-how__title\">How does it work?</h2>\n\n    <p class=\"noula-how__p\">\n      Most night creams only sit on top of dry skin. Noula uses Red Rice Recovery Complex™ to comfort skin through the night, when your moisture barrier is most ready for support.\n    </p>\n\n    <p class=\"noula-how__p\">\n      Inspired by Korean beauty rituals, red rice extract pairs with ceramides, hyaluronic acid and Vitamin B5 to help dry, dull skin feel cushioned, hydrated and calm by morning.\n    </p>\n\n    <p class=\"noula-how__p\">\n      No greasy residue. No harsh overnight peel. Just soft, replenished skin that looks like it got the rest you did.\n    </p>\n\n    <ul class=\"noula-how__list\">\n      <li>\n        <img\n          class=\"noula-how__icon\"\n          src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_11.png?v=1781139084\"\n          alt=\"\"\n          loading=\"lazy\"\n        >\n        <span>K-beauty inspired red rice care</span>\n      </li>\n\n      <li>\n        <img\n          class=\"noula-how__icon\"\n          src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_8.png?v=1781139084\"\n          alt=\"\"\n          loading=\"lazy\"\n        >\n        <span>Comforts the moisture barrier overnight</span>\n      </li>\n    </ul>\n  </div>\n</div>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "eyebrow": "",
+        "heading": "Why Noula?",
+        "product_image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_2_1.png?v=1780830581",
+        "us_label": "Noula",
+        "them_label": "Regular night creams"
       }
     },
-    "custom_liquid_WjGgDw": {
-      "type": "custom-liquid",
-      "disabled": true,
-      "name": "t:sections.custom-liquid.presets.name",
+    "ingredients": {
+      "type": "noula-v2-ingredients",
+      "blocks": {
+        "i1": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Red Rice Extract",
+            "text": "K-beauty inspired nourishment for tired-looking skin.",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ig_017798eba84234ca016a2ff8f929648191b9b9d8d8dd5f53fd.jpg?v=1781529292"
+          }
+        },
+        "i2": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Ceramides + Vitamin B5",
+            "text": "Comfort dry skin and support the moisture barrier overnight.",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ig_017798eba84234ca016a2ffa2c25c48191a8e775af1e4b7aee.jpg?v=1781529292"
+          }
+        },
+        "i3": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Hyaluronic Acid",
+            "text": "Draws in moisture for softer, fresher-looking skin by morning.",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ig_017798eba84234ca016a2ff9bdcdbc819191ec302ab8c2b571.jpg?v=1781529291"
+          }
+        }
+      },
+      "block_order": [
+        "i1",
+        "i2",
+        "i3"
+      ],
       "settings": {
-        "custom_liquid": "{% comment %}\n  SECTION 17 — REAL RESULTS (stacked stat rows)  (self-contained Custom Liquid)\n  IMPORTANT: replace the placeholder figures with your REAL panel data before\n  running paid traffic (claim substantiation matters for skincare ads).\n{% endcomment %}\n<style>\n  @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@600;700;800&display=swap');\n  .noula-results{font-family:inherit;color:#2D241D;padding:46px 0;border-top:1px solid #EAE1D2;}\n  .noula-results__wrap{max-width:680px;margin:0 auto;padding:0 20px;}\n  .noula-results__title{margin:0;text-align:center;font-family:\"Assistant\",system-ui,sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em;}\n  .noula-results__lead{margin:12px 0 0;text-align:center;color:#6B5C4F;font-size:15px;}\n  .noula-results__list{display:flex;flex-direction:column;gap:12px;margin-top:22px;}\n  .noula-stat{display:flex;align-items:center;gap:20px;border:1px solid #EAE1D2;border-radius:16px;padding:22px 24px;background:#FBF8F3;}\n  .noula-stat__big{font-family:\"Assistant\",system-ui,sans-serif;font-weight:800;font-size:46px;color:#D2978B;line-height:1;letter-spacing:-.03em;flex-shrink:0;min-width:96px;}\n  .noula-stat__txt{display:flex;flex-direction:column;gap:5px;}\n  .noula-stat__st{font-family:\"Assistant\",system-ui,sans-serif;font-weight:700;font-size:16px;line-height:1.22;}\n  .noula-stat__src{font-size:12px;color:#6B5C4F;}\n</style>\n\n<div class=\"noula-results\">\n  <div class=\"noula-results__wrap\">\n    <h2 class=\"noula-results__title\">Real results</h2>\n    <p class=\"noula-results__lead\">From an 8-week consumer panel of 120 women.</p>\n    <div class=\"noula-results__list\">\n      <div class=\"noula-stat\"><div class=\"noula-stat__big\">94%</div><div class=\"noula-stat__txt\"><div class=\"noula-stat__st\">looked more rested in the morning</div><div class=\"noula-stat__src\">Based on an 8-week consumer panel</div></div></div>\n      <div class=\"noula-stat\"><div class=\"noula-stat__big\">9/10</div><div class=\"noula-stat__txt\"><div class=\"noula-stat__st\">said skin felt softer &amp; smoother</div><div class=\"noula-stat__src\">Based on an 8-week consumer panel</div></div></div>\n      <div class=\"noula-stat\"><div class=\"noula-stat__big\">89%</div><div class=\"noula-stat__txt\"><div class=\"noula-stat__st\">would repurchase &amp; recommend</div><div class=\"noula-stat__src\">Based on an 8-week consumer panel</div></div></div>\n    </div>\n  </div>\n</div>",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "eyebrow": "",
+        "heading": "[[Skin-loving]] ingredients",
+        "lead": "The overnight comfort your skin needs when it keeps waking up dry, dull, and tired-looking."
       }
     },
-    "custom_liquid_wdUq6B": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+    "faq": {
+      "type": "noula-v2-faq",
+      "blocks": {
+        "f1": {
+          "type": "qa",
+          "settings": {
+            "q": "What makes it different?",
+            "a": "<p>Most night creams just sit on the surface. Noula's Red Rice Recovery Complex targets the look of tired, depleted skin — restoring the overnight nourishment skin loses with age, so you wake up looking rested, not just moisturised.</p>"
+          }
+        },
+        "f2": {
+          "type": "qa",
+          "settings": {
+            "q": "Does it work on my skin?",
+            "a": "<p>Yes. Noula is formulated for all skin types, including sensitive and reactive skin. It's fragrance-light, non-greasy, and comfortable to wear every night.</p>"
+          }
+        },
+        "f3": {
+          "type": "qa",
+          "settings": {
+            "q": "How do I use it?",
+            "a": "<p>As the last step of your evening routine, smooth a small amount over cleansed skin. It absorbs fully overnight — no residue on your pillow.</p>"
+          }
+        },
+        "f4": {
+          "type": "qa",
+          "settings": {
+            "q": "How long until I see results?",
+            "a": "<p>Most women notice softer, fresher-looking skin the first morning. The rested look builds over the following weeks with nightly use.</p>"
+          }
+        },
+        "f5": {
+          "type": "qa",
+          "settings": {
+            "q": "Is it safe for sensitive skin?",
+            "a": "<p>Yes — no harsh actives, no overnight peel. If you're unsure, patch test behind the ear first.</p>"
+          }
+        },
+        "f6": {
+          "type": "qa",
+          "settings": {
+            "q": "How does the guarantee work?",
+            "a": "<p>Sleep on it for 90 nights. If you don't look more rested, contact us for a full refund — keep the jar.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6"
+      ],
       "settings": {
-        "custom_liquid": "{% comment %}\n  SECTION 18 — COMPARISON TABLE\n  Self-contained Custom Liquid. Compact mobile table.\n{% endcomment %}\n\n<style>\n  .noula-cmp {\n    font-family: inherit;\n    color: #2D241D;\n    padding: 36px 0;\n    border-top: 1px solid #EAE1D2;\n  }\n\n  .noula-cmp * {\n    font-family: inherit;\n  }\n\n  .noula-cmp__wrap {\n    max-width: 680px;\n    margin: 0 auto;\n    padding: 0 16px;\n  }\n\n  .noula-cmp__title {\n    margin: 0 0 18px;\n    text-align: center;\n    color: #2D241D;\n    font-size: 26px;\n    line-height: 1.15;\n    font-weight: 800;\n    letter-spacing: 0;\n  }\n\n  .noula-cmp__box {\n    border: 1px solid #EAE1D2;\n    border-radius: 12px;\n    overflow: hidden;\n    background: #FFFDF9;\n  }\n\n  .noula-cmp__box table {\n    width: 100%;\n    border-collapse: collapse;\n    table-layout: fixed;\n  }\n\n  .noula-cmp__box th,\n  .noula-cmp__box td {\n    padding: 14px 8px;\n    text-align: center;\n    border-bottom: 1px solid #EAE1D2;\n    font-size: 13px;\n    line-height: 1.25;\n    vertical-align: middle;\n  }\n\n  .noula-cmp__box th:first-child,\n  .noula-cmp__box td:first-child {\n    width: 58%;\n    text-align: left;\n    color: #6B5C4F;\n    font-size: 12.8px;\n    font-weight: 600;\n    padding-left: 14px;\n  }\n\n  .noula-cmp__box th:nth-child(2),\n  .noula-cmp__box td:nth-child(2) {\n    width: 21%;\n  }\n\n  .noula-cmp__box th:nth-child(3),\n  .noula-cmp__box td:nth-child(3) {\n    width: 21%;\n  }\n\n  .noula-cmp__box thead th {\n    height: 74px;\n    color: #2D241D;\n    font-size: 11px;\n    font-weight: 800;\n    letter-spacing: 0.04em;\n    text-transform: uppercase;\n    vertical-align: middle;\n  }\n\n  .noula-cmp__box thead th.is-us {\n    padding: 0;\n    text-align: center;\n    background: #F6E2DC;\n  }\n\n  .noula-cmp__box td.is-us {\n    background: #F6E2DC;\n  }\n\n  .noula-cmp__box tr:last-child td {\n    border-bottom: none;\n  }\n\n  .noula-cmp__logo {\n    width: 60px;\n    height: 60px;\n    display: block;\n    margin: 0 auto;\n    object-fit: contain;\n  }\n\n  .noula-cmp__mark {\n    width: 18px;\n    height: 18px;\n    display: inline-block;\n    object-fit: contain;\n    vertical-align: middle;\n  }\n\n  .noula-cmp__mark--yes {\n    filter: invert(40%) sepia(35%) saturate(700%) hue-rotate(56deg) brightness(88%) contrast(90%);\n  }\n\n  .noula-cmp__mark--no {\n    width: 16px;\n    height: 16px;\n    opacity: 0.7;\n  }\n\n  @media screen and (min-width: 641px) {\n    .noula-cmp {\n      padding: 46px 0;\n    }\n\n    .noula-cmp__wrap {\n      padding: 0 20px;\n    }\n\n    .noula-cmp__title {\n      margin-bottom: 20px;\n      font-size: 26px;\n    }\n\n    .noula-cmp__box th,\n    .noula-cmp__box td {\n      padding: 15px 10px;\n      font-size: 13.5px;\n    }\n\n    .noula-cmp__box th:first-child,\n    .noula-cmp__box td:first-child {\n      font-size: 13px;\n      padding-left: 16px;\n    }\n\n    .noula-cmp__box thead th {\n      height: 78px;\n    }\n\n    .noula-cmp__box thead th.is-us {\n      padding: 0;\n    }\n\n    .noula-cmp__logo {\n      width: 64px;\n      height: 64px;\n    }\n\n    .noula-cmp__mark {\n      width: 20px;\n      height: 20px;\n    }\n\n    .noula-cmp__mark--no {\n      width: 18px;\n      height: 18px;\n    }\n  }\n</style>\n\n<div class=\"noula-cmp\">\n  <div class=\"noula-cmp__wrap\">\n    <h2 class=\"noula-cmp__title\">Why Noula?</h2>\n\n    <div class=\"noula-cmp__box\">\n      <table>\n        <thead>\n          <tr>\n            <th></th>\n            <th class=\"is-us\">\n              <img\n                class=\"noula-cmp__logo\"\n                src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_2_1.png?v=1780830581\"\n                alt=\"Noula\"\n                loading=\"lazy\"\n              >\n            </th>\n            <th>Others</th>\n          </tr>\n        </thead>\n\n        <tbody>\n          <tr>\n            <td>Targets the morning mirror problem</td>\n            <td class=\"is-us\"><img class=\"noula-cmp__mark noula-cmp__mark--yes\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/check-mark-black-outline.svg?v=1781528042\" alt=\"Yes\" loading=\"lazy\"></td>\n            <td><img class=\"noula-cmp__mark noula-cmp__mark--no\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/cross-23.png?v=1781528045\" alt=\"No\" loading=\"lazy\"></td>\n          </tr>\n\n          <tr>\n            <td>Helps skin look rested, not just moisturized</td>\n            <td class=\"is-us\"><img class=\"noula-cmp__mark noula-cmp__mark--yes\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/check-mark-black-outline.svg?v=1781528042\" alt=\"Yes\" loading=\"lazy\"></td>\n            <td><img class=\"noula-cmp__mark noula-cmp__mark--no\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/cross-23.png?v=1781528045\" alt=\"No\" loading=\"lazy\"></td>\n          </tr>\n\n          <tr>\n            <td>Comforts dry, dull, tired-looking skin</td>\n            <td class=\"is-us\"><img class=\"noula-cmp__mark noula-cmp__mark--yes\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/check-mark-black-outline.svg?v=1781528042\" alt=\"Yes\" loading=\"lazy\"></td>\n            <td><img class=\"noula-cmp__mark noula-cmp__mark--no\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/cross-23.png?v=1781528045\" alt=\"No\" loading=\"lazy\"></td>\n          </tr>\n\n          <tr>\n            <td>Rich cream feel without pillow-grease</td>\n            <td class=\"is-us\"><img class=\"noula-cmp__mark noula-cmp__mark--yes\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/check-mark-black-outline.svg?v=1781528042\" alt=\"Yes\" loading=\"lazy\"></td>\n            <td><img class=\"noula-cmp__mark noula-cmp__mark--no\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/cross-23.png?v=1781528045\" alt=\"No\" loading=\"lazy\"></td>\n          </tr>\n\n          <tr>\n            <td>Recovery support without harsh actives</td>\n            <td class=\"is-us\"><img class=\"noula-cmp__mark noula-cmp__mark--yes\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/check-mark-black-outline.svg?v=1781528042\" alt=\"Yes\" loading=\"lazy\"></td>\n            <td><img class=\"noula-cmp__mark noula-cmp__mark--no\" src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/cross-23.png?v=1781528045\" alt=\"No\" loading=\"lazy\"></td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n</div>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 52
+        "eyebrow": "",
+        "heading": "Frequently asked questions"
       }
     },
-    "custom_liquid_pkRcdd": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.presets.name",
+    "offer_banner": {
+      "type": "noula-v2-offer-banner",
+      "blocks": {
+        "o1": {
+          "type": "point",
+          "settings": {
+            "icon": "moon",
+            "title": "Works overnight",
+            "text": "Softer by morning, more rested-looking over the weeks"
+          }
+        },
+        "o2": {
+          "type": "point",
+          "settings": {
+            "icon": "star",
+            "title": "Trusted by 12,000+",
+            "text": "Loved by women who'd tried everything"
+          }
+        },
+        "o3": {
+          "type": "point",
+          "settings": {
+            "icon": "leaf",
+            "title": "Gentle",
+            "text": "No harsh actives, no overnight peel"
+          }
+        }
+      },
+      "block_order": [
+        "o1",
+        "o2",
+        "o3"
+      ],
       "settings": {
-        "custom_liquid": "{% comment %}\n  SECTION 19 — INGREDIENTS\n  Self-contained Custom Liquid. Premium stacked rows, mobile-first.\n{% endcomment %}\n\n<style>\n  .noula-ing {\n    font-family: inherit;\n    color: #2D241D;\n    padding: 38px 0;\n    border-top: 1px solid #EAE1D2;\n    background: #FFFDF9;\n  }\n\n  .noula-ing * {\n    font-family: inherit;\n  }\n\n  .noula-ing__wrap {\n    max-width: 680px;\n    margin: 0 auto;\n    padding: 0 16px;\n  }\n\n  .noula-ing__title {\n    margin: 0;\n    text-align: center;\n    color: #2D241D;\n    font-size: clamp(27px, 7vw, 34px);\n    line-height: 1.12;\n    font-weight: 800;\n    letter-spacing: 0;\n  }\n\n  .noula-ing__lead {\n    max-width: 520px;\n    margin: 12px auto 0;\n    text-align: center;\n    color: #6B5C4F;\n    font-size: 15px;\n    line-height: 1.55;\n    letter-spacing: 0;\n  }\n\n  .noula-ing__list {\n    display: flex;\n    flex-direction: column;\n    gap: 12px;\n    margin-top: 24px;\n  }\n\n  .noula-ing__card {\n    display: grid;\n    grid-template-columns: 84px 1fr;\n    align-items: center;\n    gap: 14px;\n    border: 1px solid #EAE1D2;\n    border-radius: 14px;\n    background: #FFFFFF;\n    padding: 12px;\n    box-shadow: 0 8px 24px rgba(45, 36, 29, 0.045);\n  }\n\n  .noula-ing__media {\n    width: 84px;\n    height: 84px;\n    border-radius: 10px;\n    background: #F3E8D8;\n    border: 1px solid #EAE1D2;\n    overflow: hidden;\n    flex-shrink: 0;\n  }\n\n  .noula-ing__img {\n    width: 100%;\n    height: 100%;\n    display: block;\n    object-fit: cover;\n  }\n\n  .noula-ing__body {\n    min-width: 0;\n    padding-right: 2px;\n  }\n\n  .noula-ing__name {\n    margin: 0;\n    color: #2D241D;\n    font-size: 18px;\n    line-height: 1.18;\n    font-weight: 800;\n    letter-spacing: 0;\n  }\n\n  .noula-ing__desc {\n    margin: 7px 0 0;\n    color: #5F5147;\n    font-size: 14px;\n    line-height: 1.45;\n    letter-spacing: 0;\n  }\n\n  @media screen and (min-width: 641px) {\n    .noula-ing {\n      padding: 46px 0;\n    }\n\n    .noula-ing__wrap {\n      padding: 0 20px;\n    }\n\n    .noula-ing__title {\n      font-size: 34px;\n      line-height: 1.14;\n    }\n\n    .noula-ing__lead {\n      font-size: 16px;\n      line-height: 1.6;\n    }\n\n    .noula-ing__list {\n      gap: 14px;\n      margin-top: 26px;\n    }\n\n    .noula-ing__card {\n      grid-template-columns: 108px 1fr;\n      gap: 18px;\n      padding: 14px 18px 14px 14px;\n    }\n\n    .noula-ing__media {\n      width: 108px;\n      height: 108px;\n      border-radius: 12px;\n    }\n\n    .noula-ing__name {\n      font-size: 20px;\n    }\n\n    .noula-ing__desc {\n      font-size: 14.5px;\n    }\n  }\n</style>\n\n<div class=\"noula-ing\">\n  <div class=\"noula-ing__wrap\">\n    <h2 class=\"noula-ing__title\">Ingredients for better-looking mornings</h2>\n\n    <p class=\"noula-ing__lead\">\n      The overnight comfort your skin needs when it keeps waking up dry, dull, and tired-looking.\n    </p>\n\n    <div class=\"noula-ing__list\">\n      <div class=\"noula-ing__card\">\n        <div class=\"noula-ing__media\">\n          <img\n            class=\"noula-ing__img\"\n            src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ig_017798eba84234ca016a2ff8f929648191b9b9d8d8dd5f53fd.jpg?v=1781529292\"\n            alt=\"Red Rice Extract\"\n            loading=\"lazy\"\n          >\n        </div>\n\n        <div class=\"noula-ing__body\">\n          <h3 class=\"noula-ing__name\">Red Rice Extract</h3>\n          <p class=\"noula-ing__desc\">K-beauty inspired nourishment for tired-looking skin</p>\n        </div>\n      </div>\n\n      <div class=\"noula-ing__card\">\n        <div class=\"noula-ing__media\">\n          <img\n            class=\"noula-ing__img\"\n            src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ig_017798eba84234ca016a2ffa2c25c48191a8e775af1e4b7aee.jpg?v=1781529292\"\n            alt=\"Ceramides and Vitamin B5\"\n            loading=\"lazy\"\n          >\n        </div>\n\n        <div class=\"noula-ing__body\">\n          <h3 class=\"noula-ing__name\">Ceramides + Vitamin B5</h3>\n          <p class=\"noula-ing__desc\">Comfort dry skin and support the moisture barrier</p>\n        </div>\n      </div>\n\n      <div class=\"noula-ing__card\">\n        <div class=\"noula-ing__media\">\n          <img\n            class=\"noula-ing__img\"\n            src=\"https://cdn.shopify.com/s/files/1/0809/2925/9750/files/ig_017798eba84234ca016a2ff9bdcdbc819191ec302ab8c2b571.jpg?v=1781529291\"\n            alt=\"Hyaluronic Acid\"\n            loading=\"lazy\"\n          >\n        </div>\n\n        <div class=\"noula-ing__body\">\n          <h3 class=\"noula-ing__name\">Hyaluronic Acid</h3>\n          <p class=\"noula-ing__desc\">Draws in moisture for softer, fresher-looking skin</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>",
-        "color_scheme": "",
-        "padding_top": 0,
-        "padding_bottom": 52
+        "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/model_916_v1.jpg?v=1781526384",
+        "heading": "Why Noula is the better choice",
+        "cta_text": "Claim offer",
+        "cta_url": "#ProductInfo-main"
+      }
+    },
+    "reviews_grid": {
+      "type": "noula-v2-reviews-grid",
+      "blocks": {
+        "g1": {
+          "type": "review",
+          "settings": {
+            "name": "Maria M.",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-01.jpg?v=1782119454",
+            "rating": 5,
+            "text": "I love this cream! My skin looks brighter in the morning and my fine lines look softer. It's now a staple in my night routine."
+          }
+        },
+        "g2": {
+          "type": "review",
+          "settings": {
+            "name": "Priya S.",
+            "image_url": "",
+            "rating": 5,
+            "text": "Rich but never greasy. I wake up and my face looks calmer, less puffy. Nothing on the pillow either."
+          }
+        },
+        "g3": {
+          "type": "review",
+          "settings": {
+            "name": "Dana R.",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-04.jpg?v=1782119454",
+            "rating": 5,
+            "text": "No sting, no peel. Just softer skin that looks less tired by morning. Three jars in."
+          }
+        },
+        "g4": {
+          "type": "review",
+          "settings": {
+            "name": "Elena K.",
+            "image_url": "",
+            "rating": 4,
+            "text": "Took about two weeks for me but the difference in my mornings is real. My husband asked if I'd started facials."
+          }
+        },
+        "g5": {
+          "type": "review",
+          "settings": {
+            "name": "Claire B.",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-06.jpg?v=1782119454",
+            "rating": 5,
+            "text": "I'd basically given up on night creams. This one I'm keeping."
+          }
+        },
+        "g6": {
+          "type": "review",
+          "settings": {
+            "name": "Nina T.",
+            "image_url": "",
+            "rating": 5,
+            "text": "The texture is lovely — cushiony, absorbs fully. My cheeks look plumper when I wake up."
+          }
+        },
+        "g7": {
+          "type": "review",
+          "settings": {
+            "name": "Sofia L.",
+            "image_url": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-02.jpg?v=1782119454",
+            "rating": 5,
+            "text": "Sensitive skin here and zero reaction. Finally something that works while I sleep."
+          }
+        },
+        "g8": {
+          "type": "review",
+          "settings": {
+            "name": "Hannah W.",
+            "image_url": "",
+            "rating": 4,
+            "text": "Great cream, wish the jar was bigger. Skin looks fresher, especially around the eyes."
+          }
+        },
+        "g9": {
+          "type": "review",
+          "settings": {
+            "name": "Joy P.",
+            "image_url": "",
+            "rating": 5,
+            "text": "Mornings look less 'exhausted' — that's the only way I can describe it. Repurchased."
+          }
+        },
+        "g10": {
+          "type": "review",
+          "settings": {
+            "name": "Amy D.",
+            "image_url": "",
+            "rating": 5,
+            "text": "Quite amazing. I follow the routine nightly and my skin looks plump, refreshed and has a glow."
+          }
+        },
+        "g11": {
+          "type": "review",
+          "settings": {
+            "name": "Lina H.",
+            "image_url": "",
+            "rating": 5,
+            "text": "Six weeks in and the dullness around my mouth has lifted. Very happy."
+          }
+        },
+        "g12": {
+          "type": "review",
+          "settings": {
+            "name": "Bukky S.",
+            "image_url": "",
+            "rating": 5,
+            "text": "Doesn't stain my pillowcase, and after ten days my skin looks brighter."
+          }
+        },
+        "g13": {
+          "type": "review",
+          "settings": {
+            "name": "Valeria",
+            "image_url": "",
+            "rating": 5,
+            "text": "Three months in and my skin has never looked this rested. Better than anything my derm gave me."
+          }
+        },
+        "g14": {
+          "type": "review",
+          "settings": {
+            "name": "Courtney E.",
+            "image_url": "",
+            "rating": 5,
+            "text": "Fine lines are way softer. My face looks refreshed and radiant. Love it."
+          }
+        }
+      },
+      "block_order": [
+        "g1",
+        "g2",
+        "g3",
+        "g4",
+        "g5",
+        "g6",
+        "g7",
+        "g8",
+        "g9",
+        "g10",
+        "g11",
+        "g12",
+        "g13",
+        "g14"
+      ],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Better mornings [[in a jar]]",
+        "lead": "Thousands already use it — here's what they said.",
+        "count_text": "476 reviews",
+        "initial": 10
+      }
+    },
+    "sticky_bar": {
+      "type": "noula-v2-sticky-bar",
+      "settings": {
+        "rating_text": "4.8/5 (476 reviews)",
+        "cta_text": "Claim offer",
+        "watch_section_id": "main"
       }
     }
   },
   "order": [
     "main",
-    "noula-loved-by",
-    "related-products",
-    "custom_liquid_9VELEq",
-    "custom_liquid_zXPBPg",
-    "custom_liquid_jLQ6JK",
-    "custom_liquid_LbhTjy",
-    "custom_liquid_WjGgDw",
-    "custom_liquid_wdUq6B",
-    "custom_liquid_pkRcdd"
+    "loved_by",
+    "made_for",
+    "how_it_works",
+    "before_after",
+    "stats",
+    "compare",
+    "ingredients",
+    "faq",
+    "offer_banner",
+    "reviews_grid",
+    "sticky_bar"
   ]
 }

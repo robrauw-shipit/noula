@@ -1,0 +1,68 @@
+{%- comment -%} Noula v2 — "Why Noula?" comparison table {%- endcomment -%}
+<section class="nv nv-section nv-section--ivory" data-section-id="{{ section.id }}">
+  <div class="nv-wrap nv-center">
+    {%- if section.settings.eyebrow != blank -%}<p class="nv-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+    <h2 class="nv-h2">{{ section.settings.heading | escape | replace: '[[', '<mark>' | replace: ']]', '</mark>' }}</h2>
+    <div class="nv-compare">
+      <div class="nv-compare__head">
+        <span></span>
+        <div class="nv-compare__brand">
+          {%- if section.settings.product_image != blank -%}
+            {{ section.settings.product_image | image_url: width: 200 | image_tag: loading: 'lazy', alt: shop.name }}
+          {%- elsif section.settings.product_image_url != blank -%}
+            <img src="{{ section.settings.product_image_url }}" loading="lazy" alt="{{ shop.name }}">
+          {%- endif -%}
+          <span>{{ section.settings.us_label }}</span>
+        </div>
+        <div class="nv-compare__brand nv-compare__brand--them">
+          <span class="nv-compare__tube" aria-hidden="true"></span>
+          <span>{{ section.settings.them_label }}</span>
+        </div>
+      </div>
+      {%- for block in section.blocks -%}
+        <div class="nv-compare__row" {{ block.shopify_attributes }}>
+          <span>{{ block.settings.label }}</span>
+          <span class="nv-us">{{ block.settings.us }}</span>
+          <span class="nv-them">{{ block.settings.them }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Noula v2 · Comparison",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Why Noula?" },
+    { "type": "image_picker", "id": "product_image", "label": "Product image" },
+    { "type": "text", "id": "product_image_url", "label": "Product image URL (fallback)", "default": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/Frame_2_1.png?v=1780830581" },
+    { "type": "text", "id": "us_label", "label": "Our column label", "default": "Noula" },
+    { "type": "text", "id": "them_label", "label": "Their column label", "default": "Regular night creams" }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Built for" },
+        { "type": "text", "id": "us", "label": "Noula", "default": "The morning mirror moment" },
+        { "type": "text", "id": "them", "label": "Others", "default": "General moisture" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noula v2 · Comparison",
+      "blocks": [
+        { "type": "row", "settings": { "label": "Built for", "us": "Tired-looking morning skin", "them": "General moisture" } },
+        { "type": "row", "settings": { "label": "Works while", "us": "You sleep — a full night of contact", "them": "Sits on top, rubs off on the pillow" } },
+        { "type": "row", "settings": { "label": "Morning feel", "us": "Rested, softer, fresher-looking", "them": "Often just richer or heavier" } },
+        { "type": "row", "settings": { "label": "Texture", "us": "Rich cream, no pillow-grease", "them": "Can feel coated by morning" } },
+        { "type": "row", "settings": { "label": "Actives", "us": "Recovery support without harsh actives", "them": "Stinging or peeling to \"work\"" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

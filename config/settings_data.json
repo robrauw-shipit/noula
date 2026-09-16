@@ -10,7 +10,7 @@
 {
   "current": {
     "logo": "shopify://shop_images/Frame_2_1.png",
-    "logo_width": 80,
+    "logo_width": 96,
     "favicon": "shopify://shop_images/noula-mark-rice_1.png",
     "type_header_font": "assistant_n7",
     "heading_scale": 100,
@@ -164,34 +164,34 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#f7f1ea",
           "background_gradient": "",
-          "text": "#000000",
+          "text": "#2b1f1a",
           "button": "#2b1f1a",
-          "button_label": "#fdfbf7",
-          "secondary_button_label": "#2e2a39",
-          "shadow": "#ffffff"
+          "button_label": "#fbf7f2",
+          "secondary_button_label": "#2b1f1a",
+          "shadow": "#2b1f1a"
         }
       },
       "scheme-2": {
         "settings": {
-          "background": "#e0b7ae",
+          "background": "#e8c4b8",
           "background_gradient": "",
-          "text": "#000000",
+          "text": "#2b1f1a",
           "button": "#2b1f1a",
-          "button_label": "#ffffff",
-          "secondary_button_label": "#2e2a39",
+          "button_label": "#fbf7f2",
+          "secondary_button_label": "#2b1f1a",
           "shadow": "#2e2a39"
         }
       },
       "scheme-3": {
         "settings": {
-          "background": "#e8dfd2",
+          "background": "#fbf7f2",
           "background_gradient": "",
-          "text": "#000000",
-          "button": "#fdfbf7",
-          "button_label": "#2e2a39",
-          "secondary_button_label": "#fdfbf7",
+          "text": "#2b1f1a",
+          "button": "#2b1f1a",
+          "button_label": "#fbf7f2",
+          "secondary_button_label": "#2b1f1a",
           "shadow": "#2e2a39"
         }
       },
@@ -200,20 +200,20 @@
           "background": "#c98a7a",
           "background_gradient": "",
           "text": "#2b1f1a",
-          "button": "#fdfbf7",
-          "button_label": "#9b046f",
-          "secondary_button_label": "#fdfbf7",
+          "button": "#2b1f1a",
+          "button_label": "#fbf7f2",
+          "secondary_button_label": "#fbf7f2",
           "shadow": "#2e2a39"
         }
       },
       "scheme-5": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#fbf7f2",
           "background_gradient": "",
-          "text": "#000000",
-          "button": "#c98a7a",
-          "button_label": "#fdfbf7",
-          "secondary_button_label": "#fdfbf7",
+          "text": "#2b1f1a",
+          "button": "#a8695b",
+          "button_label": "#fbf7f2",
+          "secondary_button_label": "#2b1f1a",
           "shadow": "#2e2a39"
         }
       }

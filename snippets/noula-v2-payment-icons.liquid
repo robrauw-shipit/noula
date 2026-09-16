@@ -1,0 +1,8 @@
+{%- comment -%} Payment icons from the shop's enabled payment types. {% render 'noula-v2-payment-icons', class: 'nv-pay' %} {%- endcomment -%}
+{%- if shop.enabled_payment_types.size > 0 -%}
+<div class="{{ class | default: 'nv-pay' }}" role="list" aria-label="Payment methods">
+  {%- for type in shop.enabled_payment_types -%}
+    {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+  {%- endfor -%}
+</div>
+{%- endif -%}

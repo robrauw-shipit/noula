@@ -1,0 +1,7 @@
+{%- comment -%} {% render 'noula-v2-stars', rating: 5, class: 'nv-stars nv-stars--sm' %} {%- endcomment -%}
+{%- assign r = rating | default: 5 | round -%}
+<span class="{{ class | default: 'nv-stars' }}" aria-label="{{ r }} out of 5 stars">
+{%- for i in (1..5) -%}
+<svg viewBox="0 0 24 24"{% if i > r %} style="opacity:.25"{% endif %}><path d="m12 2.5 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9L12 2.5Z"/></svg>
+{%- endfor -%}
+</span>

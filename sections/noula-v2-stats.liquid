@@ -1,0 +1,50 @@
+{%- comment -%} Noula v2 — "Real results" stat cards {%- endcomment -%}
+<section class="nv nv-section" data-section-id="{{ section.id }}">
+  <div class="nv-wrap nv-center">
+    {%- if section.settings.eyebrow != blank -%}<p class="nv-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+    <h2 class="nv-h2">{{ section.settings.heading | escape | replace: '[[', '<mark>' | replace: ']]', '</mark>' }}</h2>
+    {%- if section.settings.lead != blank -%}<p class="nv-lead">{{ section.settings.lead }}</p>{%- endif -%}
+    <div class="nv-stats">
+      {%- for block in section.blocks -%}
+        <div class="nv-stat" {{ block.shopify_attributes }}>
+          <div class="nv-stat__num">{{ block.settings.number }}</div>
+          <p class="nv-stat__txt">{{ block.settings.text }}</p>
+          {%- if block.settings.source != blank -%}<p class="nv-stat__src">{{ block.settings.source }}</p>{%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Noula v2 · Real results",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Real [[results]]" },
+    { "type": "text", "id": "lead", "label": "Lead", "default": "Placeholder figures — replace with your real panel data before running paid traffic." }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number", "default": "94%" },
+        { "type": "text", "id": "text", "label": "Text", "default": "looked more rested in the morning" },
+        { "type": "text", "id": "source", "label": "Source", "default": "Based on an 8-week consumer panel" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Noula v2 · Real results",
+      "blocks": [
+        { "type": "stat", "settings": { "number": "94%", "text": "looked more rested in the morning", "source": "Based on an 8-week consumer panel" } },
+        { "type": "stat", "settings": { "number": "9/10", "text": "said skin felt softer & smoother", "source": "Based on an 8-week consumer panel" } },
+        { "type": "stat", "settings": { "number": "89%", "text": "would repurchase & recommend", "source": "Based on an 8-week consumer panel" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

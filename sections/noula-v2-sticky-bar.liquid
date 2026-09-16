@@ -1,0 +1,27 @@
+{%- comment -%} Noula v2 — sticky bottom buy bar (product pages). Shows after the main buy button scrolls out. {%- endcomment -%}
+{%- if product -%}
+<div class="nv nv-sticky" data-section-id="{{ section.id }}" data-watch=".product-form__submit">
+  <div class="nv-sticky__inner">
+    {%- if product.featured_image -%}
+      {{ product.featured_image | image_url: width: 120 | image_tag: class: 'nv-sticky__thumb', loading: 'lazy', alt: product.title }}
+    {%- endif -%}
+    <div class="nv-sticky__info">
+      <div class="nv-sticky__rating">{% render 'noula-v2-stars', rating: 5, class: 'nv-stars nv-stars--sm' %}<span>{{ section.settings.rating_text }}</span></div>
+      <div class="nv-sticky__title">{{ product.title }}</div>
+    </div>
+    <a class="nv-btn" href="#ProductInfo-{{ section.settings.watch_section_id | default: 'main' }}" data-scroll-to=".product-form__submit">{{ section.settings.cta_text }}</a>
+  </div>
+</div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Noula v2 · Sticky buy bar",
+  "settings": [
+    { "type": "text", "id": "rating_text", "label": "Rating text", "default": "4.8/5 (476 reviews)" },
+    { "type": "text", "id": "cta_text", "label": "Button text", "default": "Claim offer" },
+    { "type": "text", "id": "watch_section_id", "label": "Main product section id", "default": "main" }
+  ],
+  "presets": [{ "name": "Noula v2 · Sticky buy bar" }]
+}
+{% endschema %}

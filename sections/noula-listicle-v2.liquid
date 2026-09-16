@@ -1,11 +1,15 @@
 {%- comment -%}
   NOULA LISTICLE — Cocunat skeleton, mobile first (95% of traffic).
-  Structure: sticky top bar -> hero -> 7 numbered reasons (image + copy,
-  alternating band) -> honest limits -> testimonials -> close -> sticky CTA.
+
+  Structure, matching the reference screenshots:
+    dark announcement bar -> white header (logo + Shop now)
+    -> hero (H1, body, checkmark USPs, black CTA, risk reversal line, image)
+    -> 7 numbered reasons, square image LEFT on desktop, alternating band
+    -> honest limits -> testimonials -> close -> sticky "See availability"
 
   ⚠️ LAUNCH GATE: reason 4 states red rice sits near the top of the ingredient
-  list. Per noula_listicle_1.md that is a BATCH TWO claim and is not true of
-  batch one stock. Do not publish this page against batch one.
+  list. Per noula_listicle_1.md that is a BATCH TWO claim, untrue of batch one.
+  Do not publish this page against batch one stock.
 {%- endcomment -%}
 
 {%- liquid
@@ -13,17 +17,19 @@
   if cta == blank
     assign cta = '/products/overnight-recovery-cream'
   endif
+  assign tick = 'https://cdn.shopify.com/s/files/1/0809/2925/9750/files/check-mark-black-outline.svg?v=1781528042'
 -%}
 
 <div class="nlist" data-section-id="{{ section.id }}">
 <style>
   .nlist{
-    --ink:#2D241D;
-    --ink-soft:#5F5147;
-    --line:#EAE1D2;
-    --band:#FBF8F3;
+    --ink:#1A1A1A;
+    --ink-soft:#4A4A4A;
+    --line:#E5E0D8;
+    --band:#F7F5F1;
     --paper:#FFFFFF;
     --clay:#D2978B;
+    --pad:20px;
     font-family:inherit;
     color:var(--ink);
     background:var(--paper);
@@ -31,153 +37,183 @@
   }
   .nlist *,.nlist *::before,.nlist *::after{box-sizing:border-box;font-family:inherit;}
   .nlist img{max-width:100%;display:block;}
-  .nlist__wrap{max-width:720px;margin:0 auto;padding:0 20px;}
+  .nlist__wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad);}
 
-  /* ---------- sticky top bar ---------- */
-  .nlist-top{
-    position:sticky;top:0;z-index:60;
-    background:var(--ink);color:#fff;
-    display:flex;align-items:center;justify-content:center;gap:12px;
-    padding:10px 16px;
-    font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-    text-align:center;line-height:1.3;
+  /* ---------- announcement bar ---------- */
+  .nlist-ann{
+    background:var(--ink);color:#fff;text-align:center;
+    padding:9px 16px;font-size:12px;font-weight:700;letter-spacing:.04em;line-height:1.3;
   }
-  .nlist-top__logo{height:16px;width:auto;filter:brightness(0) invert(1);flex:0 0 auto;}
-  .nlist-top__text{min-width:0;}
+
+  /* ---------- white header ---------- */
+  .nlist-head{
+    background:var(--paper);border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:60;
+  }
+  .nlist-head__in{
+    max-width:1180px;margin:0 auto;padding:12px var(--pad);
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .nlist-head__logo{height:22px;width:auto;}
+  .nlist-head__logo-txt{font-size:19px;font-weight:800;letter-spacing:-.01em;}
+  .nlist-head__cta{
+    display:inline-flex;align-items:center;justify-content:center;
+    background:var(--ink);color:#fff;text-decoration:none;
+    padding:9px 18px;border-radius:4px;
+    font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;
+  }
 
   /* ---------- hero ---------- */
-  .nlist-hero{padding:26px 0 8px;}
-  .nlist-hero__eyebrow{
-    margin:0 0 10px;color:var(--ink-soft);
-    font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  }
-  .nlist-hero__h1{
-    margin:0;font-size:29px;line-height:1.18;font-weight:800;letter-spacing:-.015em;
-  }
+  .nlist-hero{padding:22px 0 30px;}
+  .nlist-hero__grid{display:flex;flex-direction:column;}
+  .nlist-hero__media{order:-1;}
+  .nlist-hero__h1{margin:0;font-size:30px;line-height:1.16;font-weight:800;letter-spacing:-.02em;}
   .nlist-hero__stand{margin:14px 0 0;font-size:16px;line-height:1.6;color:var(--ink-soft);}
-  .nlist-hero__meta{
-    margin:16px 0 0;display:flex;flex-wrap:wrap;gap:6px 14px;
-    font-size:13px;font-weight:600;color:var(--ink-soft);
+  .nlist-hero__media{margin:0 0 20px;overflow:hidden;background:var(--band);}
+  .nlist-hero__media img{width:100%;aspect-ratio:1/1;object-fit:cover;}
+  .nlist-usps{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:12px;}
+  .nlist-usps li{display:flex;align-items:flex-start;gap:10px;font-size:15.5px;line-height:1.4;}
+  .nlist-usps img{width:17px;height:17px;flex:0 0 auto;margin-top:2px;}
+  .nlist-usps strong{font-weight:700;}
+  .nlist-cta{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:100%;min-height:54px;padding:0 24px;margin-top:22px;
+    background:var(--ink);color:#fff;text-decoration:none;border:0;border-radius:0;
+    font-size:15px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;
   }
-  .nlist-hero__meta span{display:inline-flex;align-items:center;gap:6px;}
-  .nlist-hero__meta svg{width:14px;height:14px;stroke:var(--ink);fill:none;stroke-width:2;}
+  .nlist-risk{
+    margin:14px 0 0;font-size:14px;line-height:1.5;color:var(--ink-soft);
+  }
 
   /* ---------- reason ---------- */
-  .nlist-reason{padding:30px 0;border-top:1px solid var(--line);}
+  .nlist-reason{padding:30px 0;}
   .nlist-reason--band{background:var(--band);}
-  .nlist-reason__media{margin:0 0 18px;border-radius:12px;overflow:hidden;background:var(--band);}
-  .nlist-reason__media img{width:100%;height:auto;}
-  .nlist-reason__h2{
-    margin:0 0 12px;font-size:23px;line-height:1.22;font-weight:800;letter-spacing:-.01em;
-  }
-  .nlist-reason__n{color:var(--ink);font-weight:800;}
-  .nlist-reason__body p{margin:0 0 12px;font-size:16px;line-height:1.62;color:var(--ink-soft);}
+  .nlist-reason__media{margin:0 0 18px;overflow:hidden;background:var(--band);}
+  .nlist-reason__media img{width:100%;aspect-ratio:1/1;object-fit:cover;}
+  .nlist-reason__h2{margin:0 0 12px;font-size:23px;line-height:1.24;font-weight:800;letter-spacing:-.01em;}
+  .nlist-reason__body p{margin:0 0 12px;font-size:16px;line-height:1.6;color:var(--ink-soft);}
   .nlist-reason__body p:last-child{margin-bottom:0;}
-  .nlist-reason__body strong{color:var(--ink);font-weight:700;}
 
   /* ---------- honest limits ---------- */
   .nlist-limits{padding:26px 0 30px;}
-  .nlist-limits__box{
-    border:1px solid var(--line);border-radius:12px;background:var(--band);
-    padding:18px 18px 20px;
-  }
+  .nlist-limits__box{border:1px solid var(--line);background:var(--band);padding:18px;}
   .nlist-limits__title{margin:0 0 10px;font-size:16px;font-weight:800;}
   .nlist-limits__box p{margin:0 0 10px;font-size:14.5px;line-height:1.6;color:var(--ink-soft);}
   .nlist-limits__box p:last-child{margin-bottom:0;}
 
   /* ---------- testimonials ---------- */
-  .nlist-revs{padding:30px 0;border-top:1px solid var(--line);}
-  .nlist-revs__title{margin:0 0 18px;font-size:23px;line-height:1.22;font-weight:800;text-align:center;}
-  .nlist-rev{
-    border:1px solid var(--line);border-radius:12px;background:var(--paper);
-    padding:16px 16px 18px;margin-bottom:12px;
-  }
+  .nlist-revs{padding:28px 0;border-top:1px solid var(--line);}
+  .nlist-revs__title{margin:0 0 18px;font-size:23px;line-height:1.24;font-weight:800;text-align:center;}
+  .nlist-rev{border:1px solid var(--line);background:var(--paper);padding:16px;margin-bottom:12px;}
   .nlist-rev:last-child{margin-bottom:0;}
-  .nlist-rev__top{display:flex;align-items:center;justify-content:space-between;gap:10px;}
-  .nlist-rev__name{font-size:15px;font-weight:800;}
-  .nlist-rev__stars{color:var(--clay);font-size:13px;letter-spacing:1px;line-height:1;}
+  .nlist-rev__stars{color:#E8A33D;font-size:14px;letter-spacing:1px;line-height:1;}
   .nlist-rev__quote{margin:10px 0 0;font-size:15px;line-height:1.6;color:var(--ink-soft);}
-  .nlist-rev__verified{
-    display:inline-flex;align-items:center;gap:5px;margin-top:10px;
-    font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);
+  .nlist-rev__foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px;}
+  .nlist-rev__name{font-size:14px;font-weight:700;}
+  .nlist-rev__badge{
+    display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:999px;
+    padding:4px 9px;font-size:10.5px;font-weight:700;color:var(--ink-soft);white-space:nowrap;
   }
-  .nlist-rev__verified svg{width:13px;height:13px;fill:var(--ink-soft);}
+  .nlist-rev__badge img{width:11px;height:11px;}
 
   /* ---------- close ---------- */
-  .nlist-close{padding:32px 0 40px;border-top:1px solid var(--line);text-align:center;}
-  .nlist-close__title{margin:0 0 12px;font-size:25px;line-height:1.2;font-weight:800;letter-spacing:-.01em;}
+  .nlist-close{padding:30px 0 40px;border-top:1px solid var(--line);}
+  .nlist-close__title{margin:0 0 12px;font-size:26px;line-height:1.2;font-weight:800;letter-spacing:-.02em;}
   .nlist-close p{margin:0 0 10px;font-size:16px;line-height:1.6;color:var(--ink-soft);}
-  .nlist-close__price{color:var(--ink);font-weight:700;}
-  .nlist-btn{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:100%;max-width:420px;min-height:56px;padding:0 26px;margin-top:18px;
-    background:var(--ink);color:#fff;border:0;border-radius:6px;
-    font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
-    text-decoration:none;cursor:pointer;
-  }
 
   /* ---------- sticky CTA ---------- */
   .nlist-sticky{
     position:fixed;left:0;right:0;bottom:0;z-index:70;
     background:var(--paper);border-top:1px solid var(--line);
     transform:translateY(110%);transition:transform .25s ease;
-    padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+    padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));
   }
   .nlist-sticky.is-on{transform:translateY(0);}
-  .nlist-sticky__in{
-    max-width:640px;margin:0 auto;display:flex;align-items:center;gap:12px;
-  }
+  .nlist-sticky__in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:12px;justify-content:flex-end;}
   .nlist-sticky__txt{min-width:0;flex:1;font-size:13px;line-height:1.3;font-weight:700;}
   .nlist-sticky__txt small{display:block;font-weight:500;color:var(--ink-soft);font-size:12px;}
-  .nlist-sticky .nlist-btn{margin:0;width:auto;min-height:46px;padding:0 20px;font-size:13px;flex:0 0 auto;}
+  .nlist-sticky .nlist-cta{margin:0;width:auto;min-height:46px;padding:0 24px;font-size:13px;flex:0 0 auto;}
+  @media (prefers-reduced-motion:reduce){.nlist-sticky{transition:none;}}
 
-  @media screen and (prefers-reduced-motion:reduce){
-    .nlist-sticky{transition:none;}
-  }
-
-  /* ---------- desktop: Cocunat two column ---------- */
+  /* ---------- desktop ---------- */
   @media screen and (min-width:900px){
-    .nlist__wrap{max-width:1100px;padding:0 32px;}
-    .nlist-top{font-size:12px;padding:12px 24px;}
-    .nlist-hero{padding:48px 0 18px;}
-    .nlist-hero__h1{font-size:44px;line-height:1.12;max-width:16ch;}
-    .nlist-hero__stand{font-size:18px;max-width:60ch;}
+    .nlist{--pad:32px;}
+    .nlist-ann{font-size:13px;padding:11px 16px;}
+    .nlist-head__logo{height:26px;}
 
-    .nlist-reason{padding:0;border-top:0;}
+    .nlist-hero{padding:40px 0 48px;}
+    .nlist-hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+    .nlist-hero__media{order:0;}
+    .nlist-hero__h1{font-size:46px;line-height:1.1;}
+    .nlist-hero__stand{font-size:18px;}
+    .nlist-hero__media{margin:0;}
+    .nlist-cta{width:auto;min-width:340px;}
+
+    /* square image LEFT on every reason, per the reference */
+    .nlist-reason{padding:0;}
     .nlist-reason__inner{
-      display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;
-      padding:54px 0;
+      display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:56px;align-items:center;
+      padding:48px 0;
     }
-    .nlist-reason--flip .nlist-reason__media{order:2;}
     .nlist-reason__media{margin:0;}
     .nlist-reason__h2{font-size:30px;}
     .nlist-reason__body p{font-size:17px;}
 
-    .nlist-revs__list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+    .nlist-revs__list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start;}
     .nlist-rev{margin-bottom:0;}
-    .nlist-close__title{font-size:34px;}
+    .nlist-close{text-align:center;}
+    .nlist-close__title{font-size:36px;}
   }
 </style>
 
-  <!-- sticky top bar -->
-  <div class="nlist-top">
-    {%- if section.settings.logo != blank -%}
-      <img class="nlist-top__logo" src="{{ section.settings.logo | image_url: width: 300 }}" alt="{{ shop.name }}">
-    {%- endif -%}
-    <span class="nlist-top__text">{{ section.settings.top_bar }}</span>
-  </div>
+  <!-- announcement bar -->
+  <div class="nlist-ann">{{ section.settings.announcement }}</div>
+
+  <!-- white header -->
+  <header class="nlist-head">
+    <div class="nlist-head__in">
+      <a href="{{ cta }}" aria-label="{{ shop.name }}">
+        {%- if section.settings.logo != blank -%}
+          <img class="nlist-head__logo" src="{{ section.settings.logo | image_url: width: 300 }}" alt="{{ shop.name }}">
+        {%- else -%}
+          <span class="nlist-head__logo-txt">{{ shop.name }}</span>
+        {%- endif -%}
+      </a>
+      <a class="nlist-head__cta" href="{{ cta }}">{{ section.settings.header_cta }}</a>
+    </div>
+  </header>
 
   <!-- hero -->
   <div class="nlist__wrap nlist-hero">
-    <p class="nlist-hero__eyebrow">{{ section.settings.eyebrow }}</p>
-    <h1 class="nlist-hero__h1">{{ section.settings.h1 }}</h1>
-    <p class="nlist-hero__stand">{{ section.settings.standfirst }}</p>
-    <p class="nlist-hero__meta">
-      {%- assign metas = section.settings.meta | split: '·' -%}
-      {%- for meta in metas -%}
-        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>{{ meta | strip }}</span>
-      {%- endfor -%}
-    </p>
+    <div class="nlist-hero__grid">
+      <div class="nlist-hero__copy">
+        <h1 class="nlist-hero__h1">{{ section.settings.h1 }}</h1>
+        <p class="nlist-hero__stand">{{ section.settings.standfirst }}</p>
+
+        {%- assign usps = section.settings.usps | newline_to_br | split: '<br />' -%}
+        <ul class="nlist-usps">
+          {%- for usp in usps -%}
+            {%- assign line = usp | strip -%}
+            {%- if line != blank -%}
+              <li><img src="{{ tick }}" alt="" width="17" height="17">{{ line }}</li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+        <a class="nlist-cta" href="{{ cta }}">{{ section.settings.cta_text }}</a>
+        <p class="nlist-risk">{{ section.settings.risk_reversal }}</p>
+      </div>
+
+      {%- if section.settings.hero_image != blank or section.settings.hero_asset != blank -%}
+        <figure class="nlist-hero__media">
+          {%- if section.settings.hero_image != blank -%}
+            {{ section.settings.hero_image | image_url: width: 1200 | image_tag: loading: 'eager', alt: section.settings.h1 }}
+          {%- else -%}
+            <img src="{{ section.settings.hero_asset | asset_url }}" alt="{{ section.settings.h1 | escape }}" width="1000" height="1000">
+          {%- endif -%}
+        </figure>
+      {%- endif -%}
+    </div>
   </div>
 
   <!-- reasons -->
@@ -185,20 +221,23 @@
   {%- for block in section.blocks -%}
     {%- if block.type == 'reason' -%}
       {%- assign n = n | plus: 1 -%}
-      <section class="nlist-reason{% cycle '', ' nlist-reason--band' %}" {{ block.shopify_attributes }}>
+      {%- assign band = '' -%}
+      {%- assign remainder = n | modulo: 2 -%}
+      {%- if remainder == 0 -%}{%- assign band = ' nlist-reason--band' -%}{%- endif -%}
+      <section class="nlist-reason{{ band }}" {{ block.shopify_attributes }}>
         <div class="nlist__wrap">
-          <div class="nlist-reason__inner{% cycle 'flip': '', ' nlist-reason--flip' %}">
+          <div class="nlist-reason__inner">
             {%- if block.settings.image != blank or block.settings.asset != blank -%}
               <figure class="nlist-reason__media">
                 {%- if block.settings.image != blank -%}
-                  {{ block.settings.image | image_url: width: 1200 | image_tag: loading: 'lazy', alt: block.settings.heading }}
+                  {{ block.settings.image | image_url: width: 1000 | image_tag: loading: 'lazy', alt: block.settings.heading }}
                 {%- else -%}
-                  <img src="{{ block.settings.asset | asset_url }}" loading="lazy" alt="{{ block.settings.heading | escape }}" width="1254" height="1254">
+                  <img src="{{ block.settings.asset | asset_url }}" loading="lazy" alt="{{ block.settings.heading | escape }}" width="1000" height="1000">
                 {%- endif -%}
               </figure>
             {%- endif -%}
             <div class="nlist-reason__copy">
-              <h2 class="nlist-reason__h2"><span class="nlist-reason__n">{{ n }}.</span> {{ block.settings.heading }}</h2>
+              <h2 class="nlist-reason__h2">{{ n }}. {{ block.settings.heading }}</h2>
               <div class="nlist-reason__body">{{ block.settings.body }}</div>
             </div>
           </div>
@@ -226,15 +265,12 @@
         <div class="nlist-revs__list">
           {%- for block in revs -%}
             <article class="nlist-rev" {{ block.shopify_attributes }}>
-              <div class="nlist-rev__top">
+              <span class="nlist-rev__stars">★★★★★</span>
+              <p class="nlist-rev__quote">"{{ block.settings.quote }}"</p>
+              <div class="nlist-rev__foot">
                 <span class="nlist-rev__name">{{ block.settings.name }}</span>
-                <span class="nlist-rev__stars">★★★★★</span>
+                <span class="nlist-rev__badge"><img src="{{ tick }}" alt="" width="11" height="11">Verified buyer</span>
               </div>
-              <p class="nlist-rev__quote">“{{ block.settings.quote }}”</p>
-              <span class="nlist-rev__verified">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 2.4 1.9 3-.4.9 2.9 2.7 1.4-.6 3 1.9 2.4-1.9 2.4.6 3-2.7 1.4-.9 2.9-3-.4L12 22l-2.4-1.9-3 .4-.9-2.9L3 16.2l.6-3L1.7 10.8l1.9-2.4-.6-3L5.7 4l.9-2.9 3 .4L12 2Zm-1.2 13.2 5.6-5.6-1.4-1.4-4.2 4.2-2-2-1.4 1.4 3.4 3.4Z"/></svg>
-                Verified buyer
-              </span>
             </article>
           {%- endfor -%}
         </div>
@@ -246,14 +282,16 @@
   <section class="nlist__wrap nlist-close">
     <h2 class="nlist-close__title">{{ section.settings.close_title }}</h2>
     <div>{{ section.settings.close_body }}</div>
-    <a class="nlist-btn" href="{{ cta }}">{{ section.settings.cta_text }}</a>
+    <a class="nlist-cta" href="{{ cta }}">{{ section.settings.cta_text }}</a>
   </section>
 
-  <!-- sticky CTA -->
+  <div style="height:78px" aria-hidden="true"></div>
+
+  <!-- sticky CTA: appears after 20% scroll -->
   <div class="nlist-sticky" data-nlist-sticky>
     <div class="nlist-sticky__in">
       <span class="nlist-sticky__txt">{{ section.settings.sticky_text }}<small>{{ section.settings.sticky_sub }}</small></span>
-      <a class="nlist-btn" href="{{ cta }}">{{ section.settings.cta_text }}</a>
+      <a class="nlist-cta" href="{{ cta }}">{{ section.settings.cta_text }}</a>
     </div>
   </div>
 </div>
@@ -263,14 +301,21 @@
     var root = document.querySelector('[data-section-id="{{ section.id }}"]');
     if(!root) return;
     var bar = root.querySelector('[data-nlist-sticky]');
-    var first = root.querySelector('.nlist-reason');
-    if(!bar || !first) return;
-    if(!('IntersectionObserver' in window)){ bar.classList.add('is-on'); return; }
-    new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        bar.classList.toggle('is-on', e.boundingClientRect.top < 0);
-      });
-    }, {threshold:0}).observe(first);
+    if(!bar) return;
+    var ticking = false;
+    function check(){
+      ticking = false;
+      var doc = document.documentElement;
+      var max = (doc.scrollHeight - window.innerHeight) || 1;
+      var pct = window.scrollY / max;
+      bar.classList.toggle('is-on', pct >= 0.2);
+    }
+    window.addEventListener('scroll', function(){
+      if(ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(check);
+    }, {passive:true});
+    check();
   })();
 </script>
 
@@ -278,14 +323,20 @@
 {
   "name": "Noula: Listicle",
   "settings": [
-    { "type": "header", "content": "Top bar" },
+    { "type": "header", "content": "Announcement + header" },
+    { "type": "text", "id": "announcement", "label": "Announcement bar", "default": "Save $66 + Free Shipping" },
     { "type": "image_picker", "id": "logo", "label": "Logo" },
-    { "type": "text", "id": "top_bar", "label": "Top bar text", "default": "Free shipping · 90 nights to try it · Keep the jar" },
+    { "type": "text", "id": "header_cta", "label": "Header button", "default": "Shop now" },
     { "type": "header", "content": "Hero" },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "For skin that changed after 45" },
     { "type": "textarea", "id": "h1", "label": "Headline", "default": "7 Reasons Women Over 45 Are Switching to This Korean Red Rice Night Cream" },
     { "type": "textarea", "id": "standfirst", "label": "Standfirst", "default": "Most night creams are made for skin that still repairs itself overnight. Somewhere after 45 yours stopped, and this was built for exactly that." },
-    { "type": "text", "id": "meta", "label": "Meta line (separate with ·)", "default": "Free shipping · 90 night guarantee · No harsh actives" },
+    { "type": "image_picker", "id": "hero_image", "label": "Hero image (square)" },
+    { "type": "text", "id": "hero_asset", "label": "Hero image, theme asset (fallback)" },
+    { "type": "textarea", "id": "usps", "label": "Checkmark bullets, one per line", "default": "Made for skin that changed after 45\nNo acids, no retinol, no sting\nStill working at six in the morning" },
+    { "type": "header", "content": "Call to action" },
+    { "type": "text", "id": "cta_text", "label": "Button text", "default": "See availability" },
+    { "type": "url", "id": "cta_url", "label": "Button link" },
+    { "type": "text", "id": "risk_reversal", "label": "Risk reversal under the button", "default": "Free shipping · 90 night guarantee · Keep the jar" },
     { "type": "header", "content": "Honest limits" },
     { "type": "text", "id": "limits_title", "label": "Title", "default": "What it will not do" },
     { "type": "richtext", "id": "limits_body", "label": "Body", "default": "<p>It will not lift or firm, and it will not replace lost volume. Nothing in a jar does that, whatever the jar says. It will not work in one night either. Most women tell us it takes a few weeks.</p><p>We would rather you knew now than found out in week three.</p>" },
@@ -294,18 +345,16 @@
     { "type": "header", "content": "Close" },
     { "type": "text", "id": "close_title", "label": "Title", "default": "Made for your mornings, not for someone else's twenties" },
     { "type": "richtext", "id": "close_body", "label": "Body", "default": "<p>Noula Red Rice Recovery Cream. 50ml. One step at the end of the night you already have.</p><p>One jar, $59. Free shipping. 90 nights, and the jar is yours either way.</p>" },
-    { "type": "header", "content": "Call to action" },
-    { "type": "text", "id": "cta_text", "label": "Button text", "default": "See availability" },
-    { "type": "url", "id": "cta_url", "label": "Button link" },
-    { "type": "text", "id": "sticky_text", "label": "Sticky bar text", "default": "Red Rice Recovery Cream" },
-    { "type": "text", "id": "sticky_sub", "label": "Sticky bar subtext", "default": "$59 · Free shipping" }
+    { "type": "header", "content": "Sticky bar" },
+    { "type": "text", "id": "sticky_text", "label": "Sticky text", "default": "Red Rice Recovery Cream" },
+    { "type": "text", "id": "sticky_sub", "label": "Sticky subtext", "default": "$59 · Free shipping" }
   ],
   "blocks": [
     {
       "type": "reason",
       "name": "Reason",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "image_picker", "id": "image", "label": "Image (square, 1:1)" },
         { "type": "text", "id": "asset", "label": "Theme asset filename (fallback)" },
         { "type": "text", "id": "heading", "label": "Headline" },
         { "type": "richtext", "id": "body", "label": "Body" }

@@ -6,7 +6,7 @@
         "reason_1": {
           "type": "reason",
           "settings": {
-            "asset": "noula-selfie-3.jpg",
+            "asset": "noula-selfie-4.jpg",
             "heading": "One morning you looked in the mirror and it had changed",
             "body": "<p>For most women it lands somewhere between 45 and 53, and it does not feel gradual. Almost every night cream is built for skin that still does its own repair work overnight, and yours stopped. Noula was built for the skin that comes after that.</p><p>You will still look your age. You will just stop looking like you slept badly when you did not.</p>"
           }
@@ -94,19 +94,21 @@
         "review_3"
       ],
       "settings": {
+        "announcement": "Save $66 + Free Shipping",
         "logo": "shopify://shop_images/Frame_2_1.png",
-        "top_bar": "Free shipping · 90 nights to try it · Keep the jar",
-        "eyebrow": "For skin that changed after 45",
+        "header_cta": "Shop now",
         "h1": "7 Reasons Women Over 45 Are Switching to This Korean Red Rice Night Cream",
         "standfirst": "Most night creams are made for skin that still repairs itself overnight. Somewhere after 45 yours stopped, and this was built for exactly that.",
-        "meta": "Free shipping · 90 night guarantee · No harsh actives",
+        "hero_asset": "noula-selfie-3.jpg",
+        "usps": "Made for skin that changed after 45\nNo acids, no retinol, no sting\nStill working at six in the morning",
+        "cta_text": "See availability",
+        "cta_url": "/products/overnight-recovery-cream",
+        "risk_reversal": "Free shipping · 90 night guarantee · Keep the jar",
         "limits_title": "What it will not do",
         "limits_body": "<p>It will not lift or firm, and it will not replace lost volume. Nothing in a jar does that, whatever the jar says. It will not work in one night either. Most women tell us it takes a few weeks.</p><p>We would rather you knew now than found out in week three.</p>",
         "revs_title": "What women are saying",
         "close_title": "Made for your mornings, not for someone else's twenties",
         "close_body": "<p>Noula Red Rice Recovery Cream. 50ml. One step at the end of the night you already have.</p><p>One jar, $59. Free shipping. 90 nights, and the jar is yours either way.</p>",
-        "cta_text": "See availability",
-        "cta_url": "/products/overnight-recovery-cream",
         "sticky_text": "Red Rice Recovery Cream",
         "sticky_sub": "$59 · Free shipping"
       }

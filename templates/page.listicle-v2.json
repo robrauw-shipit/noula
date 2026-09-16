@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "listicle": {
@@ -6,6 +15,7 @@
         "reason_1": {
           "type": "reason",
           "settings": {
+            "image": "shopify://shop_images/reason_1_listicle.jpg",
             "asset": "noula-selfie-4.jpg",
             "heading": "Made for skin that changed overnight",
             "body": "<p>One morning your skin was drier, flatter, thinner, and the routine that had worked for twenty years just stopped. You are not trying to look 25. You want your skin to feel the way it did a few years ago, before it fell off a cliff. The Red Rice Recovery Complex was built for the skin that comes after that change, feeding it through the night now that it no longer does that job on its own.</p>"
@@ -14,6 +24,7 @@
         "reason_2": {
           "type": "reason",
           "settings": {
+            "image": "shopify://shop_images/LISTICLE_3.jpg",
             "asset": "noula-mechanism.jpg",
             "heading": "Wake up with soft, plump skin instead of tight and dry",
             "body": "<p>You moisturise like crazy and it is gone by morning. What you want is to wake up like your skin actually held onto something overnight. Most creams sit on the surface. The Red Rice Recovery Complex stays with your skin through the night, so it is still working at seven, not just at eleven.</p>"
@@ -22,6 +33,7 @@
         "reason_3": {
           "type": "reason",
           "settings": {
+            "image": "shopify://shop_images/listicle_reason_4.jpg",
             "asset": "noula-texture.jpg",
             "heading": "Plumps up thin, crepey, tissue-paper skin overnight",
             "body": "<p>It shows on your neck first, then the tops of your cheeks, and dryness makes it look worse than it is. You want it to feel cushioned again, not papery. That takes a rich cream, and most rich creams end up on your pillow instead. The Red Rice Recovery Complex sits in a shea butter base, rich enough for that kind of dryness, and it still absorbs overnight.</p>"
@@ -30,6 +42,7 @@
         "reason_4": {
           "type": "reason",
           "settings": {
+            "image": "shopify://shop_images/LISTICLE_2.jpg",
             "asset": "noula-ingredients.jpg",
             "heading": "Works on skin that nothing works on anymore",
             "body": "<p>Not the expensive jar, not the one your sister swore by, not the one that worked at 40. You want one thing that actually does something. Most creams put their best ingredient in last, below the thickeners. Here, red rice is one of the first things on the list, printed on the jar so you can check rather than take our word for it.</p>"
@@ -38,6 +51,7 @@
         "reason_5": {
           "type": "reason",
           "settings": {
+            "image": "shopify://shop_images/Frame_55.jpg",
             "asset": "noula-selfie-5.jpg",
             "heading": "No sting, no peeling, no breaking out. Every night.",
             "body": "<p>Retinol worked at 35 and punished you at 50, so you had to stop, and everything gentle did nothing. You want something that works without making you pay for it first. There are no retinoids and no exfoliating acids in here. The Red Rice Recovery Complex feeds your skin instead of irritating it, which is why it can go on every night.</p>"
@@ -46,6 +60,7 @@
         "reason_6": {
           "type": "reason",
           "settings": {
+            "image": "shopify://shop_images/exec-74467f5c-fd1e-485e-a511-e74b516eaf67.png",
             "asset": "noula-selfie-2.jpg",
             "heading": "Look like yourself again. Not 25. You.",
             "body": "<p>One day you looked in the mirror and did not recognise yourself. Not older exactly, just not you. And you do not want a ten step routine to get back there. This is one step at the end of the night you already have, and it sits fine alongside HRT or tretinoin.</p>"
@@ -54,6 +69,7 @@
         "reason_7": {
           "type": "reason",
           "settings": {
+            "image": "shopify://shop_images/exec-fbab8dd8-25bf-45ac-8a3f-d7c77c9e0741.png",
             "asset": "noula-selfie-1.jpg",
             "heading": "90 nights to try it, or your money back",
             "body": "<p>You have spent a fortune on creams that did nothing, and at some point you gave up. So sleep on this one for 90 nights. If you are still waking up dry, one email gets you a full refund. No sending anything back, no questions asked.</p>"
@@ -99,18 +115,19 @@
         "header_cta": "Shop now",
         "h1": "7 Reasons Women Over 45 Are Switching to This Korean Red Rice Night Cream",
         "standfirst": "You didn't stop taking care of your skin. It stopped responding. Here's why women are switching to one made for the skin they have now.",
+        "hero_image": "shopify://shop_images/LISTICLE_1.jpg",
         "hero_asset": "noula-selfie-3.jpg",
         "usps": "Made for skin that changed after 45\nNo acids, no retinol, no sting\nStill working at six in the morning",
         "cta_text": "See availability",
         "cta_url": "/products/overnight-recovery-cream",
         "risk_reversal": "Free shipping · 90 night guarantee",
         "revs_title": "What women are saying",
-        "close_title": "Made for your mornings, not for someone else's twenties",
-        "sticky_text": "Red Rice Recovery Cream",
-        "sticky_sub": "$59 · Free shipping",
         "product": "overnight-recovery-cream",
         "close_rating": "4.8/5 based on 476+ reviews",
-        "close_price": "One jar, $59. Free shipping. 90 nights to try it."
+        "close_title": "Red Rice Recovery Cream",
+        "close_price": "For skin that changed after 45. Korean red rice stays with it the full eight hours you sleep, so you wake up soft instead of tight.",
+        "sticky_text": "Red Rice Recovery Cream",
+        "sticky_sub": "$59 · Free shipping"
       }
     }
   },

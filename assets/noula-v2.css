@@ -58,7 +58,7 @@ body { background: var(--nv-white); color: var(--nv-cocoa); }
 .nv-btn:hover { background: #17100d; }
 .nv-btn--block { width: 100%; }
 
-.nv-stars { display: inline-flex; gap: 2px; color: #f2b544; line-height: 1; }
+.nv-stars { display: inline-flex; gap: 2px; color: #d2978b; line-height: 1; }
 .nv-stars svg { width: 18px; height: 18px; fill: currentColor; display: block; }
 .nv-stars--sm svg { width: 15px; height: 15px; }
 

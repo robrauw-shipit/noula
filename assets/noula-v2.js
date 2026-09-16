@@ -23,7 +23,8 @@
       if (s) s.textContent = pad(sec % 60);
     }
     tick();
-    setInterval(tick, 1000);
+    if (el._nvTimer) clearInterval(el._nvTimer);
+    el._nvTimer = setInterval(tick, 1000);
   }
 
   /* ---------- accordion ---------- */
@@ -97,7 +98,8 @@
   function initSticky(bar) {
     var target = document.querySelector(bar.getAttribute('data-watch') || '.product-form__submit');
     if (!target || !('IntersectionObserver' in window)) { bar.classList.add('is-visible'); return; }
-    var io = new IntersectionObserver(function (entries) {
+    if (bar._nvIO) bar._nvIO.disconnect();
+    var io = bar._nvIO = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
         var below = e.boundingClientRect.top < 0;
         bar.classList.toggle('is-visible', !e.isIntersecting && below);
@@ -131,7 +133,14 @@
       label.innerHTML = base + ' \u00b7 ' + price + (full && full !== price ? ' <s class="nv-atc-compare">' + full + '</s>' : '');
     }
     update();
-    new MutationObserver(update).observe(host, { subtree: true, childList: true, attributes: true, characterData: true });
+    if (host._nvObserver) host._nvObserver.disconnect();
+    var scheduled = false;
+    host._nvObserver = new MutationObserver(function () {
+      if (scheduled) return;
+      scheduled = true;
+      requestAnimationFrame(function () { scheduled = false; update(); });
+    });
+    host._nvObserver.observe(host, { subtree: true, childList: true, characterData: true });
   }
 
   function init(root) {

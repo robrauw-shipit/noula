@@ -83,12 +83,6 @@
             "image_url_4": "https://cdn.shopify.com/s/files/1/0809/2925/9750/files/noula-verified-review-02.jpg?v=1782119454"
           }
         },
-        "klaviyo_atc": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<script>\n\nwindow.addEventListener('load', function() {\n\nvar _learnq = window._learnq || [];\n\nfunction addedToCart() {\n\n  fetch(`$/cart.js`)\n\n  .then(res => res.clone().json().then(data => {\n\n    var cart = {\n\n      total_price: data.total_price/100,\n\n      $value: data.total_price/100,\n\n      total_discount: data.total_discount,\n\n      original_total_price: data.original_total_price/100,\n\n      items: data.items\n\n    }\n\n    if (item !== 'undefined') {\n\n      cart = Object.assign(cart, item)\n\n    }\n\n    if (klAjax) {\n\n        _learnq.push(['track', 'Added to Cart', cart]);\n\n        klAjax = false;\n\n      }\n\n  }))\n\n};\n\n(function (ns, fetch) {\n\n  ns.fetch = function() {\n\n    const response = fetch.apply(this, arguments);\n\n    response.then(res => {\n\n      if (`$/cart/add.js`\n\n       .includes(res.url)) {\n\n         addedToCart()\n\n      }\n\n    });\n\n    return response\n\n  }\n\n}(window, window.fetch));\n\nvar klAjax = true;\n\nvar atcButtons = document.querySelectorAll("
-          }
-        },
         "description": {
           "type": "description",
           "settings": {}
@@ -185,8 +179,7 @@
         "faq_4",
         "faq_5",
         "faq_6",
-        "faq_7",
-        "klaviyo_atc"
+        "faq_7"
       ],
       "settings": {
         "enable_sticky_info": true,

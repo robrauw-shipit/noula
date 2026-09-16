@@ -254,7 +254,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Made for <mark>tired-looking mornings</mark>",
+            "heading": "Made for <em>tired-looking mornings</em>",
             "heading_size": "h1"
           }
         },
@@ -494,7 +494,7 @@
         "i3"
       ],
       "settings": {
-        "title": "<mark>Skin-loving</mark> ingredients",
+        "title": "<em>Skin-loving</em> ingredients",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "square",

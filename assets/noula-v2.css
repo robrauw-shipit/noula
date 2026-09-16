@@ -241,20 +241,21 @@ product-info.color-scheme-1 { background: #fff; }
 .image-with-text__media { border-radius: var(--nv-r-lg) !important; overflow: hidden; }
 .image-with-text__content { padding: 8px 0 !important; }
 .image-with-text__heading { font-family: var(--nv-head) !important; font-size: var(--nv-t-h2) !important; font-weight: 700 !important; line-height: 1.1 !important; text-wrap: balance; }
-.image-with-text__heading mark { background: var(--nv-pink); padding: 0 .22em; border-radius: 4px; }
+.image-with-text__heading em, .image-with-text__heading mark { font-style: normal; background: var(--nv-pink); padding: 0 .22em; border-radius: 4px; }
 .image-with-text__text, .image-with-text__text p { font-size: var(--nv-t-body) !important; line-height: 1.6 !important; color: var(--nv-body) !important; }
 .image-with-text__text p + p { margin-top: 12px; }
 .image-with-text__text--caption { font-size: 15px !important; font-weight: 600; color: var(--nv-clay-deep) !important; letter-spacing: .04em; }
 
 .multicolumn { max-width: var(--nv-max); margin: 0 auto; }
 .multicolumn .title { font-family: var(--nv-head) !important; font-size: var(--nv-t-h2) !important; font-weight: 700 !important; text-align: center; width: 100%; text-wrap: balance; }
-.multicolumn .title mark { background: var(--nv-pink); padding: 0 .22em; border-radius: 4px; }
+.multicolumn .title em, .multicolumn .title mark { font-style: normal; background: var(--nv-pink); padding: 0 .22em; border-radius: 4px; }
 .multicolumn-card { background: transparent !important; box-shadow: none !important; border: 0 !important; }
 .multicolumn-card__image-wrapper { border-radius: var(--nv-r) !important; overflow: hidden; margin-bottom: 16px !important; }
 .multicolumn-card__info { padding: 0 !important; text-align: center; }
 .multicolumn-card__info h3 { font-family: var(--nv-head) !important; font-size: var(--nv-t-h3) !important; font-weight: 700 !important; margin-bottom: 6px !important; }
 .multicolumn-card__info p, .multicolumn-card__info .rte { font-size: 16px !important; line-height: 1.55 !important; color: var(--nv-body) !important; }
 
+.collapsible-content__heading em { font-style: normal; background: var(--nv-pink); padding: 0 .22em; border-radius: 4px; }
 .collapsible-content .collapsible-content__heading { font-family: var(--nv-head) !important; font-size: var(--nv-t-h2) !important; font-weight: 700 !important; }
 .collapsible-row-layout .accordion { border: 0 !important; background: var(--nv-tint-2); border-radius: 12px; margin-bottom: 10px !important; }
 .collapsible-row-layout .accordion summary { padding: 20px 18px !important; }

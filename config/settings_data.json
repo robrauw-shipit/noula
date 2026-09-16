@@ -1,7 +1,7 @@
 {
   "current": {
     "logo": "shopify://shop_images/Frame_2_1.png",
-    "logo_width": 112,
+    "logo_width": 110,
     "favicon": "shopify://shop_images/noula-mark-rice_1.png",
     "type_header_font": "assistant_n7",
     "heading_scale": 105,
@@ -12,7 +12,7 @@
     "spacing_grid_horizontal": 20,
     "spacing_grid_vertical": 20,
     "animations_reveal_on_scroll": false,
-    "animations_hover_elements": "none",
+    "animations_hover_elements": "default",
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 55,
     "buttons_radius": 40,

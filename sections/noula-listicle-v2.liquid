@@ -64,12 +64,12 @@
   }
 
   /* ---------- hero ---------- */
-  .nlist-hero{padding-top:22px;padding-bottom:32px;}
+  .nlist-hero{padding-top:0;padding-bottom:32px;}
   .nlist-hero__grid{display:flex;flex-direction:column;}
   .nlist-hero__media{order:-1;}
-  .nlist-hero__h1{margin:0;font-size:29px;line-height:1.2;font-weight:800;letter-spacing:-.015em;}
+  .nlist-hero__h1{margin:0;font-size:25px;line-height:1.2;font-weight:800;letter-spacing:-.02em;}
   .nlist-hero__stand{margin:14px 0 0;font-size:17px;line-height:1.65;color:var(--ink-soft);}
-  .nlist-hero__media{position:relative;width:100%;padding-top:100%;margin:0 0 22px;overflow:hidden;background:var(--band);}
+  .nlist-hero__media{position:relative;width:calc(100% + var(--pad) * 2);margin:0 calc(var(--pad) * -1) 22px;padding-top:calc(100% + var(--pad) * 2);overflow:hidden;background:var(--band);}
   .nlist-hero__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;}
   .nlist-usps{list-style:none;margin:22px auto 0;padding:0;display:grid;gap:12px;width:max-content;max-width:100%;}
   .nlist-usps li{display:flex;align-items:flex-start;gap:10px;font-size:16px;line-height:1.45;font-weight:500;}
@@ -116,11 +116,15 @@
   }
   .nlist-rev__badge img{width:11px;height:11px;}
 
-  /* ---------- close ---------- */
-  .nlist-close{padding-top:32px;padding-bottom:40px;border-top:1px solid var(--line);}
-  .nlist-close__title{margin:0 0 12px;font-size:26px;line-height:1.2;font-weight:800;letter-spacing:-.02em;}
-  .nlist-close p{margin:0 0 10px;font-size:16px;line-height:1.6;color:var(--ink-soft);}
-
+  /* ---------- close: product highlight ---------- */
+  .nlist-close{background:var(--band);padding-top:32px;padding-bottom:36px;}
+  .nlist-close__rating{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink-soft);}
+  .nlist-close__rating b{color:#E8A33D;font-size:15px;letter-spacing:1px;line-height:1;}
+  .nlist-close__title{margin:12px 0 0;font-size:27px;line-height:1.2;font-weight:800;letter-spacing:-.02em;}
+  .nlist-close__price{margin:12px 0 0;font-size:15.5px;line-height:1.5;color:var(--ink-soft);}
+  .nlist-close .nlist-cta{margin-top:18px;}
+  .nlist-close__media{margin:24px auto 0;max-width:340px;}
+  .nlist-close__media img{width:100%;height:auto;}
   /* ---------- sticky CTA ---------- */
   .nlist-sticky{
     position:fixed;left:0;right:0;bottom:0;z-index:70;
@@ -142,6 +146,7 @@
     .nlist-head__logo{height:26px;}
 
     .nlist-hero{padding-top:40px;padding-bottom:48px;}
+    .nlist-hero__media{width:100%;margin:0;padding-top:100%;}
     .nlist-hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
     .nlist-hero__media{order:0;}
     .nlist-hero__h1{font-size:46px;line-height:1.1;}
@@ -163,8 +168,10 @@
 
     .nlist-revs__list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start;}
     .nlist-rev{margin-bottom:0;}
-    .nlist-close{text-align:center;}
-    .nlist-close__title{font-size:36px;}
+    .nlist-close{padding-top:56px;padding-bottom:56px;}
+    .nlist-close__grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;}
+    .nlist-close__title{font-size:38px;}
+    .nlist-close__media{margin:0;max-width:none;}
   }
 </style>
 
@@ -280,11 +287,27 @@
     </section>
   {%- endif -%}
 
-  <!-- close -->
-  <section class="nlist__wrap nlist-close">
-    <h2 class="nlist-close__title">{{ section.settings.close_title }}</h2>
-    <div>{{ section.settings.close_body }}</div>
-    <a class="nlist-cta" href="{{ cta }}">{{ section.settings.cta_text }}</a>
+  <!-- close: product highlight -->
+  {%- assign close_product = section.settings.product -%}
+  {%- if close_product == blank -%}{%- assign close_product = all_products['overnight-recovery-cream'] -%}{%- endif -%}
+  <section class="nlist-close">
+    <div class="nlist__wrap">
+      <div class="nlist-close__grid">
+        <div>
+          <p class="nlist-close__rating"><b>★★★★★</b> {{ section.settings.close_rating }}</p>
+          <h2 class="nlist-close__title">{{ section.settings.close_title }}</h2>
+          {%- if section.settings.close_price != blank -%}<p class="nlist-close__price">{{ section.settings.close_price }}</p>{%- endif -%}
+          <a class="nlist-cta" href="{{ cta }}">{{ section.settings.cta_text }}</a>
+        </div>
+        <figure class="nlist-close__media">
+          {%- if section.settings.close_image != blank -%}
+            {{ section.settings.close_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: close_product.title }}
+          {%- elsif close_product.featured_image != blank -%}
+            {{ close_product.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', alt: close_product.title }}
+          {%- endif -%}
+        </figure>
+      </div>
+    </div>
   </section>
 
   <div style="height:78px" aria-hidden="true"></div>
@@ -344,9 +367,12 @@
     { "type": "richtext", "id": "limits_body", "label": "Body", "default": "<p>It will not lift or firm, and it will not replace lost volume. Nothing in a jar does that, whatever the jar says. It will not work in one night either. Most women tell us it takes a few weeks.</p><p>We would rather you knew now than found out in week three.</p>" },
     { "type": "header", "content": "Testimonials" },
     { "type": "text", "id": "revs_title", "label": "Title", "default": "What women are saying" },
-    { "type": "header", "content": "Close" },
-    { "type": "text", "id": "close_title", "label": "Title", "default": "Made for your mornings, not for someone else's twenties" },
-    { "type": "richtext", "id": "close_body", "label": "Body", "default": "<p>Noula Red Rice Recovery Cream. 50ml. One step at the end of the night you already have.</p><p>One jar, $59. Free shipping. 90 nights, and the jar is yours either way.</p>" },
+    { "type": "header", "content": "Close (product highlight)" },
+    { "type": "product", "id": "product", "label": "Product (image + title)" },
+    { "type": "image_picker", "id": "close_image", "label": "Image override" },
+    { "type": "text", "id": "close_rating", "label": "Rating line", "default": "4.8/5 based on 476+ reviews" },
+    { "type": "text", "id": "close_title", "label": "Headline", "default": "Made for your mornings, not for someone else's twenties" },
+    { "type": "text", "id": "close_price", "label": "Price line", "default": "One jar, $59. Free shipping. 90 nights to try it." },
     { "type": "header", "content": "Sticky bar" },
     { "type": "text", "id": "sticky_text", "label": "Sticky text", "default": "Red Rice Recovery Cream" },
     { "type": "text", "id": "sticky_sub", "label": "Sticky subtext", "default": "$59 · Free shipping" }

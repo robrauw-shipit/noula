@@ -86,6 +86,18 @@
     margin:12px 0 0;font-size:14.5px;line-height:1.5;color:var(--ink-soft);text-align:center;
   }
 
+  /* ---------- founder note ---------- */
+  .nlist-founder{padding-top:8px;padding-bottom:30px;}
+  .nlist-founder__box{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0;}
+  .nlist-founder__head{display:flex;align-items:center;gap:14px;margin:0 0 16px;}
+  .nlist-founder__photo{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:0 0 auto;}
+  .nlist-founder__quote{margin:0;font-family:var(--font-heading-family,inherit);font-size:20px;line-height:1.25;font-weight:800;letter-spacing:-.01em;}
+  .nlist-founder__body p{margin:0 0 14px;font-size:17px;line-height:1.55;color:var(--ink);}
+  .nlist-founder__body p:last-child{margin-bottom:0;}
+  .nlist-founder__sig{margin:16px 0 0;font-size:15px;line-height:1.4;color:var(--ink-soft);}
+  .nlist-founder__sig b{color:var(--ink);}
+  .nlist-founder__sig span{display:block;font-size:13.5px;}
+
   /* ---------- reason ---------- */
   .nlist-reason{padding:28px 0 24px;}
   .nlist-reason--band{background:transparent;}
@@ -160,6 +172,9 @@
     .nlist-reason__h2{font-size:38px;}
     .nlist-reason__body p{font-size:19px;}
 
+    .nlist-founder__quote{font-size:24px;}
+    .nlist-founder__body p{font-size:18px;}
+    .nlist-founder__photo{width:76px;height:76px;}
     .nlist-revs__list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start;}
     .nlist-rev{margin-bottom:0;}
     .nlist-close{padding-top:56px;padding-bottom:56px;}
@@ -218,6 +233,24 @@
       {%- endif -%}
     </div>
   </div>
+
+  <!-- founder note -->
+  {%- if section.settings.founder_body != blank -%}
+    <div class="nlist__wrap nlist-founder">
+      <div class="nlist-founder__box">
+        <div class="nlist-founder__head">
+          {%- if section.settings.founder_image != blank -%}
+            {{ section.settings.founder_image | image_url: width: 200 | image_tag: class: 'nlist-founder__photo', loading: 'lazy', alt: section.settings.founder_name }}
+          {%- elsif section.settings.founder_asset != blank -%}
+            <img class="nlist-founder__photo" src="{{ section.settings.founder_asset | asset_url }}" loading="lazy" alt="{{ section.settings.founder_name | escape }}" width="200" height="200">
+          {%- endif -%}
+          <p class="nlist-founder__quote">"{{ section.settings.founder_quote }}"</p>
+        </div>
+        <div class="nlist-founder__body">{{ section.settings.founder_body }}</div>
+        <p class="nlist-founder__sig"><b>{{ section.settings.founder_name }}</b>{% if section.settings.founder_role != blank %} — {{ section.settings.founder_role }}{% endif %}<span>{{ section.settings.founder_date }}</span></p>
+      </div>
+    </div>
+  {%- endif -%}
 
   <!-- reasons -->
   {%- assign n = 0 -%}
@@ -280,6 +313,7 @@
         <div>
           <p class="nlist-close__rating"><b>★★★★★</b> {{ section.settings.close_rating }}</p>
           <h2 class="nlist-close__title">{{ section.settings.close_title }}</h2>
+          {%- if section.settings.close_sub != blank -%}<p class="nlist-close__price">{{ section.settings.close_sub }}</p>{%- endif -%}
           {%- if section.settings.close_price != blank -%}<p class="nlist-close__price">{{ section.settings.close_price }}</p>{%- endif -%}
           <a class="nlist-cta" href="{{ cta }}">{{ section.settings.cta_text }}</a>
         </div>
@@ -387,6 +421,48 @@
     },
     {
       "type": "header",
+      "content": "Founder note"
+    },
+    {
+      "type": "image_picker",
+      "id": "founder_image",
+      "label": "Photo"
+    },
+    {
+      "type": "text",
+      "id": "founder_asset",
+      "label": "Photo, theme asset (fallback)"
+    },
+    {
+      "type": "textarea",
+      "id": "founder_quote",
+      "label": "Pull quote"
+    },
+    {
+      "type": "richtext",
+      "id": "founder_body",
+      "label": "Body"
+    },
+    {
+      "type": "text",
+      "id": "founder_name",
+      "label": "Name",
+      "default": "Lauren M."
+    },
+    {
+      "type": "text",
+      "id": "founder_role",
+      "label": "Role",
+      "default": "Founder, Noula"
+    },
+    {
+      "type": "text",
+      "id": "founder_date",
+      "label": "Date line",
+      "default": "Written September 2026"
+    },
+    {
+      "type": "header",
       "content": "Call to action"
     },
     {
@@ -441,6 +517,11 @@
       "id": "close_title",
       "label": "Headline",
       "default": "Made for your mornings, not for someone else's twenties"
+    },
+    {
+      "type": "text",
+      "id": "close_sub",
+      "label": "Sub-line"
     },
     {
       "type": "text",

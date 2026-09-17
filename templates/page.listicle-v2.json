@@ -15,6 +15,7 @@
         "reason_1": {
           "type": "reason",
           "settings": {
+            "image": "shopify://shop_images/REASON_1.jpg",
             "asset": "noula-r-mirror.jpg",
             "heading": "Made for skin that changed overnight",
             "body": "<p>Somewhere around 47 or 48, your skin changed faster than your routine could keep up. It didn't happen gradually. It fell off a cliff.</p><p>You're not trying to look 25. You want your skin to feel the way it did a few years ago.</p><p>Most night creams are built for skin that still repairs itself while you sleep. Yours doesn't do that on its own anymore, and that's what changed. Red rice extract is what does that job for it now.</p>"
@@ -23,6 +24,7 @@
         "reason_2": {
           "type": "reason",
           "settings": {
+            "image": "shopify://shop_images/MOST_CREAMS_GONE_LISTICLE.jpg",
             "asset": "noula-mechanism.jpg",
             "heading": "Still working after eight hours, not gone by 3am",
             "body": "<p>You moisturise like crazy and by morning it's gone. You're not under-moisturising. Most creams are mostly water, they sit on the surface, they evaporate, and there's nothing left on your skin by 3am.</p><p>You want to wake up like your skin held onto something.</p><p>Red rice extract sits in a shea butter base that keeps it on your skin the full eight hours, so it's still feeding your skin when you wake up.</p>"
@@ -31,6 +33,7 @@
         "reason_3": {
           "type": "reason",
           "settings": {
+            "image": "shopify://shop_images/LISTICLE_2.jpg",
             "asset": "noula-r-flaking.jpg",
             "heading": "No sting, no peeling, no breaking out. Every night.",
             "body": "<p>Retinol worked at 35 and punished you at 50, so you had to stop, and everything gentle did nothing.</p><p>You want something that works without making you pay for it first.</p><p>There are no retinoids and no exfoliating acids in Noula, and nothing added for fragrance. Red rice extract works the opposite way to retinol: it feeds your skin instead of irritating it into repairing itself. That's why it can go on every night, and why it doesn't care that your skin is more reactive than it used to be.</p>"
@@ -39,6 +42,7 @@
         "reason_4": {
           "type": "reason",
           "settings": {
+            "image": "shopify://shop_images/reason5.jpg",
             "asset": "noula-r-neck.jpg",
             "heading": "Rich enough for crepey skin, gone by morning",
             "body": "<p>It shows on your neck first, then the tops of your cheeks, and dryness makes it look worse than it actually is. Skin that thin needs a rich cream. The problem with rich creams is you wake up wearing them and half of it is on the pillowcase.</p><p>You want it to feel cushioned again, not papery.</p><p>Red rice extract is water-light. The richness comes from the shea butter around it, and shea sinks in instead of sitting on top. Rich enough for that kind of dryness, dry to the touch before you're asleep, and nothing on the pillow in the morning.</p>"
@@ -47,6 +51,7 @@
         "reason_5": {
           "type": "reason",
           "settings": {
+            "image": "shopify://shop_images/LISTICLE_3.jpg",
             "asset": "noula-r-rice.jpg",
             "heading": "Works on skin that nothing works on anymore",
             "body": "<p>Not the expensive jar. Not the one your sister swore by. Not the one that worked at 40. You stopped believing any of them, and you were right to.</p><p>You want one thing that actually does something.</p><p>Red rice is rice that's been fermented, then left unpolished so the bran stays on. The red in the bran is a group of antioxidants called proanthocyanidins, and fermenting breaks the grain down into amino acids small enough for skin to actually take in. That's what gives dry skin the raw material to hold water and stay comfortable, instead of a surface layer that sits there until it evaporates. That's also why it's pink. It isn't dye, it's the bran.</p>"
@@ -63,6 +68,7 @@
         "reason_7": {
           "type": "reason",
           "settings": {
+            "image": "shopify://shop_images/exec-fbab8dd8-25bf-45ac-8a3f-d7c77c9e0741.png",
             "asset": "noula-selfie-1.jpg",
             "heading": "90 nights to try it without being stuck with another disappointing jar",
             "body": "<p>After enough creams that did nothing, the hardest part is allowing yourself to hope again. You don't want another purchase you regret every time you open the drawer.</p><p>You want time to find out whether your skin feels better, with a straightforward way out if it doesn't.</p><p>Here's the honest version: tightness goes first, in the first few mornings. Texture takes weeks. Skin doesn't turn over faster than that, and anyone telling you otherwise is selling you something. That's why it's 90 nights. Use the whole jar. If you're still waking up dry, one email gets you a full refund. No sending anything back. No questions asked.</p>"
@@ -107,9 +113,10 @@
         "logo": "shopify://shop_images/Frame_2_1.png",
         "header_cta": "Shop now",
         "h1": "7 Reasons Women Over 45 Are Switching to This Red Rice Night Cream",
-        "standfirst": "You didn't stop taking care of your skin. It stopped responding. Soft, comfortable skin by morning, without the sting, the grease, or another $100 jar that does nothing.",
+        "standfirst": "You didn't stop taking care of your skin. It stopped responding.",
+        "hero_image": "shopify://shop_images/LISTICLE_1.jpg",
         "hero_asset": "noula-selfie-3.jpg",
-        "usps": "Rich enough for dry\nNo retinol, no acids\nSits alongside HRT or tretinoin",
+        "usps": "Crepey skin, plumper by morning\nSoft by morning, not tight\nNo retinol, no acids",
         "founder_asset": "noula-lauren.jpg",
         "founder_quote": "I wasn't trying to look 25. I wanted my face to stop feeling like paper.",
         "founder_body": "<p>At 47 my skin fell off a cliff, drier, thinner, and the routine I'd used for twenty years just stopped doing anything. </p><p>Every night cream I found were either gentle ones that did nothing or strong ones that worked by irritating your skin on purpose, and at 50 mine couldn't take that.</p><p>So I spent eighteen months with a formulator in Seoul one that actually feeds it. Red rice is why that works, and I explain it properly in point 5.</p>",

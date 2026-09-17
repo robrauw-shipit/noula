@@ -139,10 +139,8 @@
     padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));
   }
   .nlist-sticky.is-on{transform:translateY(0);}
-  .nlist-sticky__in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:12px;justify-content:flex-end;}
-  .nlist-sticky__txt{min-width:0;flex:1;font-size:13px;line-height:1.3;font-weight:700;}
-  .nlist-sticky__txt small{display:block;font-weight:500;color:var(--ink-soft);font-size:12px;}
-  .nlist-sticky .nlist-cta{margin:0;width:auto;min-height:46px;padding:0 24px;font-size:13px;flex:0 0 auto;}
+  .nlist-sticky__in{max-width:560px;margin:0 auto;display:flex;justify-content:center;}
+  .nlist-sticky .nlist-cta{margin:0;width:100%;min-height:52px;padding:0 24px;font-size:15px;}
   @media (prefers-reduced-motion:reduce){.nlist-sticky{transition:none;}}
 
   /* ---------- desktop ---------- */
@@ -333,7 +331,6 @@
   <!-- sticky CTA: appears after 20% scroll -->
   <div class="nlist-sticky" data-nlist-sticky>
     <div class="nlist-sticky__in">
-      <span class="nlist-sticky__txt">{{ section.settings.sticky_text }}<small>{{ section.settings.sticky_sub }}</small></span>
       <a class="nlist-cta" href="{{ cta }}">{{ section.settings.cta_text }}</a>
     </div>
   </div>
@@ -528,22 +525,6 @@
       "id": "close_price",
       "label": "Price line",
       "default": "One jar, $59. Free shipping. 90 nights to try it."
-    },
-    {
-      "type": "header",
-      "content": "Sticky bar"
-    },
-    {
-      "type": "text",
-      "id": "sticky_text",
-      "label": "Sticky text",
-      "default": "Red Rice Recovery Cream"
-    },
-    {
-      "type": "text",
-      "id": "sticky_sub",
-      "label": "Sticky subtext",
-      "default": "$59 · Free shipping"
     }
   ],
   "blocks": [

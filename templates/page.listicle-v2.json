@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "listicle": {
@@ -94,28 +103,28 @@
         "review_3"
       ],
       "settings": {
-        "announcement": "Save $66 + Free Shipping",
+        "announcement": "Secret Deal: Save $66 + Free Shipping",
         "logo": "shopify://shop_images/Frame_2_1.png",
         "header_cta": "Shop now",
         "h1": "7 Reasons Women Over 45 Are Switching to This Red Rice Night Cream",
         "standfirst": "You didn't stop taking care of your skin. It stopped responding. Soft, comfortable skin by morning, without the sting, the grease, or another $100 jar that does nothing.",
         "hero_asset": "noula-selfie-3.jpg",
         "usps": "Rich enough for dry\nNo retinol, no acids\nSits alongside HRT or tretinoin",
-        "cta_text": "See availability",
-        "cta_url": "/products/overnight-recovery-cream",
-        "risk_reversal": "Free shipping · 90 night guarantee",
-        "revs_title": "What women are saying",
-        "close_title": "For skin that needs something different now",
-        "product": "overnight-recovery-cream",
-        "close_rating": "4.8/5 based on 476+ reviews",
-        "close_price": "Discover the night cream built around red rice extract, with 90 nights to decide whether it earns its place.",
         "founder_asset": "noula-lauren.jpg",
         "founder_quote": "I wasn't trying to look 25. I wanted my face to stop feeling like paper.",
         "founder_body": "<p>I'm Lauren. At 47 my skin fell off a cliff, drier, thinner, and the routine I'd used for twenty years just stopped doing anything. My doctor sorted out the hormone side. My face was still waking up tight every morning.</p><p>Every night cream I found was one of two things. Gentle ones that were kind to my skin and did nothing. Strong ones that work by irritating your skin on purpose, and at 50 mine couldn't take that.</p><p>So I spent eighteen months with a formulator in Seoul making a third one. It doesn't force your skin. It feeds it. Red rice is why that works, and I explain it properly in point 5.</p>",
         "founder_name": "Lauren M.",
         "founder_role": "Founder, Noula",
         "founder_date": "Written September 2026",
-        "close_sub": "Softness. Comfort. Less tightness when you wake up."
+        "cta_text": "See availability",
+        "cta_url": "/products/overnight-recovery-cream",
+        "risk_reversal": "Softer by morning, or your money back",
+        "revs_title": "What women are saying",
+        "product": "overnight-recovery-cream",
+        "close_rating": "4.8/5 based on 476+ reviews",
+        "close_title": "For skin that needs something different now",
+        "close_sub": "Softness. Comfort. Less tightness when you wake up.",
+        "close_price": "Discover the night cream built around red rice extract, with 90 nights to decide whether it earns its place."
       }
     }
   },

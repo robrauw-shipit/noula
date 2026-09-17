@@ -18,6 +18,7 @@
     assign cta = '/products/overnight-recovery-cream'
   endif
   assign tick = 'https://cdn.shopify.com/s/files/1/0809/2925/9750/files/check-mark-black-outline.svg?v=1781528042'
+  assign verified = 'https://cdn.shopify.com/s/files/1/0809/2925/9750/files/google-verified-1.svg?v=1782106303'
 -%}
 
 <div class="nlist" data-section-id="{{ section.id }}">
@@ -25,10 +26,11 @@
   .nlist{
     --ink:#1A1A1A;
     --ink-soft:#4A4A4A;
-    --line:#E5E0D8;
-    --band:#F7F5F1;
-    --paper:#FFFFFF;
+    --line:#EAE1D2;
+    --band:#FFFFFF;
+    --paper:#FBF8F3;
     --clay:#D2978B;
+    --clay-deep:#B5765C;
     --pad:16px;
     font-family:inherit;
     color:var(--ink);
@@ -47,7 +49,7 @@
 
   /* ---------- white header ---------- */
   .nlist-head{
-    background:var(--paper);border-bottom:1px solid var(--line);
+    background:#FFFFFF;border-bottom:1px solid var(--line);
     position:sticky;top:0;z-index:60;
   }
   .nlist-head__in{
@@ -70,11 +72,16 @@
   .nlist-hero__h1{margin:0;font-family:var(--font-heading-family,inherit);font-size:25.5px;line-height:1.15;font-weight:800;letter-spacing:-.01em;}
   @media screen and (min-width:390px){.nlist-hero__h1{font-size:28px;}}
   .nlist-hero__stand{margin:14px 0 0;font-size:18px;line-height:1.55;font-weight:400;color:var(--ink);}
-  .nlist-hero__media{position:relative;width:calc(100% + var(--pad) * 2);margin:0 calc(var(--pad) * -1) 22px;padding-top:calc(100% + var(--pad) * 2);overflow:hidden;background:var(--band);}
+    .nlist-hero__media{position:relative;width:calc(100% + var(--pad) * 2);margin:0 calc(var(--pad) * -1) 22px;padding-top:calc(100% + var(--pad) * 2);overflow:hidden;background:var(--band);
+    border-top:1px solid var(--clay);border-bottom:1px solid var(--clay);}
   .nlist-hero__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;}
   .nlist-usps{list-style:none;margin:22px auto 0;padding:0;display:grid;gap:12px;width:max-content;max-width:100%;}
   .nlist-usps li{display:flex;align-items:flex-start;gap:10px;font-size:17px;line-height:1.45;font-weight:700;}
-  .nlist-usps img{width:17px;height:17px;flex:0 0 auto;margin-top:2px;}
+  .nlist-usps img{
+    width:17px;height:17px;flex:0 0 auto;margin-top:2px;
+    /* black outline tick -> clay */
+    filter:invert(72%) sepia(24%) saturate(668%) hue-rotate(316deg) brightness(92%) contrast(88%);
+  }
   .nlist-usps strong{font-weight:700;}
   .nlist-cta{
     display:inline-flex;align-items:center;justify-content:center;
@@ -83,7 +90,8 @@
     font-size:15px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;
   }
   .nlist-risk{
-    margin:12px 0 0;font-size:14.5px;line-height:1.5;color:var(--ink-soft);text-align:center;
+    margin:14px 0 0;font-size:16.5px;line-height:1.45;font-weight:700;
+    color:var(--clay-deep);text-align:center;
   }
 
   /* ---------- founder note ---------- */
@@ -110,7 +118,7 @@
   /* ---------- testimonials ---------- */
   .nlist-revs{padding:28px 0;border-top:1px solid var(--line);}
   .nlist-revs__title{margin:0 0 18px;font-family:var(--font-heading-family,inherit);font-size:26px;line-height:1.2;font-weight:800;text-align:center;}
-  .nlist-rev{border:1px solid var(--line);background:var(--paper);padding:16px;margin-bottom:12px;}
+  .nlist-rev{border:1px solid var(--line);background:#FFFFFF;padding:16px;margin-bottom:12px;}
   .nlist-rev:last-child{margin-bottom:0;}
   .nlist-rev__stars{color:#E8A33D;font-size:14px;letter-spacing:1px;line-height:1;}
   .nlist-rev__quote{margin:10px 0 0;font-size:16.5px;line-height:1.55;color:var(--ink);}
@@ -121,10 +129,10 @@
     font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
     color:var(--ink-soft);white-space:nowrap;
   }
-  .nlist-rev__badge svg{width:14px;height:14px;fill:#3B82F6;flex:0 0 auto;}
+  .nlist-rev__badge img{width:14px;height:14px;flex:0 0 auto;display:block;}
 
   /* ---------- close: product highlight ---------- */
-  .nlist-close{background:var(--band);padding-top:32px;padding-bottom:36px;}
+  .nlist-close{background:#FFFFFF;padding-top:32px;padding-bottom:36px;}
   .nlist-close__rating{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink-soft);}
   .nlist-close__rating b{color:#E8A33D;font-size:15px;letter-spacing:1px;line-height:1;}
   .nlist-close__title{margin:12px 0 0;font-family:var(--font-heading-family,inherit);font-size:29px;line-height:1.15;font-weight:800;letter-spacing:-.015em;}
@@ -135,7 +143,7 @@
   /* ---------- sticky CTA ---------- */
   .nlist-sticky{
     position:fixed;left:0;right:0;bottom:0;z-index:70;
-    background:var(--paper);border-top:1px solid var(--line);
+    background:#FFFFFF;border-top:1px solid var(--line);
     transform:translateY(110%);transition:transform .25s ease;
     padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom));
   }
@@ -151,7 +159,7 @@
     .nlist-head__logo{height:26px;}
 
     .nlist-hero{padding-top:40px;padding-bottom:48px;}
-    .nlist-hero__media{width:100%;margin:0;padding-top:100%;}
+    .nlist-hero__media{width:100%;margin:0;padding-top:100%;border:1px solid var(--clay);}
     .nlist-hero__grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
     .nlist-hero__media{order:0;}
     .nlist-hero__h1{font-size:50px;line-height:1.08;}
@@ -294,10 +302,7 @@
               <p class="nlist-rev__quote">"{{ block.settings.quote }}"</p>
               <div class="nlist-rev__foot">
                 <span class="nlist-rev__name">{{ block.settings.name }}</span>
-                <span class="nlist-rev__badge">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 1.6 2.6 2 3.2-.4 1 3.1 2.9 1.5-.6 3.2 2 2.6-2 2.6.6 3.2-2.9 1.5-1 3.1-3.2-.4-2.6 2-2.6-2-3.2.4-1-3.1L2.3 19l.6-3.2-2-2.6 2-2.6L2.3 7.4l2.9-1.5 1-3.1 3.2.4 2.6-2Zm-1.3 14.2 6-6-1.7-1.7-4.3 4.3-2.1-2.1L6.9 12l3.8 3.8Z"/></svg>
-                  Verified buyer
-                </span>
+                <span class="nlist-rev__badge"><img src="{{ verified }}" alt="" width="14" height="14">Verified buyer</span>
               </div>
             </article>
           {%- endfor -%}

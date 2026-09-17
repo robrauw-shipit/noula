@@ -23,6 +23,8 @@
 
 <div class="nlist" data-section-id="{{ section.id }}">
 <style>
+  html{scroll-behavior:smooth;}
+  #nlist-reason-1{scroll-margin-top:72px;}
   .nlist{
     --ink:#1A1A1A;
     --ink-soft:#4A4A4A;
@@ -66,7 +68,7 @@
   }
 
   /* ---------- hero ---------- */
-  .nlist-hero{padding-top:0;padding-bottom:32px;}
+  .nlist-hero{padding-top:0;padding-bottom:10px;}
   .nlist-hero__grid{display:flex;flex-direction:column;}
   .nlist-hero__media{order:-1;}
   .nlist-hero__h1{margin:0;font-family:var(--font-heading-family,inherit);font-size:31px;line-height:1.12;font-weight:800;letter-spacing:-.015em;}
@@ -95,6 +97,18 @@
     color:var(--clay-deep);text-align:center;
   }
 
+  /* ---------- scroll cue ---------- */
+  .nlist-cue{display:flex;justify-content:center;padding:14px 0 30px;}
+  .nlist-cue a{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:46px;height:46px;border-radius:50%;color:var(--ink);
+    text-decoration:none;-webkit-tap-highlight-color:transparent;
+    animation:nlist-bob 2.4s ease-in-out infinite;
+  }
+  .nlist-cue svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;}
+  @keyframes nlist-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+  @media (prefers-reduced-motion:reduce){.nlist-cue a{animation:none;}}
+
   /* ---------- card: founder note + testimonials share this ---------- */
   .nlist-card{
     background:var(--paper);
@@ -112,10 +126,9 @@
   }
   .nlist-card__body p{margin:0 0 12px;font-size:17px;line-height:1.55;color:var(--ink);}
   .nlist-card__body p:last-child{margin-bottom:0;}
-  .nlist-card__sign{margin:16px 0 0;text-align:right;font-size:13px;color:var(--ink-soft);}
 
   /* ---------- founder note ---------- */
-  .nlist-founder{padding-top:8px;padding-bottom:30px;}
+  .nlist-founder{padding-top:0;padding-bottom:34px;}
 
   /* ---------- reason ---------- */  /* ---------- reason ---------- */
   .nlist-reason{padding:30px 0 28px;}
@@ -251,6 +264,13 @@
     </div>
   </div>
 
+  <!-- scroll cue -->
+  <div class="nlist-cue">
+    <a href="#nlist-reason-1" aria-label="Scroll to the first reason">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg>
+    </a>
+  </div>
+
   <!-- founder note -->
   {%- if section.settings.founder_body != blank -%}
     <div class="nlist__wrap nlist-founder">
@@ -261,11 +281,10 @@
           {%- elsif section.settings.founder_asset != blank -%}
             <img class="nlist-card__avatar" src="{{ section.settings.founder_asset | asset_url }}" loading="lazy" alt="{{ section.settings.founder_name | escape }}" width="120" height="120">
           {%- endif -%}
-          <span class="nlist-card__who">{{ section.settings.founder_name }}, founder of {{ shop.name }}</span>
+          <span class="nlist-card__who">{{ section.settings.founder_name }}</span>
         </div>
         <p class="nlist-card__quote">"{{ section.settings.founder_quote }}"</p>
         <div class="nlist-card__body">{{ section.settings.founder_body }}</div>
-        <p class="nlist-card__sign">{{ section.settings.founder_sign }}</p>
       </div>
     </div>
   {%- endif -%}
@@ -278,7 +297,7 @@
       {%- assign band = '' -%}
       {%- assign remainder = n | modulo: 2 -%}
       {%- if remainder == 0 -%}{%- assign band = ' nlist-reason--band' -%}{%- endif -%}
-      <section class="nlist-reason{{ band }}" {{ block.shopify_attributes }}>
+      <section class="nlist-reason{{ band }}"{% if n == 1 %} id="nlist-reason-1"{% endif %} {{ block.shopify_attributes }}>
         <div class="nlist__wrap">
           <div class="nlist-reason__inner">
             {%- if block.settings.image != blank or block.settings.asset != blank -%}
@@ -463,14 +482,8 @@
     {
       "type": "text",
       "id": "founder_name",
-      "label": "Name",
-      "default": "Lauren M."
-    },
-    {
-      "type": "text",
-      "id": "founder_sign",
-      "label": "Sign-off",
-      "default": "Lauren, founder"
+      "label": "Name and role (beside the photo)",
+      "default": "Lauren Bennet, Founder"
     },
     {
       "type": "header",
